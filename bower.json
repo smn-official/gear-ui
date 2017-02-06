@@ -1,0 +1,24 @@
+{
+  "name": "gear-ui",
+  "homepage": "https://github.com/smn-official/gear-ui",
+  "authors": [
+    "Mario Santos <mariocsants@gmail.com> <mario@smn.com.br>"
+  ],
+  "description": "Pacote de componentes de interface desenvolvidos com AngularJS e Material Design",
+  "main": "",
+  "keywords": [
+    "angularjs",
+    "material",
+    "gear",
+    "ui",
+    "smn"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
