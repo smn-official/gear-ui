@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('ui')
+        .module('gear')
         .factory('grToolbar', grToolbar);
 
     function grToolbar($timeout) {

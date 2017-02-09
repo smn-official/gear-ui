@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('ui')
+		.module('gear')
 		.animation('.drawer-slide-vertical', drawerSlideAnimation);
 
 	drawerSlideAnimation.$inject = ['$animateCss'];

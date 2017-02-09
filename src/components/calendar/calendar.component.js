@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('ui')
+        .module('gear')
         .component('grCalendar', {
             controller: grCalendarController,
             templateUrl: 'app/ui/components/calendar/calendar.component.tpl.html',

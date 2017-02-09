@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('ui')
+        .module('gear')
         .directive('grChip', grChip);
 
     grChip.$inject = ['$timeout'];

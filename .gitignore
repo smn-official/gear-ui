@@ -1,1 +1,4 @@
 lib/
+dist/
+src/*.min.*
+src/app.templates.js

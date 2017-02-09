@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('ui')
+        .module('gear')
         .directive('grMaskDate', grMaskDate);
 
     function grMaskDate($filter, $timeout) {

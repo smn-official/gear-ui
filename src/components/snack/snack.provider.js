@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('ui')
+		.module('gear')
 		.provider('grSnack', grSnack);
 
 	grSnack.$inject = [];

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('ui')
+        .module('gear')
         .factory('grColor', grColor);
 
     grColor.$inject = ['$timeout'];

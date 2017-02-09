@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('ui')
+		.module('gear')
 		.directive('grSnackContainer', grSnackContainer);
 
 	grSnackContainer.$inject = ['grSnack', '$templateCache', '$timeout'];

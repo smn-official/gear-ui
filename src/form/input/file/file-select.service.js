@@ -2,7 +2,7 @@
 //     'use strict';
 //
 //     angular
-//         .module('ui')
+//         .module('gear')
 //         .factory('grFileSelect', grFileSelect);
 //
 //     grFileSelect.$inject = ['$compile', '$rootScope'];

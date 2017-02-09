@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('ui')
+        .module('gear')
         .directive('grMaskPhone', grMaskPhone);
 
     function grMaskPhone(grPhoneFilter) {

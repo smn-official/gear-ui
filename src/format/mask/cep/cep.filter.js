@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('ui')
+        .module('gear')
         .filter('grCep', grCep);
 
     function grCep() {

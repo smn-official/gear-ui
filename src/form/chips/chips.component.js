@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('ui')
+        .module('gear')
         .component('grChips', {
             controller: grChipsController,
             require: {

@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('ui')
+		.module('gear')
 		.directive('grTreeViewList', grTreeViewListDirective);
 
 	grTreeViewListDirective.$inject = ['$timeout'];

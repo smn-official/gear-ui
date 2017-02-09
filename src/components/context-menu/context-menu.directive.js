@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('ui')
+		.module('gear')
 		.directive('grContextMenu', grContextMenuDirective);
 
 	grContextMenuDirective.$inject = ['$timeout', '$templateCache', '$interpolate', '$compile', '$animateCss', 'grContextMenu', 'grWindow'];

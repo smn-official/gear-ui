@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('ui')
+        .module('gear')
         .component('grInputContainer', {
             controller: grInputContainerController,
             require: '?ngModel',

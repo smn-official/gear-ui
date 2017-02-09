@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('ui')
+        .module('gear')
         .filter('grFilterBy', grFilterBy);
 
     grFilterBy.$inject = ['grUnaccentFilter']

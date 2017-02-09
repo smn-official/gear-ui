@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('ui')
+		.module('gear')
 		.factory('grContextMenu', grContextMenu);
 
 	grContextMenu.$inject = ['$rootScope'];

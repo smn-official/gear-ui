@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('ui')
+		.module('gear')
 		.directive('grProfileFloat', grProfileFloat);
 
 	grProfileFloat.$inject = ['$templateCache', '$interval'];

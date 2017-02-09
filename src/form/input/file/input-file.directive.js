@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('ui')
+        .module('gear')
         .directive('grInputFile', grInputFile);
 
     grInputFile.$inject = ['$compile'];

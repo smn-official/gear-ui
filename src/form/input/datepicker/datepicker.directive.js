@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('ui')
+        .module('gear')
         .directive('grDatepicker', grDatepicker);
 
     function grDatepicker($compile, $timeout, $animate, $interpolate) {

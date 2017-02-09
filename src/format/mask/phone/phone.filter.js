@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('ui')
+        .module('gear')
         .filter('grPhone', grPhone);
 
     function grPhone() {
