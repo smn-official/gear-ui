@@ -1,0 +1,26 @@
+<header>
+    <div>
+        <div class="year" ng-bind="$ctrl.choosenDate.getFullYear()"></div>
+        <div class="date">
+            <span ng-if="!$ctrl.choosenDate">Selecione uma data</span>
+            <span ng-if="$ctrl.choosenDate" ng-bind="$ctrl.choosenDate | date:'EEE, d \'de\' MMMM' | grCapitalize">Selecione uma data</span>
+        </div>
+    </div>
+</header>
+<div class="content">
+    <div class="controls">
+        <button class="prev round material-icons"
+                ng-click="$ctrl.prevMonth()"
+                ng-if="!$ctrl.grMinDate || $ctrl.calendar.days[0].time > $ctrl.grMinDate.getTime()"
+                tabindex="0">keyboard_arrow_left</button>
+        <button class="next round material-icons"
+                ng-click="$ctrl.nextMonth()"
+                ng-if="!$ctrl.grMaxDate || $ctrl.calendar.days[$ctrl.calendar.days.length - 1].time < $ctrl.grMaxDate.getTime()"
+                tabindex="2">keyboard_arrow_right</button>
+    </div>
+    <div class="calendar-cover"></div>
+</div>
+<div class="actions" ng-if="$ctrl.grConfirmSelection">
+    <button class="gr-button teal" ng-click="$ctrl.cancel()">Cancelar</button>
+    <button class="gr-button teal" ng-click="$ctrl.selectDate($ctrl.choosenDate)">Ok</button>
+</div>

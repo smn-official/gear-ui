@@ -1,0 +1,58 @@
+gr-floating-card {
+	display: flex;
+	position: fixed;
+	overflow: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 2000;
+	padding: 15px;
+	background-color: rgba(0,0,0,0.2);
+}
+	gr-floating-card-background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: -1;
+	}
+	gr-floating-card-content {
+		margin: auto;
+		display: block;
+		max-width: 100%;
+	}
+	gr-floating-card.ng-enter {
+		overflow: hidden;
+		background-color: transparent;
+		transition: 300ms ease-in-out;
+	}
+		gr-floating-card.ng-enter-active {
+			background-color: rgba(0,0,0,0.2);
+		}
+	gr-floating-card.ng-enter gr-card {
+		transform: translateY(100vw);
+		transition: 200ms ease-in-out;
+	}
+		gr-floating-card.ng-enter-active gr-card {
+			transform: translateY(0);
+		}
+	gr-floating-card.ng-leave {
+		overflow: hidden;
+		background-color: rgba(0,0,0,0.2);
+		transition: 200ms ease-in-out;
+	}
+		gr-floating-card.ng-leave-active {
+			background-color: transparent;
+		}
+	gr-floating-card.ng-leave gr-card {
+		transform: translateY(0);
+		transition: 200ms ease-in-out;
+	}
+		gr-floating-card.ng-leave-active gr-card {
+			transform: translateY(100vw);
+		}
+	gr-floating-card gr-card-wrap {
+		box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+	}

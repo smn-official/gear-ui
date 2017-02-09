@@ -1,0 +1,79 @@
+.gr-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+.gr-grid > .cell {
+    flex: 0 0 auto;
+}
+.gr-grid.g8,
+.gr-grid.g8 > .cell {
+    padding: 4px;
+}
+.gr-grid.gv8,
+.gr-grid.gv8 > .cell {
+    padding: 0 4px;
+}
+.gr-grid.g16,
+.gr-grid.g16 > .cell {
+    padding: 8px;
+}
+.gr-grid.gv16,
+.gr-grid.gv16 > .cell {
+    padding: 0 8px;
+}
+.gr-grid.g24,
+.gr-grid.g24 > .cell {
+    padding: 16px;
+}
+.gr-grid.gv24,
+.gr-grid.gv24 > .cell {
+    padding: 0 16px;
+}
+.gr-grid .cell.s1 {flex-basis: 8.333%;}
+.gr-grid .cell.s2 {flex-basis: 16.666%;}
+.gr-grid .cell.s3 {flex-basis: 25%;}
+.gr-grid .cell.s4 {flex-basis: 33.333%;}
+.gr-grid .cell.s5 {flex-basis: 41.666%;}
+.gr-grid .cell.s6 {flex-basis: 50%;}
+.gr-grid .cell.s7 {flex-basis: 58.333%;}
+.gr-grid .cell.s8 {flex-basis: 66.666%;}
+.gr-grid .cell.s9 {flex-basis: 75%;}
+.gr-grid .cell.s10 {flex-basis: 83.333%;}
+.gr-grid .cell.s11 {flex-basis: 91.666%;}
+.gr-grid .cell.s12 {flex-basis: 100%;}
+@media (min-width: 601px) {
+    .gr-grid .cell.m1 {flex-basis: 8.333%;}
+    .gr-grid .cell.m2 {flex-basis: 16.666%;}
+    .gr-grid .cell.m3 {flex-basis: 25%;}
+    .gr-grid .cell.m4 {flex-basis: 33.333%;}
+    .gr-grid .cell.m5 {flex-basis: 41.666%;}
+    .gr-grid .cell.m6 {flex-basis: 50%;}
+    .gr-grid .cell.m7 {flex-basis: 58.333%;}
+    .gr-grid .cell.m8 {flex-basis: 66.666%;}
+    .gr-grid .cell.m9 {flex-basis: 75%;}
+    .gr-grid .cell.m10 {flex-basis: 83.333%;}
+    .gr-grid .cell.m11 {flex-basis: 91.666%;}
+    .gr-grid .cell.m12 {flex-basis: 100%;}
+}
+@media (min-width: 961px) {
+    .gr-grid .cell.l1 {flex-basis: 8.333%;}
+    .gr-grid .cell.l2 {flex-basis: 16.666%;}
+    .gr-grid .cell.l3 {flex-basis: 25%;}
+    .gr-grid .cell.l4 {flex-basis: 33.333%;}
+    .gr-grid .cell.l5 {flex-basis: 41.666%;}
+    .gr-grid .cell.l6 {flex-basis: 50%;}
+    .gr-grid .cell.l7 {flex-basis: 58.333%;}
+    .gr-grid .cell.l8 {flex-basis: 66.666%;}
+    .gr-grid .cell.l9 {flex-basis: 75%;}
+    .gr-grid .cell.l10 {flex-basis: 83.333%;}
+    .gr-grid .cell.l11 {flex-basis: 91.666%;}
+    .gr-grid .cell.l12 {flex-basis: 100%;}
+}
+.gr-s360 {max-width: 100%; width: 360px;}
+.gr-s480 {max-width: 100%; width: 480px;}
+.gr-s600 {max-width: 100%; width: 600px;}
+.gr-s840 {max-width: 100%; width: 840px;}
+.gr-s960 {max-width: 100%; width: 960px;}
+.gr-s1280 {max-width: 100%; width: 1280px;}
+.gr-s1440 {max-width: 100%; width: 1440px;}
+.gr-s1600 {max-width: 100%; width: 1600px;}
