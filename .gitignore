@@ -1,4 +1,8 @@
-lib/
+docs/src/content/lib
+docs/src/index.html
+docs/prod
+docs/dev
 dist/
 src/*.min.*
 src/app.templates.js
+node_modules
