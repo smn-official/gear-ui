@@ -257,12 +257,6 @@ gulp.task('default', () => {
     $.runSequence('gear', 'template', 'preprocess', 'index');
 });
 
-gulp.task('all:watch', ['gear', 'template', 'preprocess', 'index'] ,() => {
-    gulp.watch(['src/app/**/*', '../src/**/*.{js,css,html}', '!../src/**/*.min.*'], () => {
-        $.runSequence('gear', 'template', 'preprocess', 'index');
-    });
-});
-
 // Usado para limpar a variável de watch, para não problema de acionar o watch várias vezes
 setTimeout(function () {
     isWatchMode = false;
