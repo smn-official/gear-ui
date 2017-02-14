@@ -8,7 +8,8 @@
             'ngMessages',
             'ngResource',
             'ngCookies',
-            'ui.router'
+            'ui.router',
+            'core'
         ]);
 
 })();
