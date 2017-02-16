@@ -18,7 +18,7 @@
                 'grSecondaryInfo': '@',
                 'grLabel': '@',
                 'grTrackBy': '@',
-                'grSearchQuery': '=searchQuery',
+                'searchQuery': '=grSearchQuery',
                 'searchFunction': '=grSearchFunction',
                 'selectFunction': '=grSelectFunction',
                 'placeholder': '@',
@@ -32,6 +32,7 @@
         $ctrl.grItemsFiltered = [];
         $ctrl.focusedIndex = 0;
         $ctrl.$onInit = function () {
+
             $element.attr('tabindex', -1);
             $element.bind('click', function (e) {
                 if (angular.element(e.target).is('gr-autocomplete'))
@@ -92,6 +93,7 @@
         };
 
         $ctrl.searchItem = function (query) {
+            $ctrl.searchQuery = query;
             $timeout.cancel(searchTimeout);
             searchTimeout = $timeout(function () {
                 $ctrl.searchFunction(query);
