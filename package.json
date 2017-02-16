@@ -9,7 +9,8 @@
     "url": "git+https://github.com/smn-official/gear-ui.git"
   },
   "authors": [
-    "Mario Santos <mariocsants@gmail.com>"
+    "Mario Santos <mariocsants@gmail.com>",
+    "Ítalo Andrade <andraditalo@gmail.com>"
   ],
   "license": "MIT",
   "bugs": {
