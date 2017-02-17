@@ -14,7 +14,7 @@
 				src: '='
 			},
 			transclude: true,
-			template: $templateCache.get('app/ui/components/profile-float/profile-float.directive.tpl.html'),
+            templateUrl: 'components/profile-float/profile-float.directive.html',
 			link: link
 		};
 		return directive;

@@ -11,7 +11,7 @@
     function grChip($timeout) {
         var directive = {
             require: '^^grChips',
-            templateUrl: 'app/ui/form/chips/chip.tpl.html',
+            templateUrl: 'form/chips/chip.html',
             link: link,
             restrict: 'E'
         };

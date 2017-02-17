@@ -13,7 +13,7 @@
 				onActive: '&?',
 				onInactive: '&?'
 			},
-			templateUrl: 'app/ui/components/slider/slide.directive.tpl.html',
+			templateUrl: 'components/slider/slide.directive.html',
 			transclude: true,
 			require: '^grSlider',
 			link: link

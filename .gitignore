@@ -2,6 +2,7 @@ node_modules
 dist/
 src/*.min.*
 **/*.templates.js
+.idea
 
 docs/src/content/lib
 docs/src/index.html

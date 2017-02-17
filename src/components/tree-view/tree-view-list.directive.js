@@ -12,7 +12,7 @@
 			require: '^grTreeView',
 			link: link,
 			restrict: 'E',
-			templateUrl: 'app/ui/components/tree-view/tree-view-list.directive.html',
+			templateUrl: 'components/tree-view/tree-view-list.directive.html',
 			scope: {
 				list: '='
 			}

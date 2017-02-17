@@ -12,7 +12,7 @@
 			require: '^grMainMenu',
 			link: link,
 			restrict: 'E',
-			template: $templateCache.get('app/ui/struct/main-menu/menu-item/menu-item.directive.tpl.html'),
+            templateUrl: 'struct/main-menu/menu-item/menu-item.directive.html',
 			scope: {
 				'item': '=',
 				'list': '=',

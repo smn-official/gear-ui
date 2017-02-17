@@ -18,7 +18,7 @@
                 show: '=?',
                 disabled: '=?'
             },
-            template: $templateCache.get('app/ui/components/multi-handle/multi-handle.directive.tpl.html')
+            templateUrl: 'components/multi-handle/multi-handle.directive.html'
         };
         return directive;
 

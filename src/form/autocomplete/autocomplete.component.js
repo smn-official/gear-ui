@@ -8,7 +8,7 @@
             require: {
                 ngModelCtrl: 'ngModel'
             },
-            templateUrl: 'app/ui/form/autocomplete/autocomplete.tpl.html',
+            templateUrl: 'form/autocomplete/autocomplete.html',
             bindings: {
                 'ngModel': '=',
                 'grItems': '=',

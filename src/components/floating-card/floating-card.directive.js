@@ -14,7 +14,7 @@
 			scope: {
 				'backgroundClick': '&'
 			},
-			template: $templateCache.get('app/ui/components/floating-card/floating-card.directive.tpl.html'),
+			templateUrl: 'components/floating-card/floating-card.directive.html',
 			link: link
 		};
 		return directive;

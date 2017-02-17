@@ -8,7 +8,7 @@
 	function grSlider(){
 		var directive = {
 			restrict: 'E',
-			templateUrl: 'app/ui/components/slider/slider.directive.tpl.html',
+			templateUrl: 'components/slider/slider.directive.html',
 			transclude: true,
 			scope: {
 				activeIndex: '='

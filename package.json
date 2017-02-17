@@ -1,9 +1,8 @@
 {
   "name": "gear",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Pacote de componentes de interface desenvolvidos com AngularJS e Material Design",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/smn-official/gear-ui.git"
@@ -20,6 +19,7 @@
   "devDependencies": {
     "event-stream": "^3.3.3",
     "gulp": "^3.9.1",
+    "gulp-angular-embed-templates": "^2.3.0",
     "gulp-angular-filesort": "^1.1.1",
     "gulp-angular-templatecache": "^1.8.0",
     "gulp-autoprefixer": "^3.1.0",

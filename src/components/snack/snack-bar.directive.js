@@ -10,7 +10,7 @@
 	function grSnackBar(grSnack, $templateCache) {
 		var directive = {
 			link: link,
-			template: $templateCache.get('app/ui/components/snack/snack-bar.directive.tpl.html'),
+            templateUrl: 'components/snack/snack-bar.directive.html',
 			restrict: 'E',
 			scope: {
 				'grBar': '='

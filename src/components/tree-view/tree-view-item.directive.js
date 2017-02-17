@@ -10,7 +10,7 @@
 	function grTreeViewItemDirective($compile, $templateCache) {
 		var directive = {
 			require: '^grTreeView',
-			templateUrl: 'app/ui/components/tree-view/tree-view-item.directive.html',
+			templateUrl: 'components/tree-view/tree-view-item.directive.html',
 			link: link,
 			restrict: 'E',
 			scope: {

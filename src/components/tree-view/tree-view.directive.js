@@ -13,7 +13,7 @@
 			controller: grTreeViewController,
 			controllerAs: 'vm',
 			restrict: 'E',
-			templateUrl: 'app/ui/components/tree-view/tree-view.directive.html',
+			templateUrl: 'components/tree-view/tree-view.directive.html',
 			scope: {
 				'list': '=',
 				'config': '=?',

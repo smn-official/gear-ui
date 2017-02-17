@@ -2,7 +2,7 @@ var gulp = require('gulp'),
     $ = require('gulp-load-plugins')({pattern: '*'});
 
 var paths = {
-        templates: '**/*.tpl.html',
+    templates: '**/*.tpl.html',
 };
 
 function minifyHtml() {
@@ -19,8 +19,12 @@ function minifyHtml() {
 }
 
 function minifyScript(dest) {
+    var optionsEmbed = {
+        basePath: 'src/' //Pegando os templates pela pasta src
+    };
     return gulp.src('**/*.js', {cwd: 'src'})
         .pipe($.plumber())
+        .pipe($.angularEmbedTemplates(optionsEmbed))
         .pipe($.angularFilesort())
         .pipe($.concat('gear.min.js'))
         .pipe($.ngAnnotate())

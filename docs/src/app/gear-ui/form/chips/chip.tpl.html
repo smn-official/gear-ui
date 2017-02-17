@@ -1,8 +1,0 @@
-<span ng-if="!ctrl.chipTemplateUrl"
-      ng-bind="ctrl.grItemsValue ? (ctrl.grItems | filter:{ idUnidade: $chip })[0][ctrl.grPrimaryInfo] || $chip : (ctrl.grPrimaryInfo ? $chip[ctrl.grPrimaryInfo] : $chip)"></span>
-<button type="button"
-        ng-click="ctrl.removeChip($index)"
-        class="remove-chip"
-        tabindex="-1"><i class="material-icons">clear</i></button>
-<chip-template ng-if="ctrl.chipTemplateUrl"
-               ng-include="ctrl.chipTemplateUrl"></chip-template>

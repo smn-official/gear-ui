@@ -9,9 +9,8 @@
 
     function grMainMenu($templateCache) {
         var directive = {
-            // link: link,
             restrict: 'E',
-            template: $templateCache.get('app/ui/struct/main-menu/main-menu.directive.tpl.html'),
+            templateUrl: 'struct/main-menu/main-menu.directive.html',
             scope: {
                 'menuList': '=',
                 'config': '=?',

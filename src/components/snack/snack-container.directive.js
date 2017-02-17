@@ -10,7 +10,7 @@
 	function grSnackContainer(grSnack, $templateCache, $timeout) {
 		var directive = {
 			link: link,
-			template: $templateCache.get('app/ui/components/snack/snack-container.directive.tpl.html'),
+            templateUrl: 'components/snack/snack-container.directive.html',
 			restrict: 'E'
 		};
 		return directive;

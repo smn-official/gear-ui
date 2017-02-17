@@ -8,7 +8,7 @@
             require: {
                 ngModelCtrl: 'ngModel'
             },
-            templateUrl: 'app/ui/form/chips/chips.tpl.html',
+            templateUrl: 'form/chips/chips.html',
             bindings: {
                 'ngModel': '=',
                 'grItems': '=',

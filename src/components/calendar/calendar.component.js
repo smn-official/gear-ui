@@ -5,7 +5,7 @@
         .module('gear')
         .component('grCalendar', {
             controller: grCalendarController,
-            templateUrl: 'app/ui/components/calendar/calendar.component.tpl.html',
+            templateUrl: 'components/calendar/calendar.component.html',
             require: 'ngModel',
             bindings: {
                 ngModel: '=?',
@@ -119,7 +119,7 @@
                 addClass: prev ? 'leave-right' : 'leave-left'
             });
 
-            var calendar = $compile($templateCache.get('app/ui/components/calendar/mini-calendar.tpl.html'))($scope);
+            var calendar = $compile($templateCache.get('components/calendar/mini-calendar.tpl.html'))($scope);
             enterAnimationPromise = $animate.enter(calendar, $element.find('.calendar-cover'), null, {
                 addClass: prev ? 'enter-left' : 'enter-right'
             });
