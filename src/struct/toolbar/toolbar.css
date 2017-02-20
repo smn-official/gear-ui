@@ -5,11 +5,20 @@ gr-toolbar {
     right: 0;
     height: 56px;
     display: flex;
-    background-color: #3F51B5;
+    background-color: #FFF;
     color: white;
     box-shadow: 0 4px 8px rgba(0,0,0,.15),0 4px 12px rgba(0,0,0,.2);
     z-index: 1100;
     transition: box-shadow 300ms ease-in-out 300ms;
+}
+gr-toolbar.indigo {
+    background-color: #3F51B5;
+}
+gr-toolbar.blue-grey {
+    background-color: #263238;
+}
+gr-toolbar.blue-teal {
+    background-color: #009688;
 }
 gr-toolbar.flat-add {
     transition: box-shadow 300ms ease-in-out 300ms, background-color 0ms ease-in-out 300ms;
