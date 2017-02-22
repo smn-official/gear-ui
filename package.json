@@ -1,6 +1,6 @@
 {
   "name": "gear",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Pacote de componentes de interface desenvolvidos com AngularJS e Material Design",
   "scripts": {},
   "repository": {
@@ -9,7 +9,8 @@
   },
   "authors": [
     "Mario Santos <mariocsants@gmail.com>",
-    "Ítalo Andrade <andraditalo@gmail.com>"
+    "Ítalo Andrade <andraditalo@gmail.com>",
+    "Claudanilo Xavier <claudaniloxavier@gmail.com>"
   ],
   "license": "MIT",
   "bugs": {
