@@ -1,7 +1,21 @@
-var gulp = require('gulp'),
-    $ = require('gulp-load-plugins')({pattern: '*'});
+const gulp = require('gulp');
+/**
+ * @param {{
+ * htmlmin
+ * plumber,
+ * angularEmbedTemplates,
+ * angularFilesort,
+ * ngAnnotate,
+ * autoprefixer,
+ * concatCss,
+ * cleanCss,
+ * angularTemplatecache
+ * runSequence
+ * }} Dynamic methods
+ */
+const $ = require('gulp-load-plugins')({pattern: '*'});
 
-var paths = {
+const paths = {
     templates: '**/*.tpl.html',
 };
 
@@ -19,11 +33,12 @@ function minifyHtml() {
 }
 
 function minifyScript(dest) {
-    var optionsEmbed = {
+    const optionsEmbed = {
         basePath: 'src/' //Pegando os templates pela pasta src
     };
     return gulp.src('**/*.js', {cwd: 'src'})
         .pipe($.plumber())
+        .pipe($.babel())
         .pipe($.angularEmbedTemplates(optionsEmbed))
         .pipe($.angularFilesort())
         .pipe($.concat('gear.min.js'))
@@ -45,9 +60,10 @@ function minifyStyle(src, dest, concat) {
 }
 
 gulp.task('template', () => {
-    var templates = gulp.src(paths.templates, {cwd: 'src'}).pipe($.plumber());
+    const templates = gulp.src(paths.templates, {cwd: 'src'}).pipe($.plumber());
 
-    return templates.pipe(minifyHtml())
+    return templates
+        .pipe(minifyHtml())
         .pipe($.angularTemplatecache('app.templates.js', {
             module: 'gear',
             root: 'app'
@@ -64,12 +80,12 @@ gulp.task('minify:js', () => {
 });
 
 gulp.task('clean', () => {
-    return gulp.src(['dist', 'src/*.min.*', 'src/app.templates.js'], {read: false}).pipe($.clean());
+    return gulp.src(['dist', 'src/*.min.*', 'src/app.templates.js'], {read: false})
+        .pipe($.clean());
 });
 
 gulp.task('dist', () => {
-    gulp
-        .src('src/*.min.*')
+    gulp.src('src/*.min.*')
         .pipe(gulp.dest('dist/'));
 });
 
