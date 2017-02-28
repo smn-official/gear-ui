@@ -49,8 +49,7 @@ gulp.task('template', () => {
 
     return templates.pipe(minifyHtml())
         .pipe($.angularTemplatecache('app.templates.js', {
-            module: 'gear',
-            root: 'app'
+            module: 'gear'
         }))
         .pipe(gulp.dest('src/'));
 });
