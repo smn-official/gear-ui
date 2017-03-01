@@ -88,7 +88,7 @@ gr-option-container {
 			}
 				gr-option input[type="checkbox"]:checked + .gr-option-shell .gr-option-fill {
 					border-width: 9px;
-					border-color: #3F51B5;
+					border-color: #2196F3;
 				}
 					gr-option input[type="checkbox"] + .gr-option-shell .gr-option-mark {
 						position: absolute;
@@ -138,7 +138,7 @@ gr-option-container {
 
 			/* Radio button */
 			gr-option input[type="radio"]:checked + .gr-option-shell {
-				border-color: #3F51B5;
+				border-color: #2196F3;
 
 			}
 				gr-option input[type="radio"] + .gr-option-shell .gr-option-fill {
@@ -148,7 +148,7 @@ gr-option-container {
 				gr-option input[type="radio"]:checked + .gr-option-shell .gr-option-fill {
 					border-width: 9px;
 					transform: scale(0.6);
-					border-color: #3F51B5;
+					border-color: #2196F3;
 					transition: border 200ms ease-in-out, transform 300ms cubic-bezier(0.42, 0, 0.53, 2) 100ms;
 				}
 

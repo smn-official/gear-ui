@@ -208,13 +208,13 @@ gr-input-container ng-messages ng-message.ng-leave-active {
 	transform: translateY(-2px);
 }
 gr-input-container > .gr-control.teal {
-	border-color: #009688;
+	border-color: #2196F3;
 }
 gr-input-container > .gr-control.teal ~ label {
-	color: #009688;
+	color: #2196F3;
 }
 gr-input-container > .gr-control.teal ~ .line {
-	background-color: #009688;
+	background-color: #2196F3;
 }
 gr-input-container .picker {
 	position: absolute;
