@@ -196,11 +196,31 @@ gr-toolbar .ellipsis {
 
 /* TOOLBAR RESIZING */
 @media (max-width: 599px) {
-    gr-struct:not(.not-on-top) gr-toolbar.flat.gte-sm {
+    gr-struct:not(.not-on-top) gr-toolbar.flat.gte-lte-xs {
         transition: box-shadow 300ms ease-in-out 300ms, background-color 0ms ease-in-out 300ms;
     }
 }
 @media (min-width: 600px) {
+    gr-struct:not(.not-on-top) gr-toolbar.flat.gte-lte-xs {
+        box-shadow: none;
+        background-color: transparent;
+        transition: 300ms ease-in-out, background-color 0s linear;
+    }
+    gr-struct:not(.not-on-top) gr-toolbar.flat.size-2x.gte-lte-xs + .gr-toolbar-placeholder::before {
+        height: 200%;
+        transition: height 300ms ease-in-out 300ms;
+    }
+    gr-struct:not(.not-on-top) .ng-enter gr-toolbar.flat.gte-lte-xs + .gr-toolbar-placeholder {
+        transition: height 300ms ease-in-out 300ms;
+    }
+}
+
+@media (max-width: 839px) {
+    gr-struct:not(.not-on-top) gr-toolbar.flat.gte-sm {
+        transition: box-shadow 300ms ease-in-out 300ms, background-color 0ms ease-in-out 300ms;
+    }
+}
+@media (min-width: 840px) {
     gr-struct:not(.not-on-top) gr-toolbar.flat.gte-sm {
         box-shadow: none;
         background-color: transparent;
