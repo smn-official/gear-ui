@@ -8,7 +8,7 @@ gr-calendar {
     box-shadow: 0 2px 4px rgba(0,0,0,.15),0 2px 6px rgba(0,0,0,.2);
 }
 gr-calendar header {
-    background-color: #009688;
+    background-color: #2196F3;
     color: #fff;
     padding: 8px 16px;
     min-height: 72px;
@@ -93,7 +93,7 @@ gr-calendar .content button.round {
     z-index: 0;
 }
 gr-calendar .today button.round {
-    color: #009688;
+    color: #2196F3;
     font-weight: bold;
 }
 gr-calendar .content button.round[disabled] {
@@ -118,7 +118,7 @@ gr-calendar .content button.round::after {
     z-index: -1;
 }
 gr-calendar .content button.round::before {
-    background-color: #009688;
+    background-color: #2196F3;
 }
 gr-calendar .content button.round.selected {
     color: white;
