@@ -9,5 +9,11 @@
 
 	function coreStates($stateProvider, $urlRouterProvider, $locationProvider) {
 		$locationProvider.html5Mode(true);
+
+		$stateProvider
+			.state('test', {
+				url: '/teste',
+				template: 'ITULU'
+			});
 	}
 })();
