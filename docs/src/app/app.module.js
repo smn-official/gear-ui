@@ -7,7 +7,6 @@
             'ngAnimate',
             'ngMessages',
             'ngResource',
-            'ngCookies',
             'ui.router',
             'core'
         ]);
