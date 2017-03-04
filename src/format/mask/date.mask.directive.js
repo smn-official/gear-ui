@@ -2,16 +2,16 @@
     'use strict';
 
     angular
-        .module('gear')
-        .directive('grMaskDate', grMaskDate);
+        .module('smn.ui')
+        .directive('uiMaskDate', uiMaskDate);
 
-    function grMaskDate($filter, $timeout) {
+    function uiMaskDate($filter, $timeout) {
         var directive = {
             restrict: 'A',
             link: link,
             require: 'ngModel',
             scope: {
-                grMaxDate: '='
+                uiMaxDate: '='
             }
         };
         return directive;
@@ -49,7 +49,7 @@
                     });
                 }
 
-                if (viewValue.length === 10 && check && (!scope.grMaxDate || scope.grMaxDate >= check)) {
+                if (viewValue.length === 10 && check && (!scope.uiMaxDate || scope.uiMaxDate >= check)) {
                     var dateArray = viewValue.split('/');
                     return new Date(dateArray[2], dateArray[1]-1, dateArray[0]);
                 }

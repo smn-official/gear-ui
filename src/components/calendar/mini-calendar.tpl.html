@@ -1,11 +1,11 @@
 <div class="calendar">
     <div class="label">
-        <button class="month-label" gr-autofocus>
-            <span ng-bind="::($ctrl.months[$ctrl.calendar.month] + ' de ' + $ctrl.calendar.year) | grCapitalize"></span>
+        <button class="month-label" ui-autofocus>
+            <span ng-bind="::($ctrl.months[$ctrl.calendar.month] + ' de ' + $ctrl.calendar.year) | uiCapitalize"></span>
         </button>
     </div>
     <div class="week-header">
-        <div class="week-day" ng-repeat="day in ::$ctrl.days" ng-bind="::day.substring(0,1) | grCapitalize"></div>
+        <div class="week-day" ng-repeat="day in ::$ctrl.days" ng-bind="::day.substring(0,1) | uiCapitalize"></div>
     </div>
     <div class="days">
         <div class="day"

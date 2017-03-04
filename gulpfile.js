@@ -41,7 +41,7 @@ function minifyScript(dest) {
         .pipe($.babel())
         .pipe($.angularEmbedTemplates(optionsEmbed))
         .pipe($.angularFilesort())
-        .pipe($.concat('gear.min.js'))
+        .pipe($.concat('smn-ui.min.js'))
         .pipe($.ngAnnotate())
         .pipe($.uglify())
         .pipe(gulp.dest(dest));
@@ -54,7 +54,7 @@ function minifyStyle(src, dest, concat) {
             browsers: ['> 1%', 'IE 7'],
             cascade: false
         }))
-        .pipe($.if(concat, $.concatCss('gear.min.css')))
+        .pipe($.if(concat, $.concatCss('smn-ui.min.css')))
         .pipe($.cleanCss())
         .pipe(gulp.dest(dest));
 }
@@ -65,7 +65,7 @@ gulp.task('template', () => {
     return templates
         .pipe(minifyHtml())
         .pipe($.angularTemplatecache('app.templates.js', {
-            module: 'gear'
+            module: 'smn.ui'
         }))
         .pipe(gulp.dest('src/'));
 });

@@ -2,22 +2,22 @@
     'use strict';
 
     angular
-        .module('gear')
-        .component('grInputContainer', {
-            controller: grInputContainerController,
+        .module('smn.ui')
+        .component('uiInputContainer', {
+            controller: uiInputContainerController,
             require: '?ngModel',
             bindings: {
                 'ngModel': '=?'
             }
         });
 
-    grInputContainerController.$inject = ['$element'];
-    function grInputContainerController($element) {
+    uiInputContainerController.$inject = ['$element'];
+    function uiInputContainerController($element) {
         var $ctrl = this;
 
         $ctrl.$postLink = function () {
-            $element.children('select, input, textarea, gr-chips')
-                .addClass('gr-control')
+            $element.children('select, input, textarea, ui-chips')
+                .addClass('ui-control')
                 .after('<div class="line"></div>');
         };
     }

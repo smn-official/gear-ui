@@ -2,12 +2,12 @@
 	'use strict';
 
 	angular
-		.module('gear')
-		.directive('grSnackContainer', grSnackContainer);
+		.module('smn.ui')
+		.directive('uiSnackContainer', uiSnackContainer);
 
-	grSnackContainer.$inject = ['grSnack', '$templateCache', '$timeout'];
+	uiSnackContainer.$inject = ['uiSnack', '$templateCache', '$timeout'];
 
-	function grSnackContainer(grSnack, $templateCache, $timeout) {
+	function uiSnackContainer(uiSnack, $templateCache, $timeout) {
 		var directive = {
 			link: link,
             templateUrl: 'components/snack/snack-container.directive.html',
@@ -18,10 +18,10 @@
 		function link(scope, element, attrs) {
 			var timeout;
 			scope.bars = [];
-			grSnack.newAdded(function (bar) {
+			uiSnack.newAdded(function (bar) {
 				// TENTAR TROCAR O NG-REPEAT POR INSERIR UM ELEMENTO
 				// USANDO O $animate.enter PRA USAR OS CALLBACK -~
-				bar = angular.extend({}, grSnack.getDefaults(), bar);
+				bar = angular.extend({}, uiSnack.getDefaults(), bar);
 				scope.bars.push(bar);
 				if (scope.bars.length == 1)
 					timerBar();
@@ -35,7 +35,7 @@
 				if (scope.bars.length && scope.bars[0].delay)
 					timeout = $timeout(finishTimeout, scope.bars[0].delay);
 			}
-			grSnack.onHide(function () {
+			uiSnack.onHide(function () {
 				if (timeout)
 					$timeout.cancel(timeout);
 				finishTimeout();

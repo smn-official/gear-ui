@@ -2,32 +2,32 @@
     'use strict';
 
     angular
-        .module('gear')
-        .directive('grDatepicker', grDatepicker);
+        .module('smn.ui')
+        .directive('uiDatepicker', uiDatepicker);
 
-    function grDatepicker($compile, $timeout, $animate, $interpolate) {
+    function uiDatepicker($compile, $timeout, $animate, $interpolate) {
         var directive = {
             require: 'ngModel',
             link: link,
             restrict: 'A',
             scope: {
                 ngModel: '=',
-                grDateFormat: '@?',
-                grDatepicker: '@?',
-                grSelect: '&?',
-                grMinDate: '=?',
-                grMaxDate: '=?',
+                uiDateFormat: '@?',
+                uiDatepicker: '@?',
+                uiSelect: '&?',
+                uiMinDate: '=?',
+                uiMaxDate: '=?',
                 ngReadonly: '=?',
-                grViewDate: '=?'
+                uiViewDate: '=?'
             }
         };
         return directive;
 
         function link(scope, element, attrs, ctrl) {
             var picker, mask, pickerGroup, fromEnter, toEnter,
-                target = scope.grDatepicker ? angular.element(scope.grDatepicker) : element;
+                target = scope.uiDatepicker ? angular.element(scope.uiDatepicker) : element;
 
-            element.on(attrs.grPickerEvent || 'focus', function (e) {
+            element.on(attrs.uiPickerEvent || 'focus', function (e) {
                 renderPicker(target);
             });
 
@@ -36,17 +36,17 @@
 
             function renderPicker(target) {
                 pickerGroup = $compile(
-                    '<gr-background-mask class="gr-picker-mask" ng-mousedown="closePicker($event)"></gr-background-mask>' +
-                    '<gr-calendar class="gr-picker" ' +
+                    '<ui-background-mask class="ui-picker-mask" ng-mousedown="closePicker($event)"></ui-background-mask>' +
+                    '<ui-calendar class="ui-picker" ' +
                                  'tabindex="0" ' +
-                                 'gr-select="select($date)" ' +
-                                 'gr-cancel="closePicker()" ' +
-                                 'gr-view-date="grViewDate" ' +
-                                 'gr-min-date="grMinDate" ' +
-                                 'gr-max-date="grMaxDate" ' +
-                                 'gr-view-date="ngModel" ' +
-                                 ('grInitOnSelected' in attrs ? 'gr-init-on-selected ' : '') +
-                                 'ng-model="ngModel"></gr-calendar>')(scope);
+                                 'ui-select="select($date)" ' +
+                                 'ui-cancel="closePicker()" ' +
+                                 'ui-view-date="grViewDate" ' +
+                                 'ui-min-date="grMinDate" ' +
+                                 'ui-max-date="grMaxDate" ' +
+                                 'ui-view-date="ngModel" ' +
+                                 ('uiInitOnSelected' in attrs ? 'ui-init-on-selected ' : '') +
+                                 'ng-model="ngModel"></ui-calendar>')(scope);
                 var inputOffset = target.offset(),
                     padding = 16;
 
@@ -114,7 +114,7 @@
             }
 
             function select($date) {
-                scope.grSelect && scope.grSelect({ $date: $date });
+                scope.uiSelect && scope.uiSelect({ $date: $date });
                 closePicker();
             };
 

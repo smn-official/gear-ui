@@ -2,18 +2,18 @@
 	'use strict';
 
 	angular
-		.module('gear')
-		.directive('grSnackBar', grSnackBar);
+		.module('smn.ui')
+		.directive('uiSnackBar', uiSnackBar);
 
-	grSnackBar.$inject = ['grSnack', '$templateCache'];
+	uiSnackBar.$inject = ['uiSnack', '$templateCache'];
 
-	function grSnackBar(grSnack, $templateCache) {
+	function uiSnackBar(uiSnack, $templateCache) {
 		var directive = {
 			link: link,
             templateUrl: 'components/snack/snack-bar.directive.html',
 			restrict: 'E',
 			scope: {
-				'grBar': '='
+				'uiBar': '='
 			}
 		};
 		return directive;

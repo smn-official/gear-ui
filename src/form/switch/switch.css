@@ -1,22 +1,22 @@
-gr-switch {
+ui-switch {
     position: relative;
     width: 36px;
     height: 24px;
     display: inline-block;
 }
-gr-switch input {
+ui-switch input {
     position: absolute;
     width: 0;
     height: 0;
     opacity: 0;
 }
-gr-switch .switch-cover {
+ui-switch .switch-cover {
     background-color: #2196f3;
     width: 0;
     height: 0;
     margin: auto;
 }
-gr-switch .track {
+ui-switch .track {
     position: absolute;
     top: 0;
     left: 0;
@@ -30,7 +30,7 @@ gr-switch .track {
     border-radius: 7px;
     transition: 300ms ease-in-out;
 }
-gr-switch .thumb-container {
+ui-switch .thumb-container {
     position: absolute;
     top: 0;
     right: 0;
@@ -41,7 +41,7 @@ gr-switch .thumb-container {
     background-color: inherit;
     transition: right 300ms ease-in-out;
 }
-gr-switch .thumb {
+ui-switch .thumb {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -54,20 +54,20 @@ gr-switch .thumb {
     background-color: inherit;
     transition: 300ms ease-in-out;
 }
-gr-switch .ng-empty + .switch-cover {
+ui-switch .ng-empty + .switch-cover {
     background-color: #212121;
 }
-gr-switch .ng-empty + .switch-cover .thumb-container {
+ui-switch .ng-empty + .switch-cover .thumb-container {
     right: 100%;
 }
-gr-switch .ng-empty + .switch-cover .thumb {
+ui-switch .ng-empty + .switch-cover .thumb {
     box-shadow: 0 1px 2px rgba(0,0,0,0.21), 0 1px 3px rgba(0,0,0,0.3);
     transform: translateX(100%);
 }
-gr-switch .ng-empty:not([disabled]) + .switch-cover .thumb {
+ui-switch .ng-empty:not([disabled]) + .switch-cover .thumb {
     background-color: white;
 }
-gr-switch .thumb-container::before {
+ui-switch .thumb-container::before {
     content: '';
     position: absolute;
     top: 0;
@@ -84,15 +84,15 @@ gr-switch .thumb-container::before {
     transition: 300ms ease-in-out;
     pointer-events: none;
 }
-gr-switch input.ng-empty + .switch-cover .thumb-container::before {
+ui-switch input.ng-empty + .switch-cover .thumb-container::before {
     background-color: black;
     opacity: 0.1;
     margin: auto 0;
 }
-gr-switch input:focus + .switch-cover .thumb-container::before,
-gr-switch input:active + .switch-cover .thumb-container::before{
+ui-switch input:focus + .switch-cover .thumb-container::before,
+ui-switch input:active + .switch-cover .thumb-container::before{
     transform: scale(1);
 }
-gr-switch [disabled] + .switch-cover {
+ui-switch [disabled] + .switch-cover {
     background-color: #bdbdbd;
 }

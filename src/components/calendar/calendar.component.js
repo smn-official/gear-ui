@@ -2,26 +2,26 @@
     'use strict';
 
     angular
-        .module('gear')
-        .component('grCalendar', {
-            controller: grCalendarController,
+        .module('smn.ui')
+        .component('uiCalendar', {
+            controller: uiCalendarController,
             templateUrl: 'components/calendar/calendar.component.html',
             require: 'ngModel',
             bindings: {
                 ngModel: '=?',
-                grViewDate: '=?',
-                grMinDate: '=?',
-                grMaxDate: '=?',
-                grFilterDate: '@?',
-                grSelect: '&?',
-                grCancel: '&?',
-                grShowOtherMonth: '=?',
-                grConfirmSelection: '=?'
+                uiViewDate: '=?',
+                uiMinDate: '=?',
+                uiMaxDate: '=?',
+                uiFilterDate: '@?',
+                uiSelect: '&?',
+                uiCancel: '&?',
+                uiShowOtherMonth: '=?',
+                uiConfirmSelection: '=?'
             }
         });
 
-    grCalendarController.$inject = ['$element', '$templateCache', '$compile', '$animate', '$scope', '$timeout', '$locale', '$attrs', '$animateCss'];
-    function grCalendarController($element, $templateCache, $compile, $animate, $scope, $timeout, $locale, $attrs, $animateCss) {
+    uiCalendarController.$inject = ['$element', '$templateCache', '$compile', '$animate', '$scope', '$timeout', '$locale', '$attrs', '$animateCss'];
+    function uiCalendarController($element, $templateCache, $compile, $animate, $scope, $timeout, $locale, $attrs, $animateCss) {
         var $ctrl = this;
         var days = $locale.DATETIME_FORMATS.DAY,
             shortDays = $locale.DATETIME_FORMATS.SHORTDAY,
@@ -32,35 +32,35 @@
             $ctrl.ngModel = $ctrl.ngModel ? new Date($ctrl.ngModel) : $ctrl.ngModel;
 
             $ctrl.choosenDate = $ctrl.ngModel;
-            $ctrl.grShowOtherMonth = typeof $ctrl.grShowOtherMonth === 'undefined' ? 'grShowOtherMonth' in $attrs : $ctrl.grShowOtherMonth;
-            $ctrl.grConfirmSelection = typeof $ctrl.grConfirmSelection === 'undefined' ? 'grConfirmSelection' in $attrs : $ctrl.grConfirmSelection;
+            $ctrl.uiShowOtherMonth = typeof $ctrl.uiShowOtherMonth === 'undefined' ? 'uiShowOtherMonth' in $attrs : $ctrl.uiShowOtherMonth;
+            $ctrl.uiConfirmSelection = typeof $ctrl.uiConfirmSelection === 'undefined' ? 'uiConfirmSelection' in $attrs : $ctrl.uiConfirmSelection;
 
             $ctrl.days = days;
             $ctrl.shortDays = shortDays;
             $ctrl.months = months;
             $ctrl.shortMonths = shortMonths;
 
-            $ctrl.grViewDate = ('grInitOnSelected' in $attrs ? null : angular.copy($ctrl.grViewDate)) || angular.copy($ctrl.ngModel) || new Date();
-            $ctrl.grViewDate = new Date($ctrl.grViewDate);
-            $ctrl.grViewDate = $ctrl.grViewDate.constructor !== Date|| isNaN($ctrl.grViewDate.getTime()) ? new Date() : $ctrl.grViewDate;
+            $ctrl.uiViewDate = ('uiInitOnSelected' in $attrs ? null : angular.copy($ctrl.uiViewDate)) || angular.copy($ctrl.ngModel) || new Date();
+            $ctrl.uiViewDate = new Date($ctrl.uiViewDate);
+            $ctrl.uiViewDate = $ctrl.uiViewDate.constructor !== Date|| isNaN($ctrl.uiViewDate.getTime()) ? new Date() : $ctrl.uiViewDate;
 
-            renderCalendar($ctrl.grViewDate);
+            renderCalendar($ctrl.uiViewDate);
         };
 
 
         $ctrl.isDay = isDay;
 
         $ctrl.prevMonth = function () {
-            renderCalendar(getMonthSequence($ctrl.grViewDate, -1), true)
-        }
+            renderCalendar(getMonthSequence($ctrl.uiViewDate, -1), true)
+        };
 
         $ctrl.nextMonth = function () {
-            renderCalendar(getMonthSequence($ctrl.grViewDate))
-        }
+            renderCalendar(getMonthSequence($ctrl.uiViewDate))
+        };
 
         $ctrl.showOtherMonth = function (dayMonth, calendarMonth) {
-            return dayMonth === calendarMonth || $ctrl.grShowOtherMonth;
-        }
+            return dayMonth === calendarMonth || $ctrl.uiShowOtherMonth;
+        };
 
         $ctrl.chooseDate = chooseDate;
         $ctrl.selectDate = selectDate;
@@ -78,7 +78,7 @@
             date.setMonth(date.getMonth() + 1);
             date.setDate(0);
 
-            $ctrl.grViewDate = date;
+            $ctrl.uiViewDate = date;
 
             var info = {
                 year: date.getFullYear(),
@@ -149,28 +149,28 @@
                 dateToCheck.getMonth() === value.getMonth() &&
                 dateToCheck.getFullYear() === value.getFullYear()
             );
-        };
+        }
 
         function chooseDate(value) {
             value = angular.copy(value);
             if (value)
                 $ctrl.choosenDate = value;
-            if (!$ctrl.grConfirmSelection)
+            if (!$ctrl.uiConfirmSelection)
                 selectDate(value);
-        };
+        }
 
         function selectDate(value) {
             $ctrl.ngModel = value;
-            $ctrl.grSelect && $ctrl.grSelect({ '$date': value });
+            $ctrl.uiSelect && $ctrl.uiSelect({ '$date': value });
         }
 
         function cancel() {
-            $ctrl.grCancel && $ctrl.grCancel();
+            $ctrl.uiCancel && $ctrl.uiCancel();
         }
 
         function isDisabled(value) {
-            var minDate = $ctrl.grMinDate ? new Date($ctrl.grMinDate).getTime() : null,
-                maxDate = $ctrl.grMaxDate ? new Date($ctrl.grMaxDate).getTime() : null,
+            var minDate = $ctrl.uiMinDate ? new Date($ctrl.uiMinDate).getTime() : null,
+                maxDate = $ctrl.uiMaxDate ? new Date($ctrl.uiMaxDate).getTime() : null,
                 date = value.getTime();
             if (typeof minDate === 'number' && !isNaN(minDate) && date < minDate)
                 return true;

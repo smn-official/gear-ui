@@ -2,49 +2,49 @@
     'use strict';
 
     angular
-        .module('gear')
-        .component('grChips', {
-            controller: grChipsController,
+        .module('smn.ui')
+        .component('uiChips', {
+            controller: uiChipsController,
             require: {
                 ngModelCtrl: 'ngModel'
             },
             templateUrl: 'form/chips/chips.html',
             bindings: {
                 'ngModel': '=',
-                'grItems': '=',
+                'uiItems': '=',
                 'required': '=',
-                'grItemsValue': '@',
-                'grPrimaryInfo': '@',
+                'uiItemsValue': '@',
+                'uiPrimaryInfo': '@',
                 'chipTemplateUrl': '@',
-                'grItemsAllowCustom': '@',
+                'uiItemsAllowCustom': '@',
                 'changeFunction': '=?',
-                'grTrackBy': '@',
-                'grSearchQuery': '=searchQuery',
+                'uiTrackBy': '@',
+                'uiSearchQuery': '=searchQuery',
                 'placeholder': '@',
                 'secondaryPlaceholder': '@',
-                'grLimit': '=',
+                'uiLimit': '=',
                 'min': '=',
                 'max': '=',
                 'name': '@'
             }
         });
 
-    function grChipsController($element, $timeout) {
+    function uiChipsController($element, $timeout) {
         var $ctrl = this;
         $ctrl.ngModel = $ctrl.ngModel || [];
-        $ctrl.grItemsFiltered = [];
+        $ctrl.uiItemsFiltered = [];
         $ctrl.focusedIndex = 0;
         $ctrl.$onInit = function () {
             $element.attr('tabindex', -1);
             $element.bind('click', function (e) {
-                if (angular.element(e.target).is('gr-chips'))
+                if (angular.element(e.target).is('ui-chips'))
                     $element.find('input').focus();
             });
             $element.on('focus', '> *', function (e) {
-                $element.addClass('gr-focused');
+                $element.addClass('ui-focused');
             });
             $element.on('blur', '> *', function (e) {
-                $element.removeClass('gr-focused');
+                $element.removeClass('ui-focused');
             });
             $ctrl.ngModelCtrl.$validators.min = isMinValid;
         };
@@ -73,18 +73,18 @@
                         $element.children('input').prev().focus();
                     break;
                 case 38:
-                    $ctrl.focusedIndex = !$ctrl.grItemsFiltered.length ? null : $ctrl.focusedIndex ? $ctrl.focusedIndex - 1 : $ctrl.grItemsFiltered.length - 1;
+                    $ctrl.focusedIndex = !$ctrl.uiItemsFiltered.length ? null : $ctrl.focusedIndex ? $ctrl.focusedIndex - 1 : $ctrl.uiItemsFiltered.length - 1;
                     break;
                 case 40:
-                    $ctrl.focusedIndex = !$ctrl.grItemsFiltered.length ? null : $ctrl.grItemsFiltered.length - 1 === $ctrl.focusedIndex ? 0 : $ctrl.focusedIndex + 1;
+                    $ctrl.focusedIndex = !$ctrl.uiItemsFiltered.length ? null : $ctrl.uiItemsFiltered.length - 1 === $ctrl.focusedIndex ? 0 : $ctrl.focusedIndex + 1;
                     break;
                 case 13:
-                    if ($ctrl.searchQuery && !$ctrl.grItems) {
+                    if ($ctrl.searchQuery && !$ctrl.uiItems) {
                         $ctrl.ngModel.indexOf($ctrl.searchQuery) === -1 && $ctrl.ngModel.push(angular.copy($ctrl.searchQuery));
                         $ctrl.searchQuery = '';
-                    } else if ($ctrl.grItemsFiltered) {
+                    } else if ($ctrl.uiItemsFiltered) {
                         if (typeof $ctrl.focusedIndex === 'number')
-                            $ctrl.selectItem($ctrl.grItemsFiltered[$ctrl.focusedIndex]);
+                            $ctrl.selectItem($ctrl.uiItemsFiltered[$ctrl.focusedIndex]);
                     }
                     event.preventDefault();
                     break;
@@ -97,33 +97,33 @@
             $timeout.cancel(hideTimeout);
             $ctrl.itemsShown = true;
             $timeout(function () {
-                $ctrl.focusedIndex = $ctrl.grItemsFiltered.length ? 0 : null;
+                $ctrl.focusedIndex = $ctrl.uiItemsFiltered.length ? 0 : null;
             });
         };
         $ctrl.hideItems = function () {
             hideTimeout = $timeout(function () {
                 $ctrl.itemsShown = false;
-                $ctrl.focusedIndex = $ctrl.grItemsFiltered.length ? 0 : null;
+                $ctrl.focusedIndex = $ctrl.uiItemsFiltered.length ? 0 : null;
             });
         };
         $ctrl.filterRemoveSelected = function (item) {
-            if ($ctrl.grTrackBy) {
+            if ($ctrl.uiTrackBy) {
                 for (var i = 0; i < $ctrl.ngModel.length; i++) {
-                    if ($ctrl.ngModel[i][$ctrl.grTrackBy] === item[$ctrl.grTrackBy])
+                    if ($ctrl.ngModel[i][$ctrl.uiTrackBy] === item[$ctrl.uiTrackBy])
                         return false;
                 }
                 return true;
             }
-            return $ctrl.grItemsValue ? $ctrl.ngModel.indexOf(item[$ctrl.grItemsValue]) === -1 : item;
+            return $ctrl.uiItemsValue ? $ctrl.ngModel.indexOf(item[$ctrl.uiItemsValue]) === -1 : item;
         };
         $ctrl.checkFilteredItems = function () {
             $timeout(function () {
-                $ctrl.focusedIndex = $ctrl.grItemsFiltered.length ? $ctrl.focusedIndex || 0 : null;
+                $ctrl.focusedIndex = $ctrl.uiItemsFiltered.length ? $ctrl.focusedIndex || 0 : null;
             });
         };
         $ctrl.selectItem = function (item) {
-            $ctrl.focusedIndex = $ctrl.grItemsFiltered.length ? 0 : null;
-            $ctrl.ngModel.push($ctrl.grItemsValue ? item[$ctrl.grItemsValue] : item);
+            $ctrl.focusedIndex = $ctrl.uiItemsFiltered.length ? 0 : null;
+            $ctrl.ngModel.push($ctrl.uiItemsValue ? item[$ctrl.uiItemsValue] : item);
             $ctrl.ngModelCtrl.$modelValue = $ctrl.ngModel;
             $ctrl.changeFunction && $ctrl.changeFunction(item);
             $element.find('input').focus();

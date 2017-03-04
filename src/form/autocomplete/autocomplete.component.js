@@ -2,47 +2,47 @@
     'use strict';
 
     angular
-        .module('gear')
-        .component('grAutocomplete', {
-            controller: grAutocompleteController,
+        .module('smn.ui')
+        .component('uiAutocomplete', {
+            controller: uiAutocompleteController,
             require: {
                 ngModelCtrl: 'ngModel'
             },
             templateUrl: 'form/autocomplete/autocomplete.html',
             bindings: {
                 'ngModel': '=',
-                'grItems': '=',
+                'uiItems': '=',
                 'required': '=',
-                'grItemsValue': '@',
-                'grPrimaryInfo': '@',
-                'grSecondaryInfo': '@',
-                'grLabel': '@',
-                'grTrackBy': '@',
-                'searchQuery': '=grSearchQuery',
-                'searchFunction': '=grSearchFunction',
-                'selectFunction': '=grSelectFunction',
+                'uiItemsValue': '@',
+                'uiPrimaryInfo': '@',
+                'uiSecondaryInfo': '@',
+                'uiLabel': '@',
+                'uiTrackBy': '@',
+                'searchQuery': '=uiSearchQuery',
+                'searchFunction': '=uiSearchFunction',
+                'selectFunction': '=uiSelectFunction',
                 'placeholder': '@',
                 'name': '@'
             }
         });
 
-    function grAutocompleteController($element, $timeout) {
+    function uiAutocompleteController($element, $timeout) {
         var $ctrl = this;
         $ctrl.ngModel = $ctrl.ngModel || [];
-        $ctrl.grItemsFiltered = [];
+        $ctrl.uiItemsFiltered = [];
         $ctrl.focusedIndex = 0;
         $ctrl.$onInit = function () {
 
             $element.attr('tabindex', -1);
             $element.bind('click', function (e) {
-                if (angular.element(e.target).is('gr-autocomplete'))
+                if (angular.element(e.target).is('ui-autocomplete'))
                     $element.find('input').focus();
             });
             $element.on('focus', '> *', function (e) {
-                $element.addClass('gr-focused');
+                $element.addClass('ui-focused');
             });
             $element.on('blur', '> *', function (e) {
-                $element.removeClass('gr-focused');
+                $element.removeClass('ui-focused');
             });
         };
 
@@ -54,17 +54,17 @@
                         $element.children('input').prev().focus();
                     break;
                 case 38:
-                    $ctrl.focusedIndex = !$ctrl.grItemsFiltered.length ? null : $ctrl.focusedIndex ? $ctrl.focusedIndex - 1 : $ctrl.grItemsFiltered.length - 1;
+                    $ctrl.focusedIndex = !$ctrl.uiItemsFiltered.length ? null : $ctrl.focusedIndex ? $ctrl.focusedIndex - 1 : $ctrl.uiItemsFiltered.length - 1;
                     break;
                 case 40:
-                    $ctrl.focusedIndex = !$ctrl.grItemsFiltered.length ? null : $ctrl.grItemsFiltered.length - 1 === $ctrl.focusedIndex ? 0 : $ctrl.focusedIndex + 1;
+                    $ctrl.focusedIndex = !$ctrl.uiItemsFiltered.length ? null : $ctrl.uiItemsFiltered.length - 1 === $ctrl.focusedIndex ? 0 : $ctrl.focusedIndex + 1;
                     break;
                 case 13:
-                    if ($ctrl.searchQuery && !$ctrl.grItems) {
+                    if ($ctrl.searchQuery && !$ctrl.uiItems) {
                         $ctrl.searchQuery = '';
-                    } else if ($ctrl.grItemsFiltered) {
+                    } else if ($ctrl.uiItemsFiltered) {
                         if (typeof $ctrl.focusedIndex === 'number')
-                            $ctrl.selectItem($ctrl.grItemsFiltered[$ctrl.focusedIndex]);
+                            $ctrl.selectItem($ctrl.uiItemsFiltered[$ctrl.focusedIndex]);
                     }
                     event.preventDefault();
                     break;
@@ -78,13 +78,13 @@
             $timeout.cancel(hideTimeout);
             $ctrl.itemsShown = true;
             $timeout(function () {
-                $ctrl.focusedIndex = $ctrl.grItemsFiltered.length ? 0 : null;
+                $ctrl.focusedIndex = $ctrl.uiItemsFiltered.length ? 0 : null;
             });
         };
         $ctrl.hideItems = function () {
             hideTimeout = $timeout(function () {
                 $ctrl.itemsShown = false;
-                $ctrl.focusedIndex = $ctrl.grItemsFiltered.length ? 0 : null;
+                $ctrl.focusedIndex = $ctrl.uiItemsFiltered.length ? 0 : null;
             });
         };
         $ctrl.blur = function (query) {
@@ -102,14 +102,14 @@
         };
 
         $ctrl.selectItem = function (item) {
-            $ctrl.focusedIndex = $ctrl.grItemsFiltered.length ? 0 : null;
-            $ctrl.ngModel = $ctrl.grItemsValue ? item[$ctrl.grItemsValue] : item;
+            $ctrl.focusedIndex = $ctrl.uiItemsFiltered.length ? 0 : null;
+            $ctrl.ngModel = $ctrl.uiItemsValue ? item[$ctrl.uiItemsValue] : item;
             $ctrl.ngModelCtrl.$modelValue = $ctrl.ngModel;
             $ctrl.ngModelCtrl.$setDirty();
             $element.find('input').focus();
             $ctrl.selectFunction && $ctrl.selectFunction(item);
             $timeout(function () {
-                $ctrl.searchQuery = $ctrl.ngModel[$ctrl.grPrimaryInfo];
+                $ctrl.searchQuery = $ctrl.ngModel[$ctrl.uiPrimaryInfo];
                 $ctrl.hideItems();
             });
         };

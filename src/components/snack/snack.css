@@ -1,4 +1,4 @@
-gr-snack-container {
+ui-snack-container {
 	position: fixed;
 	left: 0;
 	right: 0;
@@ -9,7 +9,7 @@ gr-snack-container {
 	flex-direction: column;
 	z-index: 2000;
 }
-gr-snack-bar {
+ui-snack-bar {
 	margin: 0 auto;
 	flex: 0 0 auto;
 	display: flex;
@@ -25,7 +25,7 @@ gr-snack-bar {
 }
 
 	@media (max-width: 568px) {
-		gr-snack-bar {
+		ui-snack-bar {
 			min-width: auto;
 			max-width: auto;
 			width: 100%;
@@ -33,45 +33,45 @@ gr-snack-bar {
 		}
 	}
 
-	gr-snack-bar + gr-snack-bar {
+	ui-snack-bar + ui-snack-bar {
 		margin-top: 10px;
 	}
 
-	gr-snack-bar .text {
+	ui-snack-bar .text {
 		flex: 1;
 		font-size: 14px; 
 		font-weight: 300;
 	}
 
-		gr-snack-bar .text:not(:last-child) {
+		ui-snack-bar .text:not(:last-child) {
 			padding-right: 48px;
 		}
 
-	gr-snack-bar button {
+	ui-snack-bar button {
 		margin: -8px;
 		padding: 8px;
 		height: auto;
 		font-weight: 500;
-		color: #EDFF42;
+		color: #2196F3;
 	}
 
-	gr-snack-bar.ng-enter {
+	ui-snack-bar.ng-enter {
 		transform: translateY(100%);
 	}
 
-	gr-snack-bar.ng-enter-active {
+	ui-snack-bar.ng-enter-active {
 		transform: translateY(0);
 	}
 
-	gr-snack-bar.ng-leave {
+	ui-snack-bar.ng-leave {
 		transform: translateY(0);
 	}
 
-	gr-snack-bar.ng-leave-active {
+	ui-snack-bar.ng-leave-active {
 		transform: translateY(100%);
 	}
 
-	gr-snack-bar + gr-snack-bar {
+	ui-snack-bar + ui-snack-bar {
 		position: absolute;
 		transition-delay: 200ms;
 		visibility: hidden;

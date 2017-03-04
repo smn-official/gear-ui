@@ -2,14 +2,14 @@
 	'use strict';
 
 	angular
-		.module('gear')
-		.directive('grTreeViewList', grTreeViewListDirective);
+		.module('smn.ui')
+		.directive('uiTreeViewList', uiTreeViewListDirective);
 
-	grTreeViewListDirective.$inject = ['$timeout'];
+	uiTreeViewListDirective.$inject = ['$timeout'];
 
-	function grTreeViewListDirective($timeout) {
+	function uiTreeViewListDirective($timeout) {
 		var directive = {
-			require: '^grTreeView',
+			require: '^uiTreeView',
 			link: link,
 			restrict: 'E',
 			templateUrl: 'components/tree-view/tree-view-list.directive.html',

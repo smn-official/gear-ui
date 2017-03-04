@@ -1,9 +1,9 @@
-gr-autocomplete {
+ui-autocomplete {
     cursor: text;
     position: relative;
     display: block;
 }
-gr-autocomplete .gr-autocomplete-suggestions {
+ui-autocomplete .ui-autocomplete-suggestions {
     max-height: 20vh;
     overflow: auto;
     position: absolute;
@@ -12,15 +12,15 @@ gr-autocomplete .gr-autocomplete-suggestions {
     right: 0;
     z-index: 1;
 }
-gr-autocomplete .gr-autocomplete-suggestions.ng-enter {
+ui-autocomplete .ui-autocomplete-suggestions.ng-enter {
     opacity: 0;
     transition: none;
     max-height: 0;
 }
-gr-autocomplete .gr-autocomplete-suggestions.ng-leave {
+ui-autocomplete .ui-autocomplete-suggestions.ng-leave {
     transition: 300ms ease-in-out;
 }
-gr-autocomplete .gr-autocomplete-suggestions.ng-leave {
+ui-autocomplete .ui-autocomplete-suggestions.ng-leave {
     opacity: 0;
     max-height: 0;
 }

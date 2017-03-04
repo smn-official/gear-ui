@@ -1,4 +1,4 @@
-gr-calendar {
+ui-calendar {
     display: inline-flex;
     flex-direction: column;
     width: 280px;
@@ -7,8 +7,8 @@ gr-calendar {
     border-radius: 2px;
     box-shadow: 0 2px 4px rgba(0,0,0,.15),0 2px 6px rgba(0,0,0,.2);
 }
-gr-calendar header {
-    background-color: #009688;
+ui-calendar header {
+    background-color: #2196F3;
     color: #fff;
     padding: 8px 16px;
     min-height: 72px;
@@ -16,59 +16,59 @@ gr-calendar header {
     justify-content: center;
     flex-direction: column;
 }
-gr-calendar header .year {
+ui-calendar header .year {
     font-size: 14px;
     opacity: .8;
     font-weight: 400;
 }
-gr-calendar header .date {
+ui-calendar header .date {
     font-size: 22px;
     font-weight: 500;
 }
-gr-calendar .actions {
+ui-calendar .actions {
     padding: 8px;
     text-align: right;
     cursor: default;
 }
-gr-calendar .content {
+ui-calendar .content {
     position: relative;
 }
-gr-calendar .calendar-cover {
+ui-calendar .calendar-cover {
     position: relative;
     overflow: hidden;
     transition: 300ms ease-in-out;
 }
-gr-calendar .calendar:not(:only-child) {
+ui-calendar .calendar:not(:only-child) {
     transition: 300ms ease-in-out;
 }
-gr-calendar .calendar.ng-enter {
+ui-calendar .calendar.ng-enter {
     opacity: 0;
 }
-gr-calendar .calendar.ng-enter-active {
+ui-calendar .calendar.ng-enter-active {
     opacity: 1;
     transform: translate(0px) !important;
 }
-gr-calendar .calendar.ng-leave + .calendar.ng-leave {
+ui-calendar .calendar.ng-leave + .calendar.ng-leave {
     display: none;
 }
-gr-calendar .calendar:not(:first-child) {
+ui-calendar .calendar:not(:first-child) {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
 }
-gr-calendar .calendar.ng-leave-active {
+ui-calendar .calendar.ng-leave-active {
     opacity: 0;
 }
-gr-calendar .calendar.ng-enter.enter-right {transform: translate(25%);}
-gr-calendar .calendar.ng-enter.enter-left {transform: translate(-25%);}
-gr-calendar .calendar.ng-leave-active.leave-right {transform: translate(25%);}
-gr-calendar .calendar.ng-leave-active.leave-left {transform: translate(-25%);}
-gr-calendar .label {
+ui-calendar .calendar.ng-enter.enter-right {transform: translate(25%);}
+ui-calendar .calendar.ng-enter.enter-left {transform: translate(-25%);}
+ui-calendar .calendar.ng-leave-active.leave-right {transform: translate(25%);}
+ui-calendar .calendar.ng-leave-active.leave-left {transform: translate(-25%);}
+ui-calendar .label {
     padding: 4px 40px;
 }
-gr-calendar .month-label {
+ui-calendar .month-label {
     font-size: 14px;
     height: 32px;
     display: flex;
@@ -79,10 +79,10 @@ gr-calendar .month-label {
     background-color: transparent;
     transition: 200ms ease-in-out;
 }
-gr-calendar .month-label:focus {background-color: rgba(0,0,0,.1);}
-gr-calendar .month-label:hover {background-color: rgba(0,0,0,.15);}
-gr-calendar .month-label:active {background-color: rgba(0,0,0,.2);}
-gr-calendar .content button.round {
+ui-calendar .month-label:focus {background-color: rgba(0,0,0,.1);}
+ui-calendar .month-label:hover {background-color: rgba(0,0,0,.15);}
+ui-calendar .month-label:active {background-color: rgba(0,0,0,.2);}
+ui-calendar .content button.round {
     position: relative;
     width: 36px;
     height: 36px;
@@ -92,18 +92,18 @@ gr-calendar .content button.round {
     transition: 200ms ease-in-out;
     z-index: 0;
 }
-gr-calendar .today button.round {
-    color: #009688;
+ui-calendar .today button.round {
+    color: #2196F3;
     font-weight: bold;
 }
-gr-calendar .content button.round[disabled] {
+ui-calendar .content button.round[disabled] {
     opacity: .4;
 }
-gr-calendar .other-month {
+ui-calendar .other-month {
     opacity: .7;
 }
-gr-calendar .content button.round::before,
-gr-calendar .content button.round::after {
+ui-calendar .content button.round::before,
+ui-calendar .content button.round::after {
     content: '';
     display: block;
     position: absolute;
@@ -117,68 +117,68 @@ gr-calendar .content button.round::after {
     transition: 100ms ease-in-out;
     z-index: -1;
 }
-gr-calendar .content button.round::before {
-    background-color: #009688;
+ui-calendar .content button.round::before {
+    background-color: #2196F3;
 }
-gr-calendar .content button.round.selected {
+ui-calendar .content button.round.selected {
     color: white;
 }
-gr-calendar .content button.round.selected::before {
+ui-calendar .content button.round.selected::before {
     transform: scale(1);
 }
-gr-calendar .content button.round:focus::after {
+ui-calendar .content button.round:focus::after {
     transform: scale(1);
 }
-gr-calendar .content button.round i {
+ui-calendar .content button.round i {
     display: inline;
 }
-gr-calendar .content button.round:not([disabled]):hover {
+ui-calendar .content button.round:not([disabled]):hover {
     background-color: rgba(0,0,0,.15);
 }
-gr-calendar .week-header {
+ui-calendar .week-header {
     display: flex;
     color: rgba(0,0,0,0.6);
     font-weight: bold;
 }
-gr-calendar .controls {
+ui-calendar .controls {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1;
 }
-gr-calendar .controls button.round {
+ui-calendar .controls button.round {
     position: absolute;
     top: 0;
     margin: 2px;
 }
-gr-calendar .controls button.round.ng-enter {
+ui-calendar .controls button.round.ng-enter {
     transform: scale(0);
     transition: 100ms ease-in-out;
 }
-gr-calendar .controls button.round.ng-enter-active {
+ui-calendar .controls button.round.ng-enter-active {
     transform: scale(1);
 }
-gr-calendar .controls button.round.ng-leave {
+ui-calendar .controls button.round.ng-leave {
     transform: scale(1);
     transition: 100ms ease-in-out;
 }
-gr-calendar .controls button.round.ng-leave-active {
+ui-calendar .controls button.round.ng-leave-active {
     transform: scale(0);
 }
-gr-calendar .days {
+ui-calendar .days {
     display: flex;
     flex-wrap: wrap;
 }
-gr-calendar .controls .prev {
+ui-calendar .controls .prev {
     left: 0;
 }
-gr-calendar .controls .next {
+ui-calendar .controls .next {
     right: 0;
 }
-gr-calendar .control,
-gr-calendar .week-day,
-gr-calendar .day {
+ui-calendar .control,
+ui-calendar .week-day,
+ui-calendar .day {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -188,32 +188,31 @@ gr-calendar .day {
 }
 
 
-gr-calendar.gr-picker {
+ui-calendar.ui-picker {
     position: absolute;
     left: -9999px;
-    /*border-radius: 2px;*/
     transform-origin: 0 0;
     z-index: 2001;
     transition: 200ms ease-in-out;
     box-shadow: 0 24px 48px rgba(0,0,0,.15),0 24px 72px rgba(0,0,0,.2);
 }
 
-gr-calendar.gr-picker > * {
+ui-calendar.ui-picker > * {
     transition: 150ms ease-in-out;
 }
-gr-calendar.gr-picker.ng-enter > * {
+ui-calendar.ui-picker.ng-enter > * {
     opacity: 0;
     transform: translateY(-5px)
 }
-gr-calendar.gr-picker.ng-leave {
+ui-calendar.ui-picker.ng-leave {
     transition: 150ms ease-in 150ms,
                 visibility 300ms ease-in !important;
 }
-gr-calendar.gr-picker.ng-leave > * {
+ui-calendar.ui-picker.ng-leave > * {
     opacity: 0;
     transform: translateY(-5px);
 }
-gr-background-mask {
+ui-background-mask {
     position: fixed;
     top: 0;
     left: 0;

@@ -1,6 +1,6 @@
 {
-  "name": "gear-ui",
-  "homepage": "https://github.com/smn-official/gear-ui",
+  "name": "smn-ui",
+  "homepage": "https://github.com/smn-official/smn-ui",
   "authors": [
     "Mario Santos <mariocsants@gmail.com> <mario@smn.com.br>"
   ],
@@ -9,7 +9,7 @@
   "keywords": [
     "angularjs",
     "material",
-    "gear",
+    "smn-ui",
     "ui",
     "smn"
   ],

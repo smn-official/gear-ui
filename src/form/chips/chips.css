@@ -1,7 +1,7 @@
-gr-chips {
+ui-chips {
     cursor: text;
 }
-gr-chip {
+ui-chip {
     cursor: default;
     height: 30px;
     margin: 4px;
@@ -15,11 +15,11 @@ gr-chip {
     position: relative;
     color: rgba(0,0,0,0.8);
 }
-gr-chip:focus {
+ui-chip:focus {
     background-color: #2196F3;
     color: white;
 }
-gr-chip .remove-chip {
+ui-chip .remove-chip {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,28 +32,28 @@ gr-chip .remove-chip {
     background-color: transparent;
     color: rgba(0,0,0,0.8);
 }
-gr-chip:focus .remove-chip {
+ui-chip:focus .remove-chip {
     color: white;
 }
-gr-chips input  {
+ui-chips input  {
     flex: 1;
     height: 30px;
     margin: 4px;
     align-self: center;
 }
-gr-chips .gr-chip-autocomplete {
+ui-chips .ui-chip-autocomplete {
     max-height: 20vh;
     overflow: auto;
 }
-gr-chips .gr-chip-autocomplete.ng-enter {
+ui-chips .ui-chip-autocomplete.ng-enter {
     opacity: 0;
     transition: none;
     max-height: 0;
 }
-gr-chips .gr-chip-autocomplete.ng-leave {
+ui-chips .ui-chip-autocomplete.ng-leave {
     transition: 300ms ease-in-out;
 }
-gr-chips .gr-chip-autocomplete.ng-leave {
+ui-chips .ui-chip-autocomplete.ng-leave {
     opacity: 0;
     max-height: 0;
 }

@@ -1,4 +1,4 @@
-gr-toolbar {
+ui-toolbar {
     position: fixed;
     top: 0;
     left: 0;
@@ -11,63 +11,63 @@ gr-toolbar {
     z-index: 1100;
     transition: box-shadow 300ms ease-in-out 300ms;
 }
-gr-toolbar.flat-add {
+ui-toolbar.flat-add {
     transition: box-shadow 300ms ease-in-out 300ms, background-color 0ms ease-in-out 300ms;
 }
-gr-toolbar .fixed-placeholder {
+ui-toolbar .fixed-placeholder {
     width: 56px;
     flex: 0 0 auto;
     transition: 300ms ease-in-out;
 }
-gr-toolbar .toolbar-content {
+ui-toolbar .toolbar-content {
     flex: 1;
     display: flex;
     padding: 0 8px;
     min-width: 0;
 }
-gr-toolbar .keep-right {
+ui-toolbar .keep-right {
     margin-left: auto;
 }
-gr-toolbar .align-middle {
+ui-toolbar .align-middle {
     display: flex;
     align-items: center;
 }
-gr-toolbar .user-area {
+ui-toolbar .user-area {
     display: flex;
     align-items: center;
     padding: 6px 6px 6px 12px;
     border-radius: 24px;
     transition: 300ms ease-in-out;
 }
-gr-toolbar .user-area.clickable {
+ui-toolbar .user-area.clickable {
     cursor: default;
 }
-gr-toolbar .user-area.clickable:hover {
+ui-toolbar .user-area.clickable:hover {
     background-color: rgba(255,255,255,0.1);
 }
-gr-toolbar .user-area.clickable:active {
+ui-toolbar .user-area.clickable:active {
     background-color: rgba(255,255,255,0.25);
 }
-gr-toolbar .info {
+ui-toolbar .info {
     margin-right: 10px;
     text-align: right;
     font-weight: 300;
 }
-gr-toolbar .primary {
+ui-toolbar .primary {
     font-size: 16px;
 }
-gr-toolbar .secondary {
+ui-toolbar .secondary {
     font-size: 12px;
 }
 @media (max-width: 840px) {
-    gr-toolbar .user-area {
+    ui-toolbar .user-area {
         padding: 6px;
     }
-    gr-toolbar .info {
+    ui-toolbar .info {
         display: none;
     }
 }
-gr-toolbar .profile-pic {
+ui-toolbar .profile-pic {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -80,7 +80,7 @@ gr-toolbar .profile-pic {
     background-size: cover;
     background-position: center;
 }
-gr-toolbar .title-container {
+ui-toolbar .title-container {
     position: relative;
     display: flex;
     align-items: center;
@@ -89,27 +89,27 @@ gr-toolbar .title-container {
     flex: 1;
     min-width: 0;
 }
-gr-toolbar .title-container .title {
+ui-toolbar .title-container .title {
     border-color: transparent;
     transition: 300ms ease-in-out;
 }
-gr-toolbar .title-container .title.ng-enter:not(:only-child) {
+ui-toolbar .title-container .title.ng-enter:not(:only-child) {
     position: absolute;
     transition-delay: 300ms;
 }
-gr-toolbar .title-container .title.ng-enter {
+ui-toolbar .title-container .title.ng-enter {
     opacity: 0;
 }
-gr-toolbar .title-container .title.ng-enter-active {
+ui-toolbar .title-container .title.ng-enter-active {
     opacity: 1;
 }
-gr-toolbar .title-container .title.ng-leave {
+ui-toolbar .title-container .title.ng-leave {
     opacity: 1;
 }
-gr-toolbar .title-container .title.ng-leave-active {
+ui-toolbar .title-container .title.ng-leave-active {
     opacity: 0;
 }
-gr-toolbar .title-container.bordered .title::before {
+ui-toolbar .title-container.bordered .title::before {
     content: '';
     height: 0;
     position: absolute;
@@ -119,24 +119,24 @@ gr-toolbar .title-container.bordered .title::before {
     margin: auto;
     border-left: 1px solid rgba(255, 255, 255, 0.2);
 }
-gr-toolbar .ellipsis {
+ui-toolbar .ellipsis {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
 }
-.gr-toolbar-placeholder {
+.ui-toolbar-placeholder {
     height: 56px;
     flex: 0 0 auto;
     transition: 300ms ease-in-out;
 }
-.gr-toolbar-placeholder::before {
+.ui-toolbar-placeholder::before {
     content: '';
     height: 100%;
     display: block;
     background-color: #3F51B5;
     transition: 300ms ease-in-out;
 }
-.gr-fixed-toolbar {
+.ui-fixed-toolbar {
     display: flex;
     align-items: center;
     position: fixed;
@@ -148,11 +148,11 @@ gr-toolbar .ellipsis {
     z-index: 1111;
     transition: 300ms ease-in-out;
 }
-.gr-fixed-toolbar > button {
+.ui-fixed-toolbar > button {
     flex: 0 0 auto;
     margin: 4px;
 }
-.gr-fixed-toolbar .logo {
+.ui-fixed-toolbar .logo {
     flex: 0 0 auto;
     position: relative;
     height: 50px;
@@ -162,32 +162,32 @@ gr-toolbar .ellipsis {
     transform: translateX(-10px);
     transition: 300ms ease-in-out;
 }
-.keep-logo .gr-fixed-toolbar .logo,
-.left-drawer-open .gr-fixed-toolbar .logo {
+.keep-logo .ui-fixed-toolbar .logo,
+.left-drawer-open .ui-fixed-toolbar .logo {
     opacity: 1;
     transform: translateX(0);
     visibility: visible;
     transition-delay: 100ms;
 }
 @media (min-width: 601px) {
-    gr-toolbar,
-    .gr-toolbar-placeholder,
-    .gr-fixed-toolbar {
+    ui-toolbar,
+    .ui-toolbar-placeholder,
+    .ui-fixed-toolbar {
         height: 64px;
     }
-    gr-toolbar .toolbar-content {
+    ui-toolbar .toolbar-content {
         padding: 0 16px;
     }
-    gr-toolbar .fixed-placeholder,
-    .gr-fixed-toolbar {
+    ui-toolbar .fixed-placeholder,
+    .ui-fixed-toolbar {
         width: 216px;
     }
-    .gr-fixed-toolbar .logo {
+    .ui-fixed-toolbar .logo {
         opacity: 1;
         transform: translateX(0);
         visibility: visible;
     }
-    gr-toolbar .title-container.bordered .title {
+    ui-toolbar .title-container.bordered .title {
         padding-left: 15px;
         line-height: 32px;
         border-left: 1px solid rgba(255,255,255,0.2);
@@ -196,61 +196,61 @@ gr-toolbar .ellipsis {
 
 /* TOOLBAR RESIZING */
 @media (max-width: 599px) {
-    gr-struct:not(.not-on-top) gr-toolbar.flat.gte-lte-xs {
+    ui-struct:not(.not-on-top) ui-toolbar.flat.gte-lte-xs {
         transition: box-shadow 300ms ease-in-out 300ms, background-color 0ms ease-in-out 300ms;
     }
 }
 @media (min-width: 600px) {
-    gr-struct:not(.not-on-top) gr-toolbar.flat.gte-lte-xs {
+    ui-struct:not(.not-on-top) ui-toolbar.flat.gte-lte-xs {
         box-shadow: none;
         background-color: transparent;
         transition: 300ms ease-in-out, background-color 0s linear;
     }
-    gr-struct:not(.not-on-top) gr-toolbar.flat.size-2x.gte-lte-xs + .gr-toolbar-placeholder::before {
+    ui-struct:not(.not-on-top) ui-toolbar.flat.size-2x.gte-lte-xs + .ui-toolbar-placeholder::before {
         height: 200%;
         transition: height 300ms ease-in-out 300ms;
     }
-    gr-struct:not(.not-on-top) .ng-enter gr-toolbar.flat.gte-lte-xs + .gr-toolbar-placeholder {
+    ui-struct:not(.not-on-top) .ng-enter ui-toolbar.flat.gte-lte-xs + .ui-toolbar-placeholder {
         transition: height 300ms ease-in-out 300ms;
     }
 }
 
 @media (max-width: 839px) {
-    gr-struct:not(.not-on-top) gr-toolbar.flat.gte-sm {
+    ui-struct:not(.not-on-top) ui-toolbar.flat.gte-sm {
         transition: box-shadow 300ms ease-in-out 300ms, background-color 0ms ease-in-out 300ms;
     }
 }
 @media (min-width: 840px) {
-    gr-struct:not(.not-on-top) gr-toolbar.flat.gte-sm {
+    ui-struct:not(.not-on-top) ui-toolbar.flat.gte-sm {
         box-shadow: none;
         background-color: transparent;
         transition: 300ms ease-in-out, background-color 0s linear;
     }
-    gr-struct:not(.not-on-top) gr-toolbar.flat.size-2x.gte-sm + .gr-toolbar-placeholder::before {
+    ui-struct:not(.not-on-top) ui-toolbar.flat.size-2x.gte-sm + .ui-toolbar-placeholder::before {
         height: 200%;
         transition: height 300ms ease-in-out 300ms;
     }
-    gr-struct:not(.not-on-top) .ng-enter gr-toolbar.flat.gte-sm + .gr-toolbar-placeholder {
+    ui-struct:not(.not-on-top) .ng-enter ui-toolbar.flat.gte-sm + .ui-toolbar-placeholder {
         transition: height 300ms ease-in-out 300ms;
     }
 }
 
 @media (max-width: 959px) {
-    gr-struct:not(.not-on-top) gr-toolbar.flat.gte-md {
+    ui-struct:not(.not-on-top) ui-toolbar.flat.gte-md {
         transition: box-shadow 300ms ease-in-out 300ms, background-color 0ms ease-in-out 300ms;
     }
 }
 @media (min-width: 960px) {
-    gr-struct:not(.not-on-top) gr-toolbar.flat.gte-md {
+    ui-struct:not(.not-on-top) ui-toolbar.flat.gte-md {
         box-shadow: none;
         background-color: transparent;
         transition: 300ms ease-in-out, background-color 0s linear;
     }
-    gr-struct:not(.not-on-top) gr-toolbar.flat.size-2x.gte-md + .gr-toolbar-placeholder::before {
+    ui-struct:not(.not-on-top) ui-toolbar.flat.size-2x.gte-md + .ui-toolbar-placeholder::before {
         height: 200%;
         transition: height 300ms ease-in-out 300ms;
     }
-    gr-struct:not(.not-on-top) .ng-enter gr-toolbar.flat.gte-md + .gr-toolbar-placeholder {
+    ui-struct:not(.not-on-top) .ng-enter ui-toolbar.flat.gte-md + .ui-toolbar-placeholder {
         transition: height 300ms ease-in-out 300ms;
     }
 }

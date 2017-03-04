@@ -2,12 +2,12 @@
     'use strict';
 
     angular
-        .module('gear')
-        .directive('grInputFile', grInputFile);
+        .module('smn.ui')
+        .directive('uiInputFile', uiInputFile);
 
-    grInputFile.$inject = ['$compile'];
+    uiInputFile.$inject = ['$compile'];
 
-    function grInputFile($compile) {
+    function uiInputFile($compile) {
         var directive = {
             require: 'ngModel',
             restrict: 'A',
@@ -15,12 +15,12 @@
             scope: {
                 'ngModel': '=',
                 'accept': '@?',
-                'grFileChange': '&',
-                'grMaxSize': '@?',
-                'grMaxFileSize': '@?',
-                'grValidExt': '@?',
-                'grRead': '&?',
-                'grReadDataUrl': '=?'
+                'uiFileChange': '&',
+                'uiMaxSize': '@?',
+                'uiMaxFileSize': '@?',
+                'uiValidExt': '@?',
+                'uiRead': '&?',
+                'uiReadDataUrl': '=?'
             }
         };
         return directive;
@@ -29,9 +29,9 @@
             ctrl.$formatters.push(function (value) {
                 if (!value) {
                     element.val('').trigger('change');
-                    ctrl.$setValidity('grMaxSize', true);
-                    ctrl.$setValidity('grMaxFileSize', true);
-                    ctrl.$setValidity('grAccept', true);
+                    ctrl.$setValidity('uiMaxSize', true);
+                    ctrl.$setValidity('uiMaxFileSize', true);
+                    ctrl.$setValidity('uiAccept', true);
                 }
             });
             ctrl.$parsers.push(function (value) {
@@ -46,15 +46,15 @@
 
                 var files = e.target.files;
                 scope.$apply(function () {
-                    scope.grReadDataUrl = 'grReadDataUrl' in attrs && files.length ? [] : null;
+                    scope.uiReadDataUrl = 'uiReadDataUrl' in attrs && files.length ? [] : null;
                     ctrl.$setDirty();
-                    ctrl.$setValidity('grMaxSize', true);
-                    ctrl.$setValidity('grMaxFileSize', true);
-                    ctrl.$setValidity('grAccept', true);
+                    ctrl.$setValidity('uiMaxSize', true);
+                    ctrl.$setValidity('uiMaxFileSize', true);
+                    ctrl.$setValidity('uiAccept', true);
 
                     // Verificação de tamanho
-                    var maxSize = scope.grMaxSize ? toByte(scope.grMaxSize) : null,
-                        maxFileSize = scope.grMaxFileSize ? toByte(scope.grMaxFileSize) : null,
+                    var maxSize = scope.uiMaxSize ? toByte(scope.uiMaxSize) : null,
+                        maxFileSize = scope.uiMaxFileSize ? toByte(scope.uiMaxFileSize) : null,
                         accepts = scope.accept.split(',');
                     var sum = 0;
                     for (var i = 0; i < files.length; i++) {
@@ -62,7 +62,7 @@
                             fileSize = file.size,
                             fileType = file.type;
                         if (maxFileSize && fileSize > maxFileSize)
-                            ctrl.$setValidity('grMaxFileSize', false);
+                            ctrl.$setValidity('uiMaxFileSize', false);
                         sum += fileSize;
 
                         // Verificar MIME Types
@@ -78,20 +78,20 @@
                             }
                         }
                         if (!validType)
-                            ctrl.$setValidity('grAccept', false);
+                            ctrl.$setValidity('uiAccept', false);
 
                         if (maxSize && sum > maxSize)
-                            ctrl.$setValidity('grMaxSize', false);
+                            ctrl.$setValidity('uiMaxSize', false);
 
-                        if (ctrl.$valid && scope.grReadDataUrl) {
-                            scope.grReadDataUrl.push({});
-                            readFile(file, scope.grReadDataUrl[i], i);
+                        if (ctrl.$valid && scope.uiReadDataUrl) {
+                            scope.uiReadDataUrl.push({});
+                            readFile(file, scope.uiReadDataUrl[i], i);
                         }
                     }
 
                     scope.ngModel = e.target.files;
 
-                    scope.grFileChange({ '$files': scope.ngModel, '$error': ctrl.$invalid ? ctrl.$error : null });
+                    scope.uiFileChange({ '$files': scope.ngModel, '$error': ctrl.$invalid ? ctrl.$error : null });
                 });
             }
             
@@ -138,7 +138,7 @@
                     scope.$apply(function () {
                         data.result = e.target.result;
                         data.resolved = true;
-                        scope.grRead && scope.grRead({ $data: data.result, $index: index })
+                        scope.uiRead && scope.uiRead({ $data: data.result, $index: index })
                     });
                 };
                 reader.onerror = function (e) {

@@ -2,31 +2,31 @@
     'use strict';
 
     angular
-        .module('gear')
-        .directive('grMaxlength', grMaxLength);
+        .module('smn.ui')
+        .directive('uiMaxlength', uiMaxLength);
 
-    function grMaxLength() {
+    function uiMaxLength() {
         var directive = {
             restrict: 'A',
             link: link,
             require: ['ngModel', '?^form'],
             scope: {
-                grMaxlength: '='
+                uiMaxlength: '='
             }
         };
         return directive;
 
         function link(scope, element, attrs, ctrl) {
-            scope.$watch('grMaxlength', function (value, oldValue) {
+            scope.$watch('uiMaxlength', function (value, oldValue) {
                 element.attr('maxlength', value);
             });
             // ctrl[0].$formatters.unshift(formatValue);
             // ctrl[0].$parsers.unshift(formatValue);
             function formatValue(value) {
-                if (!value || !scope.grMaxLength)
+                if (!value || !scope.uiMaxLength)
                     return value;
                 var newValue = value.toString();
-                var maxLength = parseInt(scope.grMaxLength);
+                var maxLength = parseInt(scope.uiMaxLength);
                 if (isNaN(maxLength))
                     return;
                 newValue = newValue.substring(0, maxLength);

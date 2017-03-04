@@ -2,13 +2,13 @@
     'use strict';
 
     angular
-        .module('gear')
-        .filter('grCpf', grCpf);
+        .module('smn.ui')
+        .filter('uiCpf', uiCpf);
 
-    function grCpf() {
-        return grCpfFilter;
+    function uiCpf() {
+        return uiCpfFilter;
 
-        function grCpfFilter(cpf) {
+        function uiCpfFilter(cpf) {
             if (!cpf) return '';
             cpf = cpf.toString().replace(/[^0-9]+/g, '');
             if (cpf.length > 3)

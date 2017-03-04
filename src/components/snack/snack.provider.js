@@ -2,12 +2,12 @@
 	'use strict';
 
 	angular
-		.module('gear')
-		.provider('grSnack', grSnack);
+		.module('smn.ui')
+		.provider('uiSnack', uiSnack);
 
-	grSnack.$inject = [];
+	uiSnack.$inject = [];
 
-	function grSnack() {
+	function uiSnack() {
 		var provider = {
 			getDelay: getDelay,
 			setDelay: setDelay,

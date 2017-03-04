@@ -2,12 +2,12 @@
     'use strict';
 
     angular
-        .module('gear')
-        .factory('grColor', grColor);
+        .module('smn.ui')
+        .factory('uiColor', uiColor);
 
-    grColor.$inject = ['$timeout'];
+    uiColor.$inject = ['$timeout'];
 
-    function grColor($timeout) {
+    function uiColor($timeout) {
         var service = {
             isBright: isBright,
             hexToRgb: hexToRgb

@@ -2,15 +2,15 @@
     'use strict';
 
     angular
-        .module('gear')
-        .filter('grCnpj', grCnpj);
+        .module('smn.ui')
+        .filter('uiCnpj', uiCnpj);
 
-    function grCnpj() {
-        return grCnpjFilter;
+    function uiCnpj() {
+        return uiCnpjFilter;
 
         ////////////////
 
-        function grCnpjFilter(cnpj){
+        function uiCnpjFilter(cnpj){
             if (!cnpj) return '';
             cnpj = cnpj.toString().replace(/[^0-9]+/g, '');
             if (cnpj.length > 2)

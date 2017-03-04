@@ -2,12 +2,12 @@
 	'use strict';
 
 	angular
-		.module('gear')
-		.factory('grWindow', grWindow);
+		.module('smn.ui')
+		.factory('uiWindow', uiWindow);
 
-	grWindow.$inject = ['$window', '$rootScope'];
+	uiWindow.$inject = ['$window', '$rootScope'];
 
-	function grWindow($window, $rootScope) {
+	function uiWindow($window, $rootScope) {
 		var service = {};
 
 		angular.element($window).bind('scroll', function(){

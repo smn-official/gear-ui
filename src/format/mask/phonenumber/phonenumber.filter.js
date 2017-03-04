@@ -2,13 +2,13 @@
     'use strict';
 
     angular
-        .module('gear')
-        .filter('grPhonenumber', grPhonenumber);
+        .module('smn.ui')
+        .filter('uiPhonenumber', uiPhonenumber);
 
-    function grPhonenumber() {
-        return grPhonenumberFilter;
+    function uiPhonenumber() {
+        return uiPhonenumberFilter;
 
-        function grPhonenumberFilter(phonenumber) {
+        function uiPhonenumberFilter(phonenumber) {
             if (!phonenumber) return '';
             phonenumber = phonenumber.toString().replace(/[^0-9]+/g,'');
             if (phonenumber.length > 4 && phonenumber.length < 9)

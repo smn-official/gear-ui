@@ -2,14 +2,14 @@
 	'use strict';
 
 	angular
-		.module('gear')
-		.directive('grTreeViewItem', grTreeViewItemDirective);
+		.module('smn.ui')
+		.directive('uiTreeViewItem', uiTreeViewItemDirective);
 
-	grTreeViewItemDirective.$inject = ['$compile', '$templateCache'];
+	uiTreeViewItemDirective.$inject = ['$compile', '$templateCache'];
 
-	function grTreeViewItemDirective($compile, $templateCache) {
+	function uiTreeViewItemDirective($compile, $templateCache) {
 		var directive = {
-			require: '^grTreeView',
+			require: '^uiTreeView',
 			templateUrl: 'components/tree-view/tree-view-item.directive.html',
 			link: link,
 			restrict: 'E',

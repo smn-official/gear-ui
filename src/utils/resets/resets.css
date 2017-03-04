@@ -35,12 +35,12 @@ textarea {
     -webkit-border-radius: 0;
 }
 :link {
-    color: #26C6DA;
+    color: #2196F3;
     text-decoration: none;
 }
 :link:hover {
     text-decoration: underline;
 }
 :visited {
-    color: #00ACC1;
+    color: #1E88E5;
 }

@@ -2,12 +2,12 @@
 	'use strict';
 
 	angular
-		.module('gear')
-		.directive('grProfileFloat', grProfileFloat);
+		.module('smn.ui')
+		.directive('uiProfileFloat', uiProfileFloat);
 
-	grProfileFloat.$inject = ['$templateCache', '$interval'];
+	uiProfileFloat.$inject = ['$templateCache', '$interval'];
 
-	function grProfileFloat($templateCache, $interval){
+	function uiProfileFloat($templateCache, $interval){
 		var directive = {
 			restrict: 'E',
 			scope: {

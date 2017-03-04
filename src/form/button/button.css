@@ -1,26 +1,17 @@
-/*.gr-button-container {
-	text-align: right;
-	margin-top: 10px;
-}
-	.gr-button-container > .gr-button:not(.full) ~ .gr-button:not(.full) {
-		margin-left: 5px;
-	}
-	.gr-button-container > .gr-button {
-		margin-top: 5px;
-	}*/
-.gr-button-cover {
+.gr
+.ui-button-cover {
 	display: flex;
 	flex-wrap: wrap;
 	padding: 12px 16px;
 	justify-content: flex-end;
 }
-.gr-button-cover button {
+.ui-button-cover button {
 	margin: 2px 0;
 }
-.gr-button-cover button:not(.full) + button:not(.full) {
+.ui-button-cover button:not(.full) + button:not(.full) {
 	margin-left: 4px;
 }
-.gr-button {
+.ui-button {
 	position: relative;
 	padding: 0 10px;
 	min-height: 32px;
@@ -36,20 +27,20 @@
 	transform: scale(1);
 	transition: 200ms ease-in-out;
 }
-.gr-button i {
+.ui-button i {
 	vertical-align: middle;
 }
-.gr-button > * + * {
+.ui-button > * + * {
 	margin-left: 8px;
 }
-.gr-button.pointer {
+.ui-button.pointer {
 	cursor: pointer;
 }
-.gr-button.small {
+.ui-button.small {
 	min-height: 30px;
 	font-size: 12px;
 }
-.gr-button::before {
+.ui-button::before {
 	content: '';
 	position: absolute;
 	display: block;
@@ -61,35 +52,35 @@
 	opacity: 0;
 	transition: 200ms ease-in-out;
 }
-.gr-button.fill {
+.ui-button.fill {
 	background-color: #424242;
 }
-.gr-button.fill::before,
-.gr-button.icon.dark::before {
+.ui-button.fill::before,
+.ui-button.icon.dark::before {
 	background-color: white;
 }
-.gr-button:not([disabled]):focus::before {
+.ui-button:not([disabled]):focus::before {
 	opacity: 0.1;
 }
-.gr-button:not([disabled]):not(.no-hover):hover::before {
+.ui-button:not([disabled]):not(.no-hover):hover::before {
 	opacity: 0.14;
 }
-.gr-button:not([disabled]):not(.no-active):active::before {
+.ui-button:not([disabled]):not(.no-active):active::before {
 	opacity: 0.2;
 }
-.gr-button:not([disabled]).fill:focus::before {
+.ui-button:not([disabled]).fill:focus::before {
 	opacity: 0.1;
 }
-.gr-button:not([disabled]):not(.no-hover).fill:hover::before {
+.ui-button:not([disabled]):not(.no-hover).fill:hover::before {
 	opacity: 0.2;
 }
-.gr-button:not([disabled]):not(.no-hover).fill:active::before {
+.ui-button:not([disabled]):not(.no-hover).fill:active::before {
 	opacity: 0.3;
 }
-.gr-button.full {
+.ui-button.full {
 	width: 100%;
 }
-.gr-button.icon {
+.ui-button.icon {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -99,267 +90,267 @@
 	border-radius: 50%;
 	padding: 0;
 }
-.gr-button.icon-hover i {
+.ui-button.icon-hover i {
 	opacity: .7;
 }
-.gr-button.icon-hover:hover i {
+.ui-button.icon-hover:hover i {
 	opacity: 1;
 }
-.gr-button.icon.small {
+.ui-button.icon.small {
 	width: 48px;
 	height: 48px;
 }
-.gr-button.icon.xsmall {
+.ui-button.icon.xsmall {
 	width: 36px;
 	height: 36px;
 }
-.gr-button.icon.xsmall i {
+.ui-button.icon.xsmall i {
 	font-size: 24px;
 }
-.gr-button.icon.xsmall.small-icon i {
+.ui-button.icon.xsmall.small-icon i {
 	font-size: 24px;
 }
-.gr-button.dark {
+.ui-button.dark {
 	color: white;
 }
-.gr-button.dark::before {
+.ui-button.dark::before {
 	background-color: white;
 }
-.gr-button.fill.dark {
+.ui-button.fill.dark {
 	color: rgba(0,0,0,0.8);
 	background-color: white;
 }
-.gr-button.icon.dark {
+.ui-button.icon.dark {
 	color: white;
 }
-.gr-button.fill:not(.dark) {
+.ui-button.fill:not(.dark) {
 	color: white;
 }
-.gr-button.neutral,
-.gr-button.neutral.fill.dark {
+.ui-button.neutral,
+.ui-button.neutral.fill.dark {
 	color: #607D8B;
 }
-.gr-button.fill.neutral,
-.gr-button.fill.neutral.dark::before {
+.ui-button.fill.neutral,
+.ui-button.fill.neutral.dark::before {
 	background-color: #607D8B;
 }
-.gr-button.primary,
-.gr-button.primary.fill.dark {
+.ui-button.primary,
+.ui-button.primary.fill.dark {
 	color: #2196F3;
 }
-.gr-button.fill.primary,
-.gr-button.fill.primary.dark::before {
+.ui-button.fill.primary,
+.ui-button.fill.primary.dark::before {
 	background-color: #2196F3;
 }
-.gr-button.danger,
-.gr-button.danger.fill.dark,
-.gr-button.red,
-.gr-button.red.fill.dark {
+.ui-button.danger,
+.ui-button.danger.fill.dark,
+.ui-button.red,
+.ui-button.red.fill.dark {
 	color: #F44336;
 }
-.gr-button.fill.danger,
-.gr-button.fill.danger.dark::before,
-.gr-button.fill.red,
-.gr-button.fill.red.dark::before {
+.ui-button.fill.danger,
+.ui-button.fill.danger.dark::before,
+.ui-button.fill.red,
+.ui-button.fill.red.dark::before {
 	background-color: #F44336;
 }
-.gr-button.warning,
-.gr-button.warning.fill.dark,
-.gr-button.yellow,
-.gr-button.warning.fill.dark {
+.ui-button.warning,
+.ui-button.warning.fill.dark,
+.ui-button.yellow,
+.ui-button.warning.fill.dark {
 	color: #FFC107;
 }
-.gr-button.fill.warning,
-.gr-button.fill.warning.dark::before,
-.gr-button.fill.yellow,
-.gr-button.fill.yellow.dark::before {
+.ui-button.fill.warning,
+.ui-button.fill.warning.dark::before,
+.ui-button.fill.yellow,
+.ui-button.fill.yellow.dark::before {
 	background-color: #FFC107;
 }
-.gr-button.success,
-.gr-button.success.fill.dark,
-.gr-button.green,
-.gr-button.green.fill.dark {
+.ui-button.success,
+.ui-button.success.fill.dark,
+.ui-button.green,
+.ui-button.green.fill.dark {
 	color: #4CAF50;
 }
-.gr-button.fill.success,
-.gr-button.fill.success.dark::before,
-.gr-button.fill.green,
-.gr-button.fill.green.dark::before {
+.ui-button.fill.success,
+.ui-button.fill.success.dark::before,
+.ui-button.fill.green,
+.ui-button.fill.green.dark::before {
 	background-color: #4CAF50;
 }
-.gr-button.teal,
-.gr-button.teal.fill.dark {
+.ui-button.teal,
+.ui-button.teal.fill.dark {
 	color: #009688;
 }
-.gr-button.fill.teal,
-.gr-button.fill.teal.dark::before {
+.ui-button.fill.teal,
+.ui-button.fill.teal.dark::before {
 	background-color: #009688;
 }
-.gr-button.cyan,
-.gr-button.cyan.fill.dark {
+.ui-button.cyan,
+.ui-button.cyan.fill.dark {
 	color: #00BCD4;
 }
-.gr-button.fill.cyan,
-.gr-button.fill.cyan.dark::before {
+.ui-button.fill.cyan,
+.ui-button.fill.cyan.dark::before {
 	background-color: #00BCD4;
 }
-.gr-button.pink,
-.gr-button.pink.fill.dark {
+.ui-button.pink,
+.ui-button.pink.fill.dark {
 	color: #E91E63;
 }
-.gr-button.fill.pink,
-.gr-button.fill.pink.dark::before {
+.ui-button.fill.pink,
+.ui-button.fill.pink.dark::before {
 	background-color: #E91E63;
 }
-.gr-button.pink.a200,
-.gr-button.pink.a200.fill.dark {
+.ui-button.pink.a200,
+.ui-button.pink.a200.fill.dark {
 	color: #FF4081;
 }
-.gr-button.fill.pink-a200,
-.gr-button.fill.pink-a200.dark::before {
+.ui-button.fill.pink-a200,
+.ui-button.fill.pink-a200.dark::before {
 	background-color: #FF4081;
 }
-.gr-button.pink.a400,
-.gr-button.pink.a400.fill.dark {
+.ui-button.pink.a400,
+.ui-button.pink.a400.fill.dark {
 	color: #F50057;
 }
-.gr-button.fill.pink-a400,
-.gr-button.fill.pink-a400.dark::before {
+.ui-button.fill.pink-a400,
+.ui-button.fill.pink-a400.dark::before {
 	background-color: #F50057;
 }
-.gr-button.green.a400,
-.gr-button.green.a400.fill.dark {
+.ui-button.green.a400,
+.ui-button.green.a400.fill.dark {
 	color: #00E676;
 }
-.gr-button.fill.green-a400,
-.gr-button.fill.green-a400.dark::before {
+.ui-button.fill.green-a400,
+.ui-button.fill.green-a400.dark::before {
 	background-color: #00E676;
 }
-.gr-button.indigo,
-.gr-button.indigo.fill.dark {
+.ui-button.indigo,
+.ui-button.indigo.fill.dark {
 	color: #3F51B5;
 }
-.gr-button.fill.indigo,
-.gr-button.fill.indigo.dark::before {
+.ui-button.fill.indigo,
+.ui-button.fill.indigo.dark::before {
 	background-color: #3F51B5;
 }
-.gr-button.raised {
+.ui-button.raised {
 	box-shadow: 0 2px 4px rgba(0,0,0,0.15), 0 2px 6px rgba(0,0,0,0.2);
 }
-.gr-button.raised:hover, .gr-button.raised:focus {
+.ui-button.raised:hover, .ui-button.raised:focus {
 	box-shadow: 0 4px 8px rgba(0,0,0,0.15), 0 4px 12px rgba(0,0,0,0.2);
 }
-.gr-button.raised:active {
+.ui-button.raised:active {
 	box-shadow: 0 8px 16px rgba(0,0,0,0.15), 0 8px 24px rgba(0,0,0,0.2);
 }
-.gr-button[disabled] {
+.ui-button[disabled] {
 	color: rgba(0,0,0,0.5);
 	cursor: default;
 }
-.gr-button.fill[disabled] {
+.ui-button.fill[disabled] {
 	background-color: #DDD;
 	color: white;
 	box-shadow: none;
 }
-.gr-button.raised[disabled] {
+.ui-button.raised[disabled] {
 	box-shadow: 0 2px 4px rgba(0,0,0,0.15), 0 2px 6px rgba(0,0,0,0.2);
 }
-.gr-button.fill[disabled]::before {
+.ui-button.fill[disabled]::before {
 	content: initial;
 }
-.gr-button.float {
+.ui-button.float {
 	box-shadow: 0 6px 12px rgba(0,0,0,0.15), 0 6px 18px rgba(0,0,0,0.2);
 	z-index: 10;
 	background-color: white;
 }
-.gr-float-container {
+.ui-float-container {
 	position: absolute;
 }
-.gr-float-container.half {
+.ui-float-container.half {
 	width: 0;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 }
-.gr-float-container.half > button {
+.ui-float-container.half > button {
 	margin-left: auto;
 	margin-right: auto;
 	flex: 0 0 auto;
 }
-.gr-float-container.half > * + * {
+.ui-float-container.half > * + * {
 	margin-top: 10px;
 }
-.gr-float-container.half.left {
+.ui-float-container.half.left {
 	left: 0;
 }
-.gr-float-container.half.right {
+.ui-float-container.half.right {
 	right: 0;
 }
-.gr-float-container.fixed {
+.ui-float-container.fixed {
 	position: fixed;
 }
-.gr-float-container.bottom-left {
+.ui-float-container.bottom-left {
 	left: 0;
 	bottom: 0;
 }
-.gr-float-container.bottom-right {
+.ui-float-container.bottom-right {
 	right: 0;
 	bottom: 0;
 }
-.gr-float-container.top-left {
+.ui-float-container.top-left {
 	top: 0;
 	left: 0;
 }
-.gr-float-container.top-right {
+.ui-float-container.top-right {
 	top: 0;
 	right: 0;
 }
-.gr-float-container.spaced.bottom-left {
+.ui-float-container.spaced.bottom-left {
 	margin: 0 0 15px 15px;
 }
-.gr-float-container.spaced.bottom-right {
+.ui-float-container.spaced.bottom-right {
 	margin: 0 15px 15px 0;
 }
-.gr-float-container.spaced.top-left {
+.ui-float-container.spaced.top-left {
 	margin: 15px 0 0 15px;
 }
-.gr-float-container.spaced.top-right {
+.ui-float-container.spaced.top-right {
 	margin: 15px 0 0 15px;
 }
-.gr-button.float:hover, .gr-button.float:focus {
+.ui-button.float:hover, .ui-button.float:focus {
 	box-shadow: 0 8px 16px rgba(0,0,0,0.15), 0 8px 24px rgba(0,0,0,0.2);
 }
-.gr-button.float:active {
+.ui-button.float:active {
 	box-shadow: 0 12px 24px rgba(0,0,0,0.15), 0 12px 36px rgba(0,0,0,0.2);
 }
-.gr-float-container.ng-animate {
+.ui-float-container.ng-animate {
 	transition: visibility 200ms;
 }
-.gr-float-container.ng-enter .gr-button,
-.gr-button.float.ng-enter {
+.ui-float-container.ng-enter .ui-button,
+.ui-button.float.ng-enter {
 	transform: scale(0);
 	opacity: 0;
 	transition: none;
 }
-.gr-float-container.ng-enter-active .gr-button,
-.gr-button.float.ng-enter-active {
+.ui-float-container.ng-enter-active .ui-button,
+.ui-button.float.ng-enter-active {
 	transform: scale(1);
 	opacity: 1;
 	transition: 200ms ease-in-out;
 }
-.gr-float-container.ng-leave .gr-button,
-.gr-button.float.ng-leave {
+.ui-float-container.ng-leave .ui-button,
+.ui-button.float.ng-leave {
 	transform: scale(1);
 	opacity: 1;
 	transition: none;
 }
-.gr-float-container.ng-leave-active .gr-button,
-.gr-button.float.ng-leave-active {
+.ui-float-container.ng-leave-active .ui-button,
+.ui-button.float.ng-leave-active {
 	transform: scale(0);
 	opacity: 0;
 	transition: 200ms ease-in-out;
 }
 
 @media (max-width: 599px) {
-	.gr-button-cover.lte-xs-full button {width: 100%; margin-left: 0; margin-right: 0;}
+	.ui-button-cover.lte-xs-full button {width: 100%; margin-left: 0; margin-right: 0;}
 }

@@ -2,12 +2,12 @@
     'use strict';
 
     angular
-        .module('gear')
-        .directive('grMainMenu', grMainMenu);
+        .module('smn.ui')
+        .directive('uiMainMenu', uiMainMenu);
 
-    grMainMenu.$inject = ['$templateCache'];
+    uiMainMenu.$inject = ['$templateCache'];
 
-    function grMainMenu($templateCache) {
+    function uiMainMenu($templateCache) {
         var directive = {
             restrict: 'E',
             templateUrl: 'struct/main-menu/main-menu.directive.html',
@@ -17,15 +17,15 @@
                 'menuClick': '&?'
             },
             bindToController: true,
-            controller: grMainMenuController,
+            controller: uiMainMenuController,
             controllerAs: 'vm'
         };
         return directive;
     }
 
-    grMainMenuController.$inject = ['$scope'];
+    uiMainMenuController.$inject = ['$scope'];
 
-    function grMainMenuController($scope) {
+    function uiMainMenuController($scope) {
 
         var vm = this;
         vm.level = 0;

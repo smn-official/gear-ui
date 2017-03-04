@@ -1,9 +1,8 @@
-    gr-menu {
+ui-menu {
 	position: fixed;
 	display: block;
     top: 0;
     left: 0;
-	/*width: 300px;*/
 	font-size: 14px;
 	background-color: white;
 	box-shadow: 0 8px 16px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.15);
@@ -13,41 +12,41 @@
 	user-select: none;
 	z-index: 2000;
 }
-	gr-menu ul {
+	ui-menu ul {
 		flex: 1;
 		padding: 5px 0;
 	}
-		gr-menu ul + ul {
+		ui-menu ul + ul {
 			border-top: 1px solid rgba(0,0,0,0.1);
 		}
-	gr-menu li, gr-menu a {
+	ui-menu li, ui-menu a {
 		display: flex;
 		align-items: center;
 	}
-	gr-menu a {
+	ui-menu a {
 		flex: 1;
 		padding-right: 12px;
 		color: rgba(0,0,0,0.4);
 		transition: 300ms ease-in-out;
 	}
-        gr-menu .gr-menu-wrapper a:link {
+        ui-menu .ui-menu-wrapper a:link {
             text-decoration: none;
             cursor: default;
         }
-		gr-menu a:link, gr-menu a.action {
+		ui-menu a:link, ui-menu a.action {
 			cursor: pointer;
 		}
-		gr-menu a:link:hover, gr-menu a.action:hover {
+		ui-menu a:link:hover, ui-menu a.action:hover {
 			background-color: rgba(0,0,0,0.1);
 		}
-		gr-menu a:link, gr-menu a:visited, gr-menu a.action {
+		ui-menu a:link, ui-menu a:visited, ui-menu a.action {
 			color: rgba(0,0,0,0.8);
 			text-decoration: none;
 		}
-		gr-menu a > i {
+		ui-menu a > i {
 			margin: 6px;
 		}
-	gr-menu li > div {
+	ui-menu li > div {
 		color: rgba(0,0,0,0.7);
 		flex: 1 0 auto;
 		display: flex;
@@ -55,19 +54,19 @@
 		align-items: center;
 		cursor: default;
 	}
-        gr-menu.clickable li > div:hover,
-        gr-menu li.clickable > div:hover {
+        ui-menu.clickable li > div:hover,
+        ui-menu li.clickable > div:hover {
 			background-color: rgba(0,0,0,0.1);
 		}
-	gr-menu i {
+	ui-menu i {
 		display: flex;
 		margin: 4px;
 		margin-right: 8px;
 	}
-	gr-menu .gr-menu-wrapper {
+	ui-menu .ui-menu-wrapper {
 		min-width: 150px;
 	}
-    gr-menu .title {
+    ui-menu .title {
         color: rgba(0,0,0,0.7);
         padding: 10px;
     }

@@ -2,23 +2,23 @@
     'use strict';
 
     angular
-        .module('gear')
-        .directive('grTrigger', grTrigger);
+        .module('smn.ui')
+        .directive('uiTrigger', uiTrigger);
 
-    function grTrigger() {
+    function uiTrigger() {
         var directive = {
             link: link,
             restrict: 'A',
             scope: {
-                'grTrigger': '@',
-                'grTriggerEvent': '@'
+                'uiTrigger': '@',
+                'uiTriggerEvent': '@'
             }
         };
         return directive;
 
         function link(scope, element, attrs) {
-            element.bind(scope.grTriggerEvent, function () {
-                angular.element(scope.grTrigger).trigger(scope.grTriggerEvent);
+            element.bind(scope.uiTriggerEvent, function () {
+                angular.element(scope.uiTrigger).trigger(scope.uiTriggerEvent);
             });
         }
     }

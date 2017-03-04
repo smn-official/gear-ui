@@ -1,16 +1,16 @@
-gr-menu-item {
+ui-menu-item {
 	display: flex;
 	flex-direction: column;
 	background-color: white;
 	overflow: hidden;
 	transition: 200ms ease-in-out;
 }
-	gr-menu-item > .item-wrap {
+	ui-menu-item > .item-wrap {
 		position: relative;
 		background-color: white;
 		z-index: 1;
 	}
-	gr-menu-item > .item-wrap .fav-button {
+	ui-menu-item > .item-wrap .fav-button {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -18,10 +18,10 @@ gr-menu-item {
 		margin: auto 2px;
 		opacity: 0.6;
 	}
-		gr-menu-item > .item-wrap .fav-button:hover {
+		ui-menu-item > .item-wrap .fav-button:hover {
 			opacity: 1;
 		}
-    gr-menu-item > .item-wrap a {
+    ui-menu-item > .item-wrap a {
         display: block;
         padding: 10px 10px 10px 36px;
         font-size: 14px;
@@ -30,19 +30,19 @@ gr-menu-item {
         opacity: 0.7;
         transition: 200ms ease-in-out;
     }
-    gr-menu-item > .item-wrap a:link {
+    ui-menu-item > .item-wrap a:link {
         text-decoration: none;
     }
-		gr-menu-item > .item-wrap a:link,
-		gr-menu-item > .item-wrap a.has-submenu {
+		ui-menu-item > .item-wrap a:link,
+		ui-menu-item > .item-wrap a.has-submenu {
 			opacity: 1;
 			cursor: pointer;
 		}
-	gr-menu-item:not(.is-open) > .item-wrap a:link:hover,
-	gr-menu-item:not(.is-open) > .item-wrap a.has-submenu:hover {
+	ui-menu-item:not(.is-open) > .item-wrap a:link:hover,
+	ui-menu-item:not(.is-open) > .item-wrap a.has-submenu:hover {
 		background-color: rgba(0,0,0,0.05);
 	}
-	gr-menu-item > .item-wrap .option-icon {
+	ui-menu-item > .item-wrap .option-icon {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -55,13 +55,13 @@ gr-menu-item {
 		justify-content: center;
 		transition: 200ms ease-in-out;
 	}
-	gr-menu-item > .item-wrap .arrow-drop {
+	ui-menu-item > .item-wrap .arrow-drop {
 		transform: rotate(-90deg);
 	}
-		gr-menu-item.is-open > .item-wrap .arrow-drop {
+		ui-menu-item.is-open > .item-wrap .arrow-drop {
 			transform: rotate(0);
 		}
-gr-menu-item.is-open {
+ui-menu-item.is-open {
 	margin: 5px 10px 10px;
 	border-radius: 2px;
 	box-shadow: 0 1px 2px rgba(0,0,0,0.15), 0 1px 3px rgba(0,0,0,0.2);

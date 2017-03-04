@@ -2,6 +2,6 @@
     'use strict';
 
     angular.module('core', [
-        'gear'
+        'smn.ui'
     ]);
 })();

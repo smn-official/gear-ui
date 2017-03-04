@@ -1,4 +1,4 @@
-<gr-input-container>
+<ui-input-container>
     <input type="text"
            ng-model="$ctrl.searchQuery"
            ng-focus="$ctrl.blur($ctrl.searchQuery)"
@@ -7,26 +7,26 @@
            ng-keydown="$ctrl.inputKeyAction($event)"
            ng-attr-placeholder="{{$ctrl.placeholder}}">
     <label class="keep-float" ng-bind="$ctrl.grLabel"></label>
-</gr-input-container>
-<gr-card class="gr-autocomplete-suggestions" ng-if="$ctrl.grItems && $ctrl.itemsShown"
+</ui-input-container>
+<ui-card class="ui-autocomplete-suggestions" ng-if="$ctrl.grItems && $ctrl.itemsShown"
          tabindex="-1"
          ng-focus="$ctrl.showItems()"
          ng-blur="$ctrl.hideItems()">
-    <ul class="gr-list s-l1 s-dense ">
-        <li class="clickable" ng-repeat="item in $ctrl.grItemsFiltered = $ctrl.grItems track by (ctrl.grTrackBy || $index)">
+    <ul class="ui-list s-l1 s-dense ">
+        <li class="clickable" ng-repeat="item in $ctrl.uiItemsFiltered = $ctrl.uiItems track by (ctrl.uiTrackBy || $index)">
             <div class="item-cover blue"
                  ng-click="$ctrl.selectItem(item)"
                  ng-class="{'focused': $ctrl.focusedIndex === $index}">
                 <div class="list-text">
-                    <span ng-bind="$ctrl.grPrimaryInfo ? item[$ctrl.grPrimaryInfo] : item"></span>
-                    <div  class="gr-secondary" ng-if="$ctrl.grSecondaryInfo" ng-bind="$ctrl.grSecondaryInfo ? item[$ctrl.grSecondaryInfo] : item"></div>
+                    <span ng-bind="$ctrl.uiPrimaryInfo ? item[$ctrl.uiPrimaryInfo] : item"></span>
+                    <div  class="ui-secondary" ng-if="$ctrl.uiSecondaryInfo" ng-bind="$ctrl.uiSecondaryInfo ? item[$ctrl.uiSecondaryInfo] : item"></div>
                 </div>
             </div>
         </li>
-        <li ng-if="!$ctrl.grItems.length">
+        <li ng-if="!$ctrl.uiItems.length">
             <div class="item-cover">
-                <div class="list-text gr-ellipsis">Nenhum resultado encontrado para "{{$ctrl.searchQuery}}"</div>
+                <div class="list-text ui-ellipsis">Nenhum resultado encontrado para "{{$ctrl.searchQuery}}"</div>
             </div>
         </li>
     </ul>
-</gr-card>
+</ui-card>
