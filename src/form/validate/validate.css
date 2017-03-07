@@ -1,16 +1,16 @@
-.gr-validate:not(.on-dirty):not(.on-submit) .gr-control.ng-invalid,
-.gr-validate.on-dirty .gr-control.ng-dirty.ng-invalid,
-.gr-validate.on-submit.ng-submitted .gr-control.ng-invalid {
+.ui-validate:not(.on-dirty):not(.on-submit) .ui-control.ng-invalid,
+.ui-validate.on-dirty .ui-control.ng-dirty.ng-invalid,
+.ui-validate.on-submit.ng-submitted .ui-control.ng-invalid {
     border-color: #F44336;
 }
-.gr-validate:not(.on-dirty):not(.on-submit) .gr-control.ng-invalid ~ label,
-.gr-validate.on-dirty .gr-control.ng-dirty.ng-invalid ~ label,
-.gr-validate.on-submit.ng-submitted .gr-control.ng-invalid ~ label,
-.gr-error-message {
+.ui-validate:not(.on-dirty):not(.on-submit) .ui-control.ng-invalid ~ label,
+.ui-validate.on-dirty .ui-control.ng-dirty.ng-invalid ~ label,
+.ui-validate.on-submit.ng-submitted .ui-control.ng-invalid ~ label,
+.ui-error-message {
     color: #F44336;
 }
-.gr-validate:not(.on-dirty):not(.on-submit) .gr-control.ng-invalid ~ .line,
-.gr-validate.on-dirty .gr-control.ng-dirty.ng-invalid ~ .line,
-.gr-validate.on-submit.ng-submitted .gr-control.ng-invalid ~ .line {
+.ui-validate:not(.on-dirty):not(.on-submit) .ui-control.ng-invalid ~ .line,
+.ui-validate.on-dirty .ui-control.ng-dirty.ng-invalid ~ .line,
+.ui-validate.on-submit.ng-submitted .ui-control.ng-invalid ~ .line {
     background-color: #F44336;
 }

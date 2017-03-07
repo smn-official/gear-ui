@@ -2,15 +2,15 @@
     'use strict';
 
     angular
-        .module('gear')
-        .filter('grCapitalize', grCapitalize);
+        .module('smn-ui')
+        .filter('uiCapitalize', uiCapitalize);
 
-    function grCapitalize() {
-        return grCapitalizeFilter;
+    function uiCapitalize() {
+        return uiCapitalizeFilter;
 
         ////////////////
 
-        function grCapitalizeFilter(value) {
+        function uiCapitalizeFilter(value) {
             return (angular.isString(value) && value.length > 0) ? value[0].toUpperCase() + value.substr(1).toLowerCase() : value;
         }
     }

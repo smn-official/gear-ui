@@ -2,15 +2,15 @@
     'use strict';
 
     angular
-        .module('gear')
-        .filter('grPhone', grPhone);
+        .module('smn-ui')
+        .filter('uiPhone', uiPhone);
 
-    function grPhone() {
-        return grPhoneFilter;
+    function uiPhone() {
+        return uiPhoneFilter;
 
         ////////////////
 
-        function grPhoneFilter(phone) {
+        function uiPhoneFilter(phone) {
             if (!phone) return;
             phone = phone.toString().replace(/[^0-9]+/g,'');
             if (phone.length > 0)

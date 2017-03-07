@@ -1,4 +1,4 @@
-gr-loader {
+ui-loader {
     background-color: white;
     display: flex;
     align-items: center;
@@ -9,7 +9,7 @@ gr-loader {
     box-shadow: 0 3px 6px rgba(0,0,0,0.15), 0 3px 9px rgba(0,0,0,0.2);
     transition: 300ms ease-in-out;
 }
-gr-loader gr-spinner {
+ui-loader ui-spinner {
     width: 20px;
     height: 20px;
 }

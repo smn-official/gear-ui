@@ -1,23 +1,23 @@
-gr-tree-view,
-gr-tree-view-list,
-gr-tree-view-item {
+ui-tree-view,
+ui-tree-view-list,
+ui-tree-view-item {
     display: block;
 }
 
-gr-tree-view-list {
+ui-tree-view-list {
     display: flex;
     transition: 200ms ease-in-out;
 }
 
-gr-tree-view-list gr-tree-view-list > .offset {
+ui-tree-view-list ui-tree-view-list > .offset {
     position: relative;
     width: 36px;
     flex: 0 0 auto;
 }
 
-gr-tree-view-item:not(:last-child) > .list-wrap > gr-tree-view-list > .offset::before,
-gr-tree-view-item > .option-wrap:not(.submenu) > .icon-wrap::before,
-gr-tree-view-item > .option-wrap:not(.submenu) > .icon-wrap::after {
+ui-tree-view-item:not(:last-child) > .list-wrap > ui-tree-view-list > .offset::before,
+ui-tree-view-item > .option-wrap:not(.submenu) > .icon-wrap::before,
+ui-tree-view-item > .option-wrap:not(.submenu) > .icon-wrap::after {
     content: '';
     position: absolute;
     display: block;
@@ -31,33 +31,33 @@ gr-tree-view-item > .option-wrap:not(.submenu) > .icon-wrap::after {
     transition: 200ms ease-in-out;
 }
 
-gr-tree-view-list > .options {
+ui-tree-view-list > .options {
     flex: 1 1 auto;
 }
 
-gr-tree-view-item .list-wrap {
+ui-tree-view-item .list-wrap {
     overflow: hidden;
 }
 
-gr-tree-view-item .option-wrap {
+ui-tree-view-item .option-wrap {
     min-height: 42px;
     display: flex;
     font-size: 14px;
 }
 
-gr-tree-view-item .option-wrap:hover,
-gr-tree-view-list gr-tree-view-list > .offset:hover {
+ui-tree-view-item .option-wrap:hover,
+ui-tree-view-list ui-tree-view-list > .offset:hover {
     /*background-color: rgba(0,0,0,0.12);*/
     /*cursor: default;*/
 }
 
-gr-tree-view-item .icon-wrap {
+ui-tree-view-item .icon-wrap {
     width: 36px;
     min-height: 36px;
 }
 
-gr-tree-view-item .icon-wrap,
-gr-tree-view-item .action-wrap {
+ui-tree-view-item .icon-wrap,
+ui-tree-view-item .action-wrap {
     position: relative;
     display: flex;
     align-items: center;
@@ -65,21 +65,21 @@ gr-tree-view-item .action-wrap {
     flex: 0 0 auto;
 }
 
-gr-tree-view > gr-tree-view-list > .options > gr-tree-view-item:first-child > .option-wrap .icon-wrap::before {
+ui-tree-view > ui-tree-view-list > .options > ui-tree-view-item:first-child > .option-wrap .icon-wrap::before {
     top: 50%;
 }
 
-gr-tree-view-item:last-child > .option-wrap .icon-wrap::before {
+ui-tree-view-item:last-child > .option-wrap .icon-wrap::before {
     bottom: 50%;
 }
 
-gr-tree-view-item > .option-wrap:not(.submenu) > .icon-wrap::after {
+ui-tree-view-item > .option-wrap:not(.submenu) > .icon-wrap::after {
     width: initial;
     height: 1px;
     left: 50%;
 }
 
-gr-tree-view-item > .option-wrap .name {
+ui-tree-view-item > .option-wrap .name {
     flex: 1 1 auto;
     padding: 2px 30px 2px 14px;
     display: flex;
@@ -88,7 +88,7 @@ gr-tree-view-item > .option-wrap .name {
     cursor: default;
 }
 
-gr-tree-view .icon-wrap button {
+ui-tree-view .icon-wrap button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -100,81 +100,81 @@ gr-tree-view .icon-wrap button {
     transition: 200ms ease-in-out;
 }
 
-gr-tree-view .icon-wrap button:hover {
+ui-tree-view .icon-wrap button:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
-gr-tree-view .icon-wrap button:active {
+ui-tree-view .icon-wrap button:active {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-gr-tree-view .icon-wrap button {
+ui-tree-view .icon-wrap button {
     transform: rotate(-90deg);
 }
 
-gr-tree-view .open > .icon-wrap button {
+ui-tree-view .open > .icon-wrap button {
     transform: rotate(-45deg);
     color: rgba(3, 169, 244, 0.8);
 }
 
-gr-tree-view .icon-wrap button i {
+ui-tree-view .icon-wrap button i {
     width: 24px;
     height: 24px;
 }
 
-gr-tree-view .icon-wrap button.ng-enter {
+ui-tree-view .icon-wrap button.ng-enter {
     opacity: 0;
 }
 
-gr-tree-view .icon-wrap button.ng-enter-active {
+ui-tree-view .icon-wrap button.ng-enter-active {
     opacity: 1;
 }
 
-gr-tree-view .icon-wrap button.ng-enter {
+ui-tree-view .icon-wrap button.ng-enter {
     opacity: 1;
 }
 
-gr-tree-view .icon-wrap button.ng-enter-active {
+ui-tree-view .icon-wrap button.ng-enter-active {
     opacity: 0;
 }
 
-.option-wrap:hover + .list-wrap > gr-tree-view-list > .options > gr-tree-view-item > .option-wrap .icon-wrap::after,
-.option-wrap:hover + .list-wrap > gr-tree-view-list > .options > gr-tree-view-item > .option-wrap .icon-wrap::before,
-.option-wrap:hover + .list-wrap > gr-tree-view-list > .options > gr-tree-view-item > .list-wrap > gr-tree-view-list > .offset::before {
+.option-wrap:hover + .list-wrap > ui-tree-view-list > .options > ui-tree-view-item > .option-wrap .icon-wrap::after,
+.option-wrap:hover + .list-wrap > ui-tree-view-list > .options > ui-tree-view-item > .option-wrap .icon-wrap::before,
+.option-wrap:hover + .list-wrap > ui-tree-view-list > .options > ui-tree-view-item > .list-wrap > ui-tree-view-list > .offset::before {
     background-color: rgba(3, 169, 244, 0.8);
 }
 
-gr-tree-view .option-wrap button,
-gr-tree-view .action-wrap button {
+ui-tree-view .option-wrap button,
+ui-tree-view .action-wrap button {
     margin: 3px;
 }
 
-gr-tree-view-item > .option-wrap:hover .action-wrap button {
+ui-tree-view-item > .option-wrap:hover .action-wrap button {
     opacity: 1;
 }
 
-gr-tree-view .action-wrap {
+ui-tree-view .action-wrap {
     position: relative;
 }
 
-gr-tree-view .action-wrap button {
+ui-tree-view .action-wrap button {
     position: absolute;
     top: 0;
     right: 0;
 }
 
-gr-tree-view .action-wrap button.ng-enter {
+ui-tree-view .action-wrap button.ng-enter {
     opacity: 0;
 }
 
-gr-tree-view .action-wrap button.ng-enter-active {
+ui-tree-view .action-wrap button.ng-enter-active {
     opacity: 1;
 }
 
-gr-tree-view .action-wrap button.ng-leave {
+ui-tree-view .action-wrap button.ng-leave {
     opacity: 1;
 }
 
-gr-tree-view .action-wrap button.ng-leave-active {
+ui-tree-view .action-wrap button.ng-leave-active {
     opacity: 0;
 }

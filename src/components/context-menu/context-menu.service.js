@@ -2,12 +2,12 @@
 	'use strict';
 
 	angular
-		.module('gear')
-		.factory('grContextMenu', grContextMenu);
+		.module('smn-ui')
+		.factory('uiContextMenu', uiContextMenu);
 
-	grContextMenu.$inject = ['$rootScope'];
+	uiContextMenu.$inject = ['$rootScope'];
 
-	function grContextMenu($rootScope) {
+	function uiContextMenu($rootScope) {
 		var service = {
 			closeAll: closeAll,
 			eventBound: false
@@ -16,7 +16,7 @@
 		return service;
 
 		function closeAll() {
-			$rootScope.$broadcast('grContextMenu.close');
+			$rootScope.$broadcast('uiContextMenu.close');
 		}
 	}
 })();

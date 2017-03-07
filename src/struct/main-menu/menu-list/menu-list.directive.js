@@ -2,14 +2,14 @@
 	'use strict';
 
 	angular
-		.module('gear')
-		.directive('grMenuList', grMenuList);
+		.module('smn-ui')
+		.directive('uiMenuList', uiMenuList);
 
-	grMenuList.$inject = ['$templateCache'];
+	uiMenuList.$inject = ['$templateCache'];
 
-	function grMenuList($templateCache) {
+	function uiMenuList($templateCache) {
 		var directive = {
-			require: '^grMainMenu',
+			require: '^uiMainMenu',
 			link: link,
 			restrict: 'E',
             templateUrl: 'struct/main-menu/menu-list/menu-list.directive.html',

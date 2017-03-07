@@ -1,4 +1,4 @@
-.gr-avatar-cover {
+.ui-avatar-cover {
     position: relative;
     display: flex;
     align-items: center;
@@ -12,19 +12,19 @@
     font-weight: 400;
     color: rgba(0,0,0,.8);
 }
-.gr-avatar-cover.dark {color: white;}
-.gr-avatar-cover.rounded {border-radius: 8px;}
-.gr-avatar-cover.rounded {border-radius: 8px;}
-.gr-avatar-cover.circle {border-radius: 50%;}
-.gr-avatar-cover button {
+.ui-avatar-cover.dark {color: white;}
+.ui-avatar-cover.rounded {border-radius: 8px;}
+.ui-avatar-cover.rounded {border-radius: 8px;}
+.ui-avatar-cover.circle {border-radius: 50%;}
+.ui-avatar-cover button {
     position: absolute;
     right: 0;
     bottom: 0;
 }
-.gr-avatar-cover.s18 {width: 18px; height: 18px;}
-.gr-avatar-cover.s24 {width: 24px; height: 24px;}
-.gr-avatar-cover.s36 {width: 36px; height: 36px; font-size: 24px;}
-.gr-avatar-cover img {
+.ui-avatar-cover.s18 {width: 18px; height: 18px;}
+.ui-avatar-cover.s24 {width: 24px; height: 24px;}
+.ui-avatar-cover.s36 {width: 36px; height: 36px; font-size: 24px;}
+.ui-avatar-cover img {
     position: absolute;
     top: 0;
     left: 0;
@@ -35,6 +35,6 @@
     max-width: 100%;
     max-height: 100%;
 }
-.gr-avatar-cover.circle img {
+.ui-avatar-cover.circle img {
     border-radius: 50%;
 }

@@ -2,13 +2,13 @@
     'use strict';
 
     angular
-        .module('gear')
-        .directive('grAutofocus', grAutofocus);
+        .module('smn-ui')
+        .directive('uiAutofocus', uiAutofocus);
 
-    grAutofocus.$inject = ['$timeout'];
+    uiAutofocus.$inject = ['$timeout'];
 
     /* @ngInject */
-    function grAutofocus($timeout) {
+    function uiAutofocus($timeout) {
         var directive = {
             link: link,
             restrict: 'A'

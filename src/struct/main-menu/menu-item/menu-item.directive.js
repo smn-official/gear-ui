@@ -2,14 +2,14 @@
 	'use strict';
 
 	angular
-		.module('gear')
-		.directive('grMenuItem', grMenuItem);
+		.module('smn-ui')
+		.directive('uiMenuItem', uiMenuItem);
 
-	grMenuItem.$inject = ['$compile', '$templateCache'];
+	uiMenuItem.$inject = ['$compile', '$templateCache'];
 
-	function grMenuItem($compile, $templateCache) {
+	function uiMenuItem($compile, $templateCache) {
 		var directive = {
-			require: '^grMainMenu',
+			require: '^uiMainMenu',
 			link: link,
 			restrict: 'E',
             templateUrl: 'struct/main-menu/menu-item/menu-item.directive.html',
@@ -32,7 +32,7 @@
 			};
 			scope.buttonOffset = scope.level != 1 ? (36 * (scope.level - 1) + 'px') : 0;
 			if (scope.list) {
-				$compile('<gr-menu-list class="drawer-slide-vertical" list="list" config="config" parent-level="level" ng-hide="!isOpen"></gr-menu-list>')(scope, function (cloned, scope){
+				$compile('<ui-menu-list class="drawer-slide-vertical" list="list" config="config" parent-level="level" ng-hide="!isOpen"></ui-menu-list>')(scope, function (cloned, scope){
 					element.append(cloned);
 				});
 			}

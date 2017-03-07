@@ -2,18 +2,18 @@
     'use strict';
 
     angular
-        .module('gear')
-        .directive('grInteger', grInteger);
+        .module('smn-ui')
+        .directive('uiInteger', uiInteger);
 
-    grInteger.$inject = ['grIntegerFilter'];
+    uiInteger.$inject = ['uiIntegerFilter'];
 
-    function grInteger(grIntegerFilter) {
+    function uiInteger(uiIntegerFilter) {
         var directive = {
             restrict: 'A',
             link: link,
             require: 'ngModel',
             scope: {
-                grIntegerDigitMax: '=?'
+                uiIntegerDigitMax: '=?'
             }
         };
         return directive;
@@ -27,9 +27,9 @@
             });
             ctrl.$formatters.push(formatValue);
             function formatValue(value) {
-                var newValue = grIntegerFilter(value);
-                if (scope.grIntegerDigitMax && typeof newValue === 'number') {
-                    var maxDigit = parseInt(scope.grIntegerDigitMax);
+                var newValue = uiIntegerFilter(value);
+                if (scope.uiIntegerDigitMax && typeof newValue === 'number') {
+                    var maxDigit = parseInt(scope.uiIntegerDigitMax);
                     if (!isNaN(maxDigit)) {
                         newValue = parseInt(newValue.toString().substring(0, maxDigit));
                     }

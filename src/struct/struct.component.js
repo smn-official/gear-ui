@@ -2,12 +2,12 @@
     'use strict';
 
     angular
-        .module('gear')
-        .component('grStruct', {
-            controller: grStructController
+        .module('smn-ui')
+        .component('uiStruct', {
+            controller: uiStructController
         });
 
-    function grStructController($element, $window) {
+    function uiStructController($element, $window) {
         var $ctrl = this;
 
         $ctrl.$postLink = function () {

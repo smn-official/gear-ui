@@ -2,10 +2,10 @@
     'use strict';
 
     angular
-        .module('gear')
-        .filter('grUnaccent', grUnaccent);
+        .module('smn-ui')
+        .filter('uiUnaccent', uiUnaccent);
 
-    function grUnaccent() {
+    function uiUnaccent() {
         return function (strAccents) {
             if (!strAccents)
                 return '';

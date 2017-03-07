@@ -2,15 +2,15 @@
 	'use strict';
 
 	angular
-		.module('gear')
-		.directive('grTreeView', grTreeViewDirective);
+		.module('smn-ui')
+		.directive('uiTreeView', uiTreeViewDirective);
 
-	grTreeViewDirective.$inject = ['$timeout'];
+	uiTreeViewDirective.$inject = ['$timeout'];
 
-	function grTreeViewDirective($timeout) {
+	function uiTreeViewDirective($timeout) {
 		var directive = {
 			bindToController: true,
-			controller: grTreeViewController,
+			controller: uiTreeViewController,
 			controllerAs: 'vm',
 			restrict: 'E',
 			templateUrl: 'components/tree-view/tree-view.directive.html',
@@ -24,7 +24,7 @@
 		};
 		return directive;
 	}
-	function grTreeViewController () {
+	function uiTreeViewController () {
 		var vm = this;
 
 		vm.config = vm.config || {};

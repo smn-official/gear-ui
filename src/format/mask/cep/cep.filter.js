@@ -2,13 +2,13 @@
     'use strict';
 
     angular
-        .module('gear')
-        .filter('grCep', grCep);
+        .module('smn-ui')
+        .filter('uiCep', uiCep);
 
-    function grCep() {
-        return grCepFilter;
+    function uiCep() {
+        return uiCepFilter;
 
-        function grCepFilter(cep) {
+        function uiCepFilter(cep) {
             if (!cep) return '';
             cep = cep.toString().replace(/[^0-9]+/g, '');
             if (cep.length > 5)

@@ -2,10 +2,10 @@
     'use strict';
 
     angular
-        .module('gear')
-        .directive('grDateFormat', grDateFormat);
+        .module('smn-ui')
+        .directive('uiDateFormat', uiDateFormat);
 
-    function grDateFormat($locale, $filter) {
+    function uiDateFormat($locale, $filter) {
         var directive = {
             require: '?ngModel',
             link: link,
@@ -34,7 +34,7 @@
             });
 
             function getDateMask() {
-                var mask = attrs.grDateFormat || 'shortDate',
+                var mask = attrs.uiDateFormat || 'shortDate',
                     formats = $locale.DATETIME_FORMATS;
                 var dateMask = mask in formats ? formats[mask] : mask;
                 return dateMask;

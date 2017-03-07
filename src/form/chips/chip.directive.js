@@ -2,15 +2,15 @@
     'use strict';
 
     angular
-        .module('gear')
-        .directive('grChip', grChip);
+        .module('smn-ui')
+        .directive('uiChip', uiChip);
 
-    grChip.$inject = ['$timeout'];
+    uiChip.$inject = ['$timeout'];
 
     /* @ngInject */
-    function grChip($timeout) {
+    function uiChip($timeout) {
         var directive = {
-            require: '^^grChips',
+            require: '^^uiChips',
             templateUrl: 'form/chips/chip.html',
             link: link,
             restrict: 'E'

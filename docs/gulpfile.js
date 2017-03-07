@@ -22,20 +22,20 @@ var paths = {
             lib: {
                 common: ['content/lib/jquery/dist/jquery.min.js', 'content/lib/angular/angular.min.js', 'content/lib/angular-*/**/*.min.js', 'content/lib/angular-i18n/**/angular-locale_pt-br.js', 'content/lib/socket.io-client/socket.io.js', '!content/lib/jquery/external/**/*'],
                 dev: [],
-                prod: ['content/lib/gear-ui/gear-ui.min.js']
+                prod: ['content/lib/smn-ui/smn-ui.min.js']
             },
             src: {
                 pre: 'app/**/*.pre.js',
                 common: ['app/**/*.js', '!app/**/*.pre.js', '!**/*.min.js'],
                 dev: [],
-                prod: ['!app/gear-ui/**/*']
+                prod: ['!app/smn-ui/**/*']
             }
         },
         styles: {
             src: {
                 pre: 'app/**/*.pre.css',
                 common: ['app/core/**/*.css', 'app/ui/**/*.css', 'app/utils/**/*.css', 'app/seguranca/login/**/*.css', '!**/*.min.css', '!app/**/*.pre.css'],
-                dev: ['app/gear-ui/**/*.css'],
+                dev: ['app/smn-ui/**/*.css'],
                 prod: [],
                 build: ['app/app.min.css', 'app/**/*.css', '!app/+(core|ui|utils)/**/*', '!app/seguranca/login/**/*.css', '!app/**/*.pre.css']
             }
@@ -209,17 +209,17 @@ gulp.task('minify', () => {
     return $.runSequence('minify:css', 'minify:js');
 });
 
-gulp.task('gear:clean', () => {
-    return gulp.src(['src/app/gear-ui/'], {read: false}).pipe($.clean());
+gulp.task('smn-ui:clean', () => {
+    return gulp.src(['src/app/smn-ui/'], {read: false}).pipe($.clean());
 });
 
-gulp.task('gear', () => {
+gulp.task('g', () => {
     if (isWatchMode)
-        gulp.watch(['../src/**/*.{js,css,html}', '!../src/**/*.min.*'], ['gear']);
+        gulp.watch(['../src/**/*.{js,css,html}', '!../src/**/*.min.*'], ['smn-ui']);
 
     if (!isProductionMode) {
         return gulp.src(['../src/**/*.*', '!../src/*.min.*', '!../src/app.templates.js'])
-            .pipe(gulp.dest('src/app/gear-ui'));
+            .pipe(gulp.dest('src/app/smn-ui'));
     }
 });
 
@@ -247,14 +247,14 @@ gulp.task('build', () => {
     if (isWatchMode)
         gulp.watch(['src/app/**/*', '!src/app/**/*.{min,templates,pro}.*'], ['build']);
 
-    $.runSequence('build:clean', 'gear', 'template', 'preprocess', 'minify:css', 'minify:js', 'build:style', 'build:files', 'build:index', function () {
+    $.runSequence('build:clean', 'smn-ui', 'template', 'preprocess', 'minify:css', 'minify:js', 'build:style', 'build:files', 'build:index', function () {
         var endTime = process.hrtime(startTime);
         $.util.log('Finished \'' + $.util.colors.cyan(fullMode) + '\' build after ' + $.util.colors.magenta($.prettyHrtime(endTime)));
     });
 });
 
 gulp.task('default', () => {
-    $.runSequence('gear', 'template', 'preprocess', 'index');
+    $.runSequence('smn-ui', 'template', 'preprocess', 'index');
 });
 
 gulp.task('all:watch', ['template', 'preprocess', 'index'] ,() => {

@@ -1,49 +1,49 @@
-gr-struct {
+ui-struct {
     display: flex;
     flex-direction: column;
     height: 100%;
 }
-gr-struct > .gr-header-placeholder {
+ui-struct > .ui-header-placeholder {
     flex: 0 0 auto;
 }
-gr-pages {
+ui-pages {
     position: relative;
     display: block;
     flex: 1 0 auto;
 }
-gr-page-cover {
+ui-page-cover {
     display: block;
     flex: 1 0 auto;
 }
-gr-page {
+ui-page {
     display: block;
     transition: 300ms ease-in-out;
 }
-gr-page.spaced {
+ui-page.spaced {
     padding: 10px;
 }
-gr-page.v-spaced {
+ui-page.v-spaced {
     padding: 10px 0;
 }
-gr-page.h-spaced {
+ui-page.h-spaced {
     padding: 0 10px;
 }
-gr-container {
+ui-container {
     display: block;
     margin: 0 auto;
     max-width: 100%;
 }
-gr-container.small {
+ui-container.small {
     width: 480px;
 }
 @media (min-width: 601px) {
-    gr-page.spaced {
+    ui-page.spaced {
         padding: 20px;
     }
-    gr-page.v-spaced {
+    ui-page.v-spaced {
         padding: 20px 0;
     }
-    gr-page.h-spaced {
+    ui-page.h-spaced {
         padding: 0 20px;
     }
 }

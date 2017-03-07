@@ -2,22 +2,22 @@
 	'use strict';
 
 	angular
-		.module('gear')
-		.component('grOption', {
-            controller: grOptionController
+		.module('smn-ui')
+		.component('uiOption', {
+            controller: uiOptionController
         });
 
-	grOptionController.$inject = ['$element'];
+	uiOptionController.$inject = ['$element'];
 
-	function grOptionController($element) {
+	function uiOptionController($element) {
 	    var $ctrl = this;
         $ctrl.$postLink = function () {
             $element
                 .wrapInner('<label></label>');
             $element
                 .find('input')
-                .addClass('gr-option')
-                .after('<div class="gr-option-shell"><div class="gr-option-fill"></div><div class="gr-option-mark"></div></div>');
+                .addClass('ui-option')
+                .after('<div class="ui-option-shell"><div class="ui-option-fill"></div><div class="ui-option-mark"></div></div>');
         }
 	}
 })();

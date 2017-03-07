@@ -2,10 +2,10 @@
 	'use strict';
 
 	angular
-		.module('gear')
-		.directive('grSlider', grSlider);
+		.module('smn-ui')
+		.directive('uiSlider', uiSlider);
 
-	function grSlider(){
+	function uiSlider(){
 		var directive = {
 			restrict: 'E',
 			templateUrl: 'components/slider/slider.directive.html',
@@ -13,7 +13,7 @@
 			scope: {
 				activeIndex: '='
 			},
-			controller: grSliderController,
+			controller: uiSliderController,
 			controllerAs: 'vm',
 			bindToController: true
 		};
@@ -21,9 +21,9 @@
 		return directive;
 	}
 
-	grSliderController.$inject = ['$scope', '$element', '$compile', '$animate', '$animateCss', '$timeout'];
+	uiSliderController.$inject = ['$scope', '$element', '$compile', '$animate', '$animateCss', '$timeout'];
 
-	function grSliderController($scope, $element, $compile, $animate, $animateCss, $timeout) {
+	function uiSliderController($scope, $element, $compile, $animate, $animateCss, $timeout) {
 		var vm = this;
 		vm.slides = [];
 		vm.activeSlide = null;
@@ -33,7 +33,7 @@
 			$timeout(function(){
 				$animateCss($element, {
 					from: { height: $element.outerHeight() },
-					to: { height: $element.children('gr-slider-content').children().eq(value).children().outerHeight() }
+					to: { height: $element.children('ui-slider-content').children().eq(value).children().outerHeight() }
 				}).start().done(function(){
 					$element[0].style.height = '';
 				});

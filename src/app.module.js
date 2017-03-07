@@ -1,7 +1,7 @@
 (function () {
 
     angular
-        .module('gear', [
+        .module('smn-ui', [
             'ngMessages',
             'ngAnimate'
         ])

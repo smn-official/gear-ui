@@ -2,10 +2,10 @@
     'use strict';
 
     angular
-        .module('gear')
-        .directive('grMaskCep', grMaskCep);
+        .module('smn-ui')
+        .directive('uiMaskCep', uiMaskCep);
 
-    function grMaskCep(grCepFilter, $timeout) {
+    function uiMaskCep(uiCepFilter, $timeout) {
         var directive = {
             restrict: 'A',
             link: link,
@@ -23,7 +23,7 @@
             ctrl.$parsers.push(function(value){
                 afterSelIndex = doGetCaretPosition(element[0]);
 
-                var viewValue = grCepFilter(value);
+                var viewValue = uiCepFilter(value);
                 ctrl.$setViewValue(viewValue);
                 ctrl.$render();
 
@@ -48,7 +48,7 @@
             });
 
             ctrl.$formatters.push(function(value){
-                return grCepFilter(value);
+                return uiCepFilter(value);
             });
 
             function doGetCaretPosition(elem) {

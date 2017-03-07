@@ -2,15 +2,15 @@
     'use strict';
 
     angular
-        .module('gear')
-        .filter('grInteger', grInteger);
+        .module('smn-ui')
+        .filter('uiInteger', uiInteger);
 
-    function grInteger() {
-        return grIntegerFilter;
+    function uiInteger() {
+        return uiIntegerFilter;
 
         ////////////////
 
-        function grIntegerFilter(value) {
+        function uiIntegerFilter(value) {
             if (value === undefined || value === null)
                 return null;
             value = value.toString().replace(/\D+/g, '');

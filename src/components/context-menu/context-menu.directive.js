@@ -2,12 +2,12 @@
 	'use strict';
 
 	angular
-		.module('gear')
-		.directive('grContextMenu', grContextMenuDirective);
+		.module('smn-ui')
+		.directive('uiContextMenu', uiContextMenuDirective);
 
-	grContextMenuDirective.$inject = ['$timeout', '$templateCache', '$interpolate', '$compile', '$animateCss', 'grContextMenu', 'grWindow'];
+	uiContextMenuDirective.$inject = ['$timeout', '$templateCache', '$interpolate', '$compile', '$animateCss', 'uiContextMenu', 'uiWindow'];
 
-	function grContextMenuDirective($timeout, $templateCache, $interpolate, $compile, $animateCss, grContextMenu, grWindow) {
+	function uiContextMenuDirective($timeout, $templateCache, $interpolate, $compile, $animateCss, uiContextMenu, uiWindow) {
 		var directive = {
 			link: link,
 			restrict: 'EA',
@@ -16,17 +16,17 @@
 		return directive;
 
 		function link(scope, element, attrs, model) {
-			if (!grContextMenu.eventBound) {
+			if (!uiContextMenu.eventBound) {
 				document.addEventListener('mousedown', removeEvent);
 				document.addEventListener('click', removeEvent);
 				window.addEventListener('scroll', removeEvent);
 				window.addEventListener('resize', removeEvent);
 				window.addEventListener('blur', removeEvent);
-				grContextMenu.eventBound = true;
+				uiContextMenu.eventBound = true;
 			}
 
 			function removeEvent() {
-				grContextMenu.closeAll();
+				uiContextMenu.closeAll();
 				scope.$apply();
 			}
 
@@ -61,7 +61,7 @@
 				}
 			}
 
-			scope.$on('grContextMenu.close', closeMenu);
+			scope.$on('uiContextMenu.close', closeMenu);
 
 			function getModel() {
 				return model ? angular.extend(scope, model.$modelValue) : scope;
@@ -70,27 +70,27 @@
 			function render(event, strategy) {
 				strategy = strategy || 'append';
 				if ('preventDefault' in event) {
-					grContextMenu.closeAll();
+					uiContextMenu.closeAll();
 					event.stopPropagation();
 					event.preventDefault();
 					scope.position = { x: event.clientX || element.offset().left, y: event.clientY || element.offset().top };
 				} else if (!scope.menu)
 					return;
 
-				var compiled = $compile($templateCache.get(attrs.grContextMenu))(angular.extend(getModel())),
+				var compiled = $compile($templateCache.get(attrs.uiContextMenu))(angular.extend(getModel())),
 					menu = angular.element(compiled);
 				switch (strategy) {
 					case 'append':
 						angular.element('body').append(menu);
 						scope.newPosition = {};
 
-						if (scope.position.y + menu[0].offsetHeight + 10 > grWindow.innerHeight)
-							scope.newPosition.y = scope.position.y - ((scope.position.y + menu[0].offsetHeight + 10) - grWindow.innerHeight);
+						if (scope.position.y + menu[0].offsetHeight + 10 > uiWindow.innerHeight)
+							scope.newPosition.y = scope.position.y - ((scope.position.y + menu[0].offsetHeight + 10) - uiWindow.innerHeight);
 						else
 							scope.newPosition.y = scope.position.y;
 
-						if (scope.position.x + menu[0].offsetWidth + 10 > grWindow.innerWidth)
-							scope.newPosition.x = scope.position.x - ((scope.position.x + menu[0].offsetWidth + 10) - grWindow.innerWidth);
+						if (scope.position.x + menu[0].offsetWidth + 10 > uiWindow.innerWidth)
+							scope.newPosition.x = scope.position.x - ((scope.position.x + menu[0].offsetWidth + 10) - uiWindow.innerWidth);
 						else
 							scope.newPosition.x = scope.position.x;
 
@@ -140,7 +140,7 @@
 				}, true);
 			}
 
-			element.bind(attrs.grContextEvent || 'contextmenu', render);
+			element.bind(attrs.uiContextEvent || 'contextmenu', render);
 		}
 	}
 })();

@@ -2,21 +2,21 @@
 	'use strict';
 
 	angular
-		.module('gear')
-		.component('grSwitch', {
-            controller: grSwitchController
+		.module('smn-ui')
+		.component('uiSwitch', {
+            controller: uiSwitchController
         });
 
-	grSwitchController.$inject = ['$element'];
+	uiSwitchController.$inject = ['$element'];
 
-	function grSwitchController($element) {
+	function uiSwitchController($element) {
 	    var $ctrl = this;
         $ctrl.$postLink = function () {
             $element
                 .wrapInner('<label></label>');
             $element
                 .find('input')
-                .addClass('gr-switch')
+                .addClass('ui-switch')
                 .after('<div class="switch-cover"><div class="track"></div><div class="thumb-container"><div class="thumb"></div></div></div>');
         }
 	}

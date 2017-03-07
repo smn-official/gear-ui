@@ -2,10 +2,10 @@
 	'use strict';
 
 	angular
-		.module('gear')
-		.directive('grSlide', grSlide);
+		.module('smn-ui')
+		.directive('uiSlide', uiSlide);
 
-	function grSlide(){
+	function uiSlide(){
 		var directive = {
 			restrict: 'AE',
 			priority: 1,
@@ -15,18 +15,18 @@
 			},
 			templateUrl: 'components/slider/slide.directive.html',
 			transclude: true,
-			require: '^grSlider',
+			require: '^uiSlider',
 			link: link
 		};
 
 		return directive;
 
-		function link(scope, element, attributes, grSliderController){
+		function link(scope, element, attributes, uiSliderController){
 			scope.index = null;
 			scope.active = false;
-			scope.ctrl = grSliderController;
+			scope.ctrl = uiSliderController;
 			scope.element = element;
-			grSliderController.addSlide(scope);
+			uiSliderController.addSlide(scope);
 		}
 	}
 })();

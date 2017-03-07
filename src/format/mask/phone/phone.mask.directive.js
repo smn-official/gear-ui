@@ -2,10 +2,10 @@
     'use strict';
 
     angular
-        .module('gear')
-        .directive('grMaskPhone', grMaskPhone);
+        .module('smn-ui')
+        .directive('uiMaskPhone', uiMaskPhone);
 
-    function grMaskPhone(grPhoneFilter) {
+    function uiMaskPhone(uiPhoneFilter) {
         var directive = {
             restrict: 'A',
             link: link,
@@ -15,7 +15,7 @@
 
         function link(scope, element, attrs, ctrl) {
             ctrl.$parsers.push(function(value){
-                var viewValue = grPhoneFilter(value);
+                var viewValue = uiPhoneFilter(value);
                 ctrl.$setViewValue(viewValue);
                 ctrl.$render();
                 if (viewValue.length === 14 || viewValue.length === 15)
@@ -25,7 +25,7 @@
             });
 
             ctrl.$formatters.push(function(value){
-                return grPhoneFilter(value);
+                return uiPhoneFilter(value);
             });
         }
     }

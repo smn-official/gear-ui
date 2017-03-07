@@ -1,4 +1,4 @@
-gr-drawer {
+ui-drawer {
 	position: fixed;
 	display: flex;
 	flex-direction: column;
@@ -10,11 +10,11 @@ gr-drawer {
 	z-index: 1110;
 	transition: 300ms ease-in-out;
 }
-	gr-drawer.open {
+	ui-drawer.open {
 		transform: translateX(100%);
 		box-shadow: 0 16px 32px rgba(0,0,0,0.15), 0 16px 48px rgba(0,0,0,0.2);
 	}
-	gr-drawer > .toolbar-offset {
+	ui-drawer > .toolbar-offset {
 		flex: 0 0 auto;
         height: 56px;
 		text-align: center;
@@ -24,28 +24,28 @@ gr-drawer {
 		border-bottom: 1px solid rgba(0,0,0,0.1);
         transition: 300ms ease-in-out;
 	}
-		gr-drawer > .toolbar-offset img {
+		ui-drawer > .toolbar-offset img {
 			height: 36px;
 		}
-	gr-drawer > .drawer-content {
+	ui-drawer > .drawer-content {
 		flex: 1;
 		overflow: auto;
 	}
-	gr-drawer.ng-leave {
+	ui-drawer.ng-leave {
 		transition: 300ms ease-in-out;
 	}
-	gr-drawer.ng-leave-active {
+	ui-drawer.ng-leave-active {
 		transform: translateX(0);
 		box-shadow: none;
 	}
-	gr-drawer.right {
+	ui-drawer.right {
 		right: initial;
 		left: 100%;
 	}
-		gr-drawer.right.open {
+		ui-drawer.right.open {
 			transform: translateX(-100%);
 		}
-gr-drawer-background {
+ui-drawer-background {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -57,13 +57,13 @@ gr-drawer-background {
 	visibility: hidden;
 	transition: 300ms ease-in-out;
 }
-	gr-drawer-background.show {
+	ui-drawer-background.show {
 		opacity: 1;
 		visibility: visible;
 	}
 
 @media (min-width: 601px) {
-    gr-drawer > .toolbar-offset {
+    ui-drawer > .toolbar-offset {
         height: 64px;
     }
 }

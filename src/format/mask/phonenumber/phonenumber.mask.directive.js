@@ -2,10 +2,10 @@
     'use strict';
 
     angular
-        .module('gear')
-        .directive('grMaskPhonenumber', grMaskPhonenumber);
+        .module('smn-ui')
+        .directive('uiMaskPhonenumber', uiMaskPhonenumber);
 
-    function grMaskPhonenumber(grPhonenumberFilter, $timeout) {
+    function uiMaskPhonenumber(uiPhonenumberFilter, $timeout) {
         var directive = {
             restrict: 'A',
             link: link,
@@ -23,8 +23,8 @@
             ctrl.$parsers.push(function(value){
                 afterSelIndex = doGetCaretPosition(element[0]);
 
-                var viewValue = grPhonenumberFilter(value);
-                ctrl.$setViewValue(grPhonenumberFilter(viewValue));
+                var viewValue = uiPhonenumberFilter(value);
+                ctrl.$setViewValue(uiPhonenumberFilter(viewValue));
                 ctrl.$render();
 
                 if (element[0].selectionStart || element[0].selectionStart == '0') {
@@ -48,7 +48,7 @@
             });
 
             ctrl.$formatters.push(function(value){
-                return grPhonenumberFilter(value);
+                return uiPhonenumberFilter(value);
             });
 
             function doGetCaretPosition(elem) {

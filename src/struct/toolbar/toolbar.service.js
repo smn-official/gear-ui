@@ -2,10 +2,10 @@
     'use strict';
 
     angular
-        .module('gear')
-        .factory('grToolbar', grToolbar);
+        .module('smn-ui')
+        .factory('uiToolbar', uiToolbar);
 
-    function grToolbar($timeout) {
+    function uiToolbar($timeout) {
         var toolbarTitle,
             flatModeDefaults = {
                 active: false,

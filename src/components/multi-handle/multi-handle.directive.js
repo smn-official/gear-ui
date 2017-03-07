@@ -2,11 +2,11 @@
     'use strict';
 
     angular
-        .module('gear')
-        .directive('multiHandle', multiHandle);
+        .module('smn-ui')
+        .directive('uiMultiHandle', uiMultiHandle);
 
-    multiHandle.$inject = ['$templateCache', '$document', '$timeout', 'dateFilter'];
-    function multiHandle($templateCache, $document, $timeout, dateFilter) {
+    uiMultiHandle.$inject = ['$templateCache', '$document', '$timeout', 'dateFilter'];
+    function uiMultiHandle($templateCache, $document, $timeout, dateFilter) {
         var directive = {
             link: link,
             restrict: 'E',

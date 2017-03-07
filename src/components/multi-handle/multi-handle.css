@@ -1,38 +1,38 @@
-multi-handle {
+ui-multi-handle {
     display: flex;
     align-items: center;
     position: relative;
     height: 16px;
 }
 
-multi-handle .range-bar, multi-handle .points {
+ui-multi-handle .range-bar, ui-multi-handle .points {
     position: absolute;
     left: 0;
     right: 0;
 }
 
 /*  Range Bar  */
-multi-handle .range-bar {
+ui-multi-handle .range-bar {
     background-color: #bdbdbd;
     height: 2px;
 }
 
 /*  Points  */
-multi-handle .points {
+ui-multi-handle .points {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-multi-handle .point {
+ui-multi-handle .point {
     padding: 1px;
     border-radius: 50%;
     background-color: rgba(0,0,0,0.4);
 }
 
 /*  Range  */
-multi-handle .range {
+ui-multi-handle .range {
     display: flex;
     position: absolute;
     left: 0;
@@ -41,18 +41,11 @@ multi-handle .range {
     height: 2px;
 }
 
-multi-handle .range.disabled {
+ui-multi-handle .range.disabled {
     background-color: #bdbdbd;
 }
 
-
-
-/*multi-handle .range.ng-enter, multi-handle .range.ng-leave-active {*/
-    /*transition: 150ms ease-in-out;*/
-    /*opacity: 0;*/
-/*}*/
-
-multi-handle .start, multi-handle .end {
+ui-multi-handle .start, ui-multi-handle .end {
     width: 16px;
     height: 16px;
     border-radius: 50%;
@@ -64,14 +57,14 @@ multi-handle .start, multi-handle .end {
     margin-top: -6px;
 }
 
-multi-handle .range.disabled > div {
+ui-multi-handle .range.disabled > div {
     width: 10px;
     height: 10px;
     margin-top: -4px;
     background-color: #bdbdbd;
 }
 
-multi-handle .range > div::before {
+ui-multi-handle .range > div::before {
     content: '';
     position: absolute;
     left: 0;
@@ -85,13 +78,13 @@ multi-handle .range > div::before {
     transition: all 200ms ease-in-out;
 }
 
-multi-handle .range > div.active::before {
+ui-multi-handle .range > div.active::before {
     transform: rotate(90deg) scale(1);
     bottom: -24px;
     transition: all 200ms 100ms ease-in-out;
 }
 
-multi-handle .range > div::after {
+ui-multi-handle .range > div::after {
     content: '';
     display: block;
     position: absolute;
@@ -103,12 +96,12 @@ multi-handle .range > div::after {
 }
 
 
-multi-handle .start {
+ui-multi-handle .start {
     left: 0;
     transform: translateX(-50%);
 }
 
-multi-handle .range > div.active {
+ui-multi-handle .range > div.active {
     transform: translate(-50%, -80%);
     width: 34px;
     height: 34px;
@@ -116,26 +109,26 @@ multi-handle .range > div.active {
     margin-top: -16px;
 }
 
-multi-handle .range .end.active {
+ui-multi-handle .range .end.active {
     transform: translate(50%, -80%);
 }
 
-multi-handle .end {
+ui-multi-handle .end {
     right: 0;
     transform: translateX(50%);
 }
 
-multi-handle .value {
+ui-multi-handle .value {
     font-size: 11px;
     white-space: nowrap;
     margin: auto;
     transition: all 100ms ease-in-out;
 }
 
-multi-handle .value.ng-enter {
+ui-multi-handle .value.ng-enter {
     opacity: 0;
 }
 
-multi-handle .value.ng-leave {
+ui-multi-handle .value.ng-leave {
     transition: none;
 }

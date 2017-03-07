@@ -1,11 +1,11 @@
-.gr-secondary {
+.ui-secondary {
     color: rgba(0,0,0,0.6);
     font-size: 13px;
 }
-.gr-title {
+.ui-title {
     margin-bottom: 16px;
 }
-.gr-title.card.dense {
+.ui-title.card.dense {
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 16px;

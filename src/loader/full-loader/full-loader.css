@@ -1,4 +1,4 @@
-.gr-loader-full {
+.ui-loader-full {
     position: fixed;
     top: 0;
     left: 0;
@@ -10,10 +10,10 @@
     background-color: rgba(255,255,255,0.6);
     transition: 300ms ease-in-out;
 }
-.gr-loader-full.ng-enter {
+.ui-loader-full.ng-enter {
     opacity: 0;
     transition: none;
 }
-.gr-loader-full.ng-leave {
+.ui-loader-full.ng-leave {
     opacity: 0;
 }

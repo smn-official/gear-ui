@@ -2,10 +2,10 @@
     'use strict';
 
     angular
-        .module('gear')
-        .directive('grMaskCpf', grMaskCpf);
+        .module('smn-ui')
+        .directive('uiMaskCpf', uiMaskCpf);
 
-    function grMaskCpf(grCpfFilter) {
+    function uiMaskCpf(uiCpfFilter) {
         var directive = {
             restrict: 'A',
             link: link,
@@ -15,7 +15,7 @@
 
         function link(scope, element, attrs, ctrl) {
             ctrl.$parsers.push(function(value){
-                var viewValue = grCpfFilter(value);
+                var viewValue = uiCpfFilter(value);
                 ctrl.$setViewValue(viewValue);
                 ctrl.$render();
                 if (viewValue.length === 14)
@@ -25,7 +25,7 @@
             });
 
             ctrl.$formatters.push(function(value){
-                return grCpfFilter(value);
+                return uiCpfFilter(value);
             });
         }
     }

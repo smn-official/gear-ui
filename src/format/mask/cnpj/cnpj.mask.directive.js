@@ -2,10 +2,10 @@
     'use strict';
 
     angular
-        .module('gear')
-        .directive('grMaskCnpj', grMaskCnpj);
+        .module('smn-ui')
+        .directive('uiMaskCnpj', uiMaskCnpj);
 
-    function grMaskCnpj(grCnpjFilter, $timeout) {
+    function uiMaskCnpj(uiCnpjFilter, $timeout) {
         var directive = {
             restrict: 'A',
             link: link,
@@ -23,7 +23,7 @@
             ctrl.$parsers.push(function(value){
                 afterSelIndex = doGetCaretPosition(element[0]);
 
-                var viewValue = grCnpjFilter(value);
+                var viewValue = uiCnpjFilter(value);
                 ctrl.$setViewValue(viewValue);
                 ctrl.$render();
 
@@ -57,7 +57,7 @@
             });
 
             ctrl.$formatters.push(function(value){
-                return grCnpjFilter(value);
+                return uiCnpjFilter(value);
             });
 
             function doGetCaretPosition(elem) {

@@ -2,12 +2,12 @@
 	'use strict';
 
 	angular
-		.module('gear')
-		.animation('.gr-expand', grExpandAnimation);
+		.module('smn-ui')
+		.animation('.ui-expand', uiExpandAnimation);
 
-	grExpandAnimation.$inject = ['$animateCss'];
+	uiExpandAnimation.$inject = ['$animateCss'];
 
-	function grExpandAnimation($animateCss) {
+	function uiExpandAnimation($animateCss) {
 		var animation = {
 				addClass: addClass,
 				removeClass: removeClass
@@ -18,10 +18,10 @@
 		return animation;
 
 		function getId(el) {
-			var id = el[0].getAttribute('gr-expand-toggle');
+			var id = el[0].getAttribute('ui-expand-toggle');
 			if (!id) {
 				id = ++lastId;
-				el[0].setAttribute('gr-expand-toggle', id);
+				el[0].setAttribute('ui-expand-toggle', id);
 			}
 			return id;
 		}

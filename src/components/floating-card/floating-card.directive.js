@@ -2,12 +2,12 @@
 	'use strict';
 
 	angular
-		.module('gear')
-		.directive('grFloatingCard', grFloatingCardDirective);
+		.module('smn-ui')
+		.directive('uiFloatingCard', uiFloatingCardDirective);
 
-	grFloatingCardDirective.$inject = ['$templateCache'];
+	uiFloatingCardDirective.$inject = ['$templateCache'];
 
-	function grFloatingCardDirective($templateCache) {
+	function uiFloatingCardDirective($templateCache) {
 		var directive = {
 			restrict: 'E',
 			transclude: true,

@@ -2,13 +2,13 @@
 	'use strict';
 	
 	angular
-		.module('gear')
-		.filter('grStringDate', crFullDate);
+		.module('smn-ui')
+		.filter('uiStringDate', uiFullDate);
 	
-	function crFullDate() {
-		return crFullDateFilter;
+	function uiFullDate() {
+		return uiFullDateFilter;
 	}
-	function crFullDateFilter(date) {
+	function uiFullDateFilter(date) {
 		var today = new Date(),
 			yesterday = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 1),
 			months = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],

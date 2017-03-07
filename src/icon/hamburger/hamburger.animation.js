@@ -2,8 +2,8 @@
 	'use strict';
 
 	angular
-		.module('gear')
-		.animation('.gr-hamburger-icon', hamburgerAnimation);
+		.module('smn-ui')
+		.animation('.ui-hamburger-icon', hamburgerAnimation);
 
 	hamburgerAnimation.$inject = ['$animateCss', '$timeout'];
 
