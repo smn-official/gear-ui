@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('smn.ui')
+        .module('smn-ui')
         .directive('uiMultiHandle', uiMultiHandle);
 
     uiMultiHandle.$inject = ['$templateCache', '$document', '$timeout', 'dateFilter'];

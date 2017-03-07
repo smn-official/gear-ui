@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('smn.ui')
+		.module('smn-ui')
 		.animation('.ui-hamburger-icon', hamburgerAnimation);
 
 	hamburgerAnimation.$inject = ['$animateCss', '$timeout'];

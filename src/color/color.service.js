@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('smn.ui')
+        .module('smn-ui')
         .factory('uiColor', uiColor);
 
     uiColor.$inject = ['$timeout'];

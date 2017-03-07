@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('smn.ui')
+        .module('smn-ui')
         .filter('uiInteger', uiInteger);
 
     function uiInteger() {

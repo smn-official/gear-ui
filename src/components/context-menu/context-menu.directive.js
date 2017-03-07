@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('smn.ui')
+		.module('smn-ui')
 		.directive('uiContextMenu', uiContextMenuDirective);
 
 	uiContextMenuDirective.$inject = ['$timeout', '$templateCache', '$interpolate', '$compile', '$animateCss', 'uiContextMenu', 'uiWindow'];

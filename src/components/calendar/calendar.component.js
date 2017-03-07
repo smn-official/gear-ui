@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('smn.ui')
+        .module('smn-ui')
         .component('uiCalendar', {
             controller: uiCalendarController,
             templateUrl: 'components/calendar/calendar.component.html',

@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('smn.ui')
+		.module('smn-ui')
 		.directive('uiTreeViewList', uiTreeViewListDirective);
 
 	uiTreeViewListDirective.$inject = ['$timeout'];

@@ -65,7 +65,7 @@ gulp.task('template', () => {
     return templates
         .pipe(minifyHtml())
         .pipe($.angularTemplatecache('app.templates.js', {
-            module: 'smn.ui'
+            module: 'smn-ui'
         }))
         .pipe(gulp.dest('src/'));
 });

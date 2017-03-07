@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('smn.ui')
+		.module('smn-ui')
 		.directive('uiTreeViewItem', uiTreeViewItemDirective);
 
 	uiTreeViewItemDirective.$inject = ['$compile', '$templateCache'];

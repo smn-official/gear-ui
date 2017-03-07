@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('smn.ui')
+        .module('smn-ui')
         .directive('uiCurrencyMask', uiCurrencyMask);
 
     function uiCurrencyMask($timeout, $locale, uiCurrencyFilter) {

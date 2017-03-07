@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('smn.ui')
+        .module('smn-ui')
         .directive('uiDatepicker', uiDatepicker);
 
     function uiDatepicker($compile, $timeout, $animate, $interpolate) {

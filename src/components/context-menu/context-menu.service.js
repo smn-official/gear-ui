@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('smn.ui')
+		.module('smn-ui')
 		.factory('uiContextMenu', uiContextMenu);
 
 	uiContextMenu.$inject = ['$rootScope'];

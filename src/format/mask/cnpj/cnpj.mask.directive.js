@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('smn.ui')
+        .module('smn-ui')
         .directive('uiMaskCnpj', uiMaskCnpj);
 
     function uiMaskCnpj(uiCnpjFilter, $timeout) {
