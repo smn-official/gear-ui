@@ -3,9 +3,9 @@
 
     angular
         .module('smn-ui')
-        .directive('uiCurrencyMask', uiCurrencyMask);
+        .directive('uiMaskCurrency', uiMaskCurrency);
 
-    function uiCurrencyMask($timeout, $locale, uiCurrencyFilter) {
+    function uiMaskCurrency($timeout, $locale, uiCurrencyFilter) {
         var directive = {
             restrict: 'A',
             link: link,
