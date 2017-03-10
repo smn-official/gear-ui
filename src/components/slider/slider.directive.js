@@ -28,6 +28,7 @@
 		vm.slides = [];
 		vm.activeSlide = null;
 		vm.addSlide = addSlide;
+		vm.removeSlide = removeSlide;
 
 		$scope.$watch('vm.activeIndex', function(value, oldValue){
 			$timeout(function(){
@@ -49,6 +50,13 @@
 			else
 				deactivateElement(slide);
 		}
+
+        function removeSlide(scope) {
+            vm.slides.splice(scope.index, 1);
+            for (var i = scope.index; i < vm.slides.length; i++) {
+                vm.slides[i].index = i;
+            }
+        }
 
 		function activateElement(scope){
 			if (!scope)

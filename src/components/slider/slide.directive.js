@@ -27,6 +27,9 @@
 			scope.ctrl = uiSliderController;
 			scope.element = element;
 			uiSliderController.addSlide(scope);
+            scope.$on('$destroy', function () {
+                uiSliderController.removeSlide(scope);
+            })
 		}
 	}
 })();
