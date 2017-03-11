@@ -6,9 +6,9 @@
            ng-change="$ctrl.searchItem($ctrl.searchQuery)"
            ng-keydown="$ctrl.inputKeyAction($event)"
            ng-attr-placeholder="{{$ctrl.placeholder}}">
-    <label class="keep-float" ng-bind="$ctrl.grLabel"></label>
+    <label class="keep-float" ng-bind="$ctrl.uiLabel"></label>
 </ui-input-container>
-<ui-card class="ui-autocomplete-suggestions" ng-if="$ctrl.grItems && $ctrl.itemsShown"
+<ui-card class="ui-autocomplete-suggestions" ng-if="$ctrl.uiItems && $ctrl.itemsShown"
          tabindex="-1"
          ng-focus="$ctrl.showItems()"
          ng-blur="$ctrl.hideItems()">
