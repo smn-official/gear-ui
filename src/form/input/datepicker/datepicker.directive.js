@@ -41,9 +41,9 @@
                                  'tabindex="0" ' +
                                  'ui-select="select($date)" ' +
                                  'ui-cancel="closePicker()" ' +
-                                 'ui-view-date="grViewDate" ' +
-                                 'ui-min-date="grMinDate" ' +
-                                 'ui-max-date="grMaxDate" ' +
+                                 'ui-view-date="uiViewDate" ' +
+                                 'ui-min-date="uiMinDate" ' +
+                                 'ui-max-date="uiMaxDate" ' +
                                  'ui-view-date="ngModel" ' +
                                  ('uiInitOnSelected' in attrs ? 'ui-init-on-selected ' : '') +
                                  'ng-model="ngModel"></ui-calendar>')(scope);
