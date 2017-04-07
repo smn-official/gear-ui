@@ -16,7 +16,8 @@
                 end: '=?',
                 formatValue: '=?',
                 show: '=?',
-                disabled: '=?'
+                disabled: '=?',
+                hideBalloon: '=?'
             },
             templateUrl: 'components/multi-handle/multi-handle.directive.html'
         };
@@ -132,7 +133,7 @@
                 position -= ratingArea.offset().left;
                 position = position / ratingArea.width() * 100;
                 position = position > 100 ? 100 : position < 0 ? 0 : position;
-                return (24 / 100) * position;
+                return ((scope.range.length - 1) / 100) * position;
             }
             
             function closestNumber(number, array) {
@@ -156,7 +157,7 @@
             }
             
             function getPercentageRight() {
-                return percentageBlock * Math.abs(right.index - 24);
+                return percentageBlock * Math.abs(right.index - (scope.range.length - 1));
             }
 
             function formatValue(value) {
