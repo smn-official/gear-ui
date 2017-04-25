@@ -213,7 +213,7 @@ gulp.task('smn-ui:clean', () => {
     return gulp.src(['src/app/smn-ui/'], {read: false}).pipe($.clean());
 });
 
-gulp.task('g', () => {
+gulp.task('smn-ui', () => {
     if (isWatchMode)
         gulp.watch(['../src/**/*.{js,css,html}', '!../src/**/*.min.*'], ['smn-ui']);
 

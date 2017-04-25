@@ -1,0 +1,33 @@
+<form name="vm.form" class="ui-validate">
+    <ui-input-container>
+        <input type="text"
+               ng-model="vm.info.data"
+               ui-mask-date
+               ui-max-date="vm.info.data2"
+               ng-required="true"
+               autocomplete="off"
+               name="data">
+        <ng-messages for="vm.form.data.$error" class="ui-error-message" ng-if="vm.form.$submitted || vm.form.data.$dirty">
+            <ng-message when="required">Insira uma data.</ng-message>
+            <ng-message when="parse">Parse.</ng-message>
+            <ng-message when="min">min.</ng-message>
+            <ng-message when="max">max.</ng-message>
+        </ng-messages>
+    </ui-input-container>
+
+    <ui-input-container>
+        <input type="text"
+               ng-model="vm.info.data2"
+               ui-mask-date
+               ui-min-date="vm.info.data"
+               ng-required="true"
+               autocomplete="off"
+               name="data2">
+        <ng-messages for="vm.form.data2.$error" class="ui-error-message" ng-if="vm.form.$submitted || vm.form.data2.$dirty">
+            <ng-message when="required">Insira uma data2.</ng-message>
+            <ng-message when="parse">Parse.</ng-message>
+            <ng-message when="min">min.</ng-message>
+            <ng-message when="max">max.</ng-message>
+        </ng-messages>
+    </ui-input-container>
+</form>

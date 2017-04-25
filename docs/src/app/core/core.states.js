@@ -12,7 +12,10 @@
 
 		$stateProvider
 			.state('home', {
-				url: '/smn-ui'
+				url: '/',
+				templateUrl: 'app/core/core.html',
+				controller: 'CoreController',
+				controllerAs: 'vm'
 			});
 	}
 })();

@@ -11,7 +11,8 @@
             link: link,
             require: 'ngModel',
             scope: {
-                uiMaxDate: '='
+                uiMaxDate: '=',
+                uiMinDate: '=',
             }
         };
         return directive;
@@ -49,16 +50,34 @@
                     });
                 }
 
-                if (viewValue.length === 10 && check && (!scope.uiMaxDate || scope.uiMaxDate >= check)) {
+                if (viewValue.length === 10 && check) {
                     var dateArray = viewValue.split('/');
+
+                    ctrl.$setValidity('max', !(scope.uiMaxDate && scope.uiMaxDate < check));
+                    ctrl.$setValidity('min', !(scope.uiMinDate && scope.uiMinDate > check));
+
                     return new Date(dateArray[2], dateArray[1]-1, dateArray[0]);
                 }
+
                 if (!viewValue)
                     return '';
+
             });
 
             ctrl.$formatters.push(function (value) {
                 return $filter('date')(value, 'dd/MM/yyyy');
+            });
+
+            scope.$watch('uiMaxDate', function () {
+                var viewValue = formatDate(ctrl.$viewValue);
+                var check = checkDate(viewValue);
+                ctrl.$setValidity('max', !(check && scope.uiMaxDate && scope.uiMaxDate < check));
+            });
+
+            scope.$watch('uiMinDate', function () {
+                var viewValue = formatDate(ctrl.$viewValue);
+                var check = checkDate(viewValue);
+                ctrl.$setValidity('min', !(check && scope.uiMinDate && scope.uiMinDate < check));
             });
 
             function formatDate(date) {
