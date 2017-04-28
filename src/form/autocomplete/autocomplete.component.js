@@ -21,6 +21,9 @@
                 'searchQuery': '=uiSearchQuery',
                 'searchFunction': '=uiSearchFunction',
                 'selectFunction': '=uiSelectFunction',
+                'uiFocus': '&',
+                'uiBlur': '&',
+                'uiChange': '&',
                 'placeholder': '@',
                 'name': '@'
             }

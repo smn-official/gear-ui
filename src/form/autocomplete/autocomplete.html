@@ -1,9 +1,9 @@
 <ui-input-container>
     <input type="text"
            ng-model="$ctrl.searchQuery"
-           ng-focus="$ctrl.blur($ctrl.searchQuery)"
-           ng-blur="$ctrl.hideItems()"
-           ng-change="$ctrl.searchItem($ctrl.searchQuery)"
+           ng-focus="$ctrl.blur($ctrl.searchQuery); $ctrl.uiFocus()"
+           ng-blur="$ctrl.hideItems(); $ctrl.uiBlur()"
+           ng-change="$ctrl.searchItem($ctrl.searchQuery); $ctrl.uiChange()"
            ng-keydown="$ctrl.inputKeyAction($event)"
            ng-attr-placeholder="{{$ctrl.placeholder}}">
     <label class="keep-float" ng-bind="$ctrl.uiLabel"></label>
