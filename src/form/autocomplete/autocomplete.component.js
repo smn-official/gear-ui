@@ -13,7 +13,7 @@
                 'ngModel': '=',
                 'uiItems': '=',
                 'required': '=',
-                'disabled': '=',
+                'uiDisabled': '=',
                 'uiItemsValue': '@',
                 'uiPrimaryInfo': '@',
                 'uiSecondaryInfo': '@',
