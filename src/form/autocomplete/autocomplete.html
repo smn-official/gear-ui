@@ -5,6 +5,7 @@
            ng-blur="$ctrl.hideItems(); $ctrl.uiBlur()"
            ng-change="$ctrl.searchItem($ctrl.searchQuery); $ctrl.uiChange()"
            ng-keydown="$ctrl.inputKeyAction($event)"
+           ng-disabled="$ctrl.disabled"
            ng-attr-placeholder="{{$ctrl.placeholder}}">
     <label class="keep-float" ng-bind="$ctrl.uiLabel"></label>
 </ui-input-container>
