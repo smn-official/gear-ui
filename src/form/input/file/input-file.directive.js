@@ -60,7 +60,8 @@
                     for (var i = 0; i < files.length; i++) {
                         var file = files[i],
                             fileSize = file.size,
-                            fileType = file.type;
+                            fileType = file.type,
+                            fileExtension = file.name.substring(file.name.lastIndexOf('.') + 1);
                         if (maxFileSize && fileSize > maxFileSize)
                             ctrl.$setValidity('uiMaxFileSize', false);
                         sum += fileSize;
@@ -72,7 +73,7 @@
                             // Checa se tem apenas um asterisco
                             // e se ele está no final
                             var regex = accept.match(/^[^\*]*\*$/) ? new RegExp('^' + accept) : new RegExp('^' + accept + '$');
-                            if (fileType.match(regex)) {
+                            if (fileType.match(regex) || fileExtension.match(regex)) {
                                 validType = true;
                                 break;
                             }
@@ -94,7 +95,7 @@
                     scope.uiFileChange({ '$files': scope.ngModel, '$error': ctrl.$invalid ? ctrl.$error : null });
                 });
             }
-            
+
             function toByte(sizeString) {
                 sizeString = sizeString.toString();
                 var unitMatch = sizeString.match(/[a-zA-Z]+/g),
@@ -135,10 +136,11 @@
                 var reader = new FileReader();
                 data.resolved = 'false';
                 reader.onload = function (e) {
+
                     scope.$apply(function () {
                         data.result = e.target.result;
                         data.resolved = true;
-                        scope.uiRead && scope.uiRead({ $data: data.result, $index: index })
+                        scope.uiRead && scope.uiRead({ $data: data.result, $index: index, $file: file })
                     });
                 };
                 reader.onerror = function (e) {
@@ -163,4 +165,3 @@
     }
 
 })();
-
