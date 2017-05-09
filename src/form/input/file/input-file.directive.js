@@ -61,8 +61,10 @@
                         var file = files[i],
                             fileSize = file.size,
                             fileType = file.type,
-                            fileExtension = file.name.substring(file.name.lastIndexOf('.') + 1);
-                        if (maxFileSize && fileSize > maxFileSize)
+                            validMaxFileSize = maxFileSize && fileSize > maxFileSize,
+                            validMaxSize = maxSize && sum > maxSize;
+
+                        if (validMaxFileSize)
                             ctrl.$setValidity('uiMaxFileSize', false);
                         sum += fileSize;
 
@@ -73,7 +75,7 @@
                             // Checa se tem apenas um asterisco
                             // e se ele está no final
                             var regex = accept.match(/^[^\*]*\*$/) ? new RegExp('^' + accept) : new RegExp('^' + accept + '$');
-                            if (fileType.match(regex) || fileExtension.match(regex)) {
+                            if (fileType.match(regex)) {
                                 validType = true;
                                 break;
                             }
@@ -84,9 +86,16 @@
                         if (maxSize && sum > maxSize)
                             ctrl.$setValidity('uiMaxSize', false);
 
-                        if (ctrl.$valid && scope.uiReadDataUrl) {
+                        if (!validType && !validMaxFileSize && !validMaxSize) {
                             scope.uiReadDataUrl.push({});
                             readFile(file, scope.uiReadDataUrl[i], i);
+                        }
+                        else if (scope.uiError) {
+                            scope.uiError(file, {
+                                type: validType,
+                                maxSize: validMaxSize,
+                                maxFileSize: validMaxFileSize
+                            }, i);
                         }
                     }
 
@@ -136,11 +145,10 @@
                 var reader = new FileReader();
                 data.resolved = 'false';
                 reader.onload = function (e) {
-
                     scope.$apply(function () {
                         data.result = e.target.result;
                         data.resolved = true;
-                        scope.uiRead && scope.uiRead({ $data: data.result, $index: index, $file: file })
+                        scope.uiRead && scope.uiRead({ $data: data.result, $index: index })
                     });
                 };
                 reader.onerror = function (e) {
@@ -165,3 +173,4 @@
     }
 
 })();
+
