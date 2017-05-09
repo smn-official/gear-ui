@@ -1,43 +1,17 @@
-<form name="vm.form" class="ui-validate">
-    <ui-input-container>
-        <input type="text"
-               ng-model="vm.info.data"
-               ui-mask-date
-               ui-max-date="vm.info.data2"
-               ng-required="true"
-               autocomplete="off"
-               name="data">
-        <ng-messages for="vm.form.data.$error" class="ui-error-message" ng-if="vm.form.$submitted || vm.form.data.$dirty">
-            <ng-message when="required">Insira uma data.</ng-message>
-            <ng-message when="parse">Parse.</ng-message>
-            <ng-message when="min">min.</ng-message>
-            <ng-message when="max">max.</ng-message>
-        </ng-messages>
-    </ui-input-container>
-
-    <ui-input-container>
-        <input type="text"
-               ng-model="vm.info.data2"
-               ui-mask-date
-               ui-min-date="vm.info.data"
-               ng-required="true"
-               autocomplete="off"
-               name="data2">
-        <ng-messages for="vm.form.data2.$error" class="ui-error-message" ng-if="vm.form.$submitted || vm.form.data2.$dirty">
-            <ng-message when="required">Insira uma data2.</ng-message>
-            <ng-message when="parse">Parse.</ng-message>
-            <ng-message when="min">min.</ng-message>
-            <ng-message when="max">max.</ng-message>
-        </ng-messages>
-    </ui-input-container>
-</form>
-
-<div style="margin: 80px auto; width: 300px">
-    <ui-autocomplete ng-model="vm.info"
-                     ui-search-function="vm.busca"
-                     ui-items="vm.users"
-                     ui-primary-info="name"
-                     ui-focus="vm.teste('Mario')">
-
-    </ui-autocomplete>
+<input type="file"
+       ui-input-file
+       multiple
+       ui-file-change="vm.teste(teste)"
+       ui-read-data-url="vm.teste.dataUrl"
+       ui-read="teste.novaImagem = $data; vm.teste($data, $file)"
+       accept="jpg"
+       ui-file-change="fileChange($error)"
+       ui-max-size="2MB"
+       ui-error="vm.error"
+       id="cl-attachment-files"
+       accept="jpg,jpeg,png,gif,rar,zip,7z,3gp,m4a,mp3,ogg,wma,wmv,pdf,doc,docx,xls,xlsx,ppt,pptx,mp4,avi,mkv,mov,flv,mpg,mpeg"
+       ng-model="files">
+<i class="cloud material-icons">cloud_upload</i>
+<div class="text">
+    <span class="show-mobile select-files" ui-trigger="#cl-attachment-files" ui-trigger-event="click">Escolher arquivos</span>
 </div>

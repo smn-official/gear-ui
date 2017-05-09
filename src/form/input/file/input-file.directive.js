@@ -150,7 +150,7 @@
                     scope.$apply(function () {
                         data.result = e.target.result;
                         data.resolved = true;
-                        scope.uiRead && scope.uiRead({ $data: data.result, $index: index })
+                        scope.uiRead && scope.uiRead({ $data: data.result, $index: index, $file: file })
                     });
                 };
                 reader.onerror = function (e) {

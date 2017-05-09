@@ -24,12 +24,16 @@
             console.log('Core controller loaded with success');
         }
 
-        vm.teste = function (string) {
-            console.log(string)
+        vm.teste = function (data, file) {
+            if(!data && !file) {
+                return;
+            }
+            // console.log(data, file)
         }
-        
-        vm.busca = function () {
-            
+
+        vm.error = function (file, errors, index) {
+            console.log('error');
+            console.log(file.name, errors, index);
         }
     }
 
