@@ -20,6 +20,7 @@
                 'uiMaxFileSize': '@?',
                 'uiValidExt': '@?',
                 'uiRead': '&?',
+                'uiError': '=?',
                 'uiReadDataUrl': '=?'
             }
         };
@@ -62,7 +63,8 @@
                             fileSize = file.size,
                             fileType = file.type,
                             validMaxFileSize = maxFileSize && fileSize > maxFileSize,
-                            validMaxSize = maxSize && sum > maxSize;
+                            validMaxSize = maxSize && sum > maxSize,
+                            fileExtension = file.name.substring(file.name.lastIndexOf('.') + 1);
 
                         if (validMaxFileSize)
                             ctrl.$setValidity('uiMaxFileSize', false);
@@ -75,7 +77,7 @@
                             // Checa se tem apenas um asterisco
                             // e se ele está no final
                             var regex = accept.match(/^[^\*]*\*$/) ? new RegExp('^' + accept) : new RegExp('^' + accept + '$');
-                            if (fileType.match(regex)) {
+                            if (fileType.match(regex) || fileExtension.match(regex)) {
                                 validType = true;
                                 break;
                             }
@@ -86,13 +88,13 @@
                         if (maxSize && sum > maxSize)
                             ctrl.$setValidity('uiMaxSize', false);
 
-                        if (!validType && !validMaxFileSize && !validMaxSize) {
+                        if (validType && !validMaxFileSize && !validMaxSize) {
                             scope.uiReadDataUrl.push({});
                             readFile(file, scope.uiReadDataUrl[i], i);
                         }
                         else if (scope.uiError) {
                             scope.uiError(file, {
-                                type: validType,
+                                type: !validType,
                                 maxSize: validMaxSize,
                                 maxFileSize: validMaxFileSize
                             }, i);
