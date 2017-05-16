@@ -42,7 +42,6 @@
                         scope.switchVarArrowLeft = angular.element($event.currentTarget).offset().left - angular.element(element.find('.switch-color')).offset().left + (angular.element($event.currentTarget).width() / 2) - 6;
                     };
                     scope.colorClass = function(color){
-                        console.log(color);
                         return color;
                     };
                     scope.checkAccentColor = function(variation){

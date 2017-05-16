@@ -1,3 +1,8 @@
+ui-color-picker {
+    width: 48px;
+    display: block;
+    position: relative;
+}
 ui-color-picker .ui-icon {
     position: absolute;
     top: 20px;
