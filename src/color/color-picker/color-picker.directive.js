@@ -13,7 +13,8 @@
                     'uiName': '@',
                     'uiClass': '=?',
                     'uiShape': '@',
-                    'uiPrimaryInfo': '@'
+                    'uiPrimaryInfo': '@',
+                    'uiSelect': '='
                 },
                 templateUrl: 'color/color-picker/color-picker.directive.html',
                 link: function(scope, element, attrs, ctrls, transclude) {
@@ -64,6 +65,7 @@
                         ctrls[1].$render();
                         ctrls[0][scope.uiName].$setDirty();
                         scope.switchClose();
+                        scope.uiSelect && scope.uiSelect();
                     };
 
                     ctrls[1].$formatters.push(function(value){
