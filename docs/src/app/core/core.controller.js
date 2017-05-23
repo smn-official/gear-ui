@@ -28,7 +28,7 @@
             if(!data && !file) {
                 return;
             }
-            // console.log(data, file)
+            console.log(file)
         }
 
         vm.error = function (file, errors, index) {
