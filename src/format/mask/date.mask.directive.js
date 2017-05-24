@@ -77,7 +77,7 @@
             scope.$watch('uiMinDate', function () {
                 var viewValue = formatDate(ctrl.$viewValue);
                 var check = checkDate(viewValue);
-                ctrl.$setValidity('min', !(check && scope.uiMinDate && scope.uiMinDate < check));
+                ctrl.$setValidity('min', check && scope.uiMinDate && scope.uiMinDate < check);
             });
 
             function formatDate(date) {
