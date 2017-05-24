@@ -71,13 +71,19 @@
             scope.$watch('uiMaxDate', function () {
                 var viewValue = formatDate(ctrl.$viewValue);
                 var check = checkDate(viewValue);
-                ctrl.$setValidity('max', !(check && scope.uiMaxDate && scope.uiMaxDate < check));
+
+                ctrl.$setValidity('max', true);
+                if (check && scope.uiMinDate)
+                    ctrl.$setValidity('max', !(scope.uiMaxDate < check));
             });
 
             scope.$watch('uiMinDate', function () {
                 var viewValue = formatDate(ctrl.$viewValue);
                 var check = checkDate(viewValue);
-                ctrl.$setValidity('min', check && scope.uiMinDate && scope.uiMinDate < check);
+
+                ctrl.$setValidity('min', true);
+                if (check && scope.uiMinDate)
+                    ctrl.$setValidity('min', scope.uiMinDate <= check);
             });
 
             function formatDate(date) {
