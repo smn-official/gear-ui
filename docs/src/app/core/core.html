@@ -1,16 +1,16 @@
 <form name="vm.test" class="ui-validate">
     <ui-input-container>
-        <input type="text" name="hora" ng-model="vm.hora" ui-hour>
+        <input type="text" name="hora" ng-model="vm.hora" ui-mask-date>
         <label>Hora</label>
     </ui-input-container>
 
     <ui-input-container>
-        <input type="text" name="hora" ng-model="vm.minuto" ui-minute>
+        <input type="text" name="hora" ng-model="vm.minuto" ui-mask-date ui-min-date="vm.hora">
         <label>Minuto</label>
     </ui-input-container>
 
-    <button class="ui-button icon">
-        <i class="material-icons">child</i>
+    <button class="ui-button icon" ng-disabled="vm.test.$invalid">
+        <i class="material-icons">add</i>
     </button>
 </form>
 
