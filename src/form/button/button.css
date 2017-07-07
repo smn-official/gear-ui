@@ -89,6 +89,9 @@
 	border-radius: 50%;
 	padding: 0;
 }
+.ui-button.icon > * {
+	margin: auto;
+}
 .ui-button.icon-hover i {
 	opacity: .7;
 }
