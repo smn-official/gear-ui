@@ -92,6 +92,8 @@ ui-toolbar .title-container {
 ui-toolbar .title-container .title {
     border-color: transparent;
     transition: 300ms ease-in-out;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 ui-toolbar .title-container .title.ng-enter:not(:only-child) {
     position: absolute;
