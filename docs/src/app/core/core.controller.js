@@ -5,7 +5,7 @@
         .module('core')
         .controller('CoreController', CoreController);
 
-    function CoreController() {
+    function CoreController(uiToolbar) {
         var vm = this;
         vm.hoje = new Date();
         vm.ontem = new Date();
@@ -38,4 +38,5 @@
     }
 
 })();
+
 

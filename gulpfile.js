@@ -36,7 +36,7 @@ function minifyScript(dest) {
     const optionsEmbed = {
         basePath: 'src/' //Pegando os templates pela pasta src
     };
-    return gulp.src('**/*.js', {cwd: 'src'})
+    return gulp.src(['!**/smn-ui.*', '**/*.js',], {cwd: 'src'})
         .pipe($.plumber())
         .pipe($.babel())
         .pipe($.angularEmbedTemplates(optionsEmbed))
@@ -71,7 +71,7 @@ gulp.task('template', () => {
 });
 
 gulp.task('minify:css', () => {
-    return minifyStyle('**/*.css', 'src/', true);
+    return minifyStyle(['!**/smn-ui.*', '**/*.css'], 'src/', true);
 });
 
 gulp.task('minify:js', () => {
@@ -79,7 +79,7 @@ gulp.task('minify:js', () => {
 });
 
 gulp.task('concat:css', () => {
-    return gulp.src('**/*.css', {cwd: 'src'})
+    return gulp.src(['!**/smn-ui.*', '**/*.css'], {cwd: 'src'})
         .pipe($.plumber())
         .pipe($.autoprefixer({
             browsers: ['> 1%', 'IE 7'],
@@ -93,7 +93,7 @@ gulp.task('concat:js', () => {
     const optionsEmbed = {
         basePath: 'src/' //Pegando os templates pela pasta src
     };
-    return gulp.src('**/*.js', {cwd: 'src'})
+    return gulp.src(['!**/smn-ui.*', '**/*.js'], {cwd: 'src'})
         .pipe($.plumber())
         .pipe($.babel())
         .pipe($.angularEmbedTemplates(optionsEmbed))
