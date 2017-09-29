@@ -128,12 +128,12 @@
         }
 
         function verifyTabOverflowScroll() {
-            var buttons = angular.element('ui-tabs button');
+            var buttons = angular.element('ui-tabs .bar button');
             var size = 0;
             angular.forEach(buttons, function(button, index) {
                 size = size + angular.element(button).outerWidth();
             });
-            var overflowWidth = window.innerWidth;
+            var overflowWidth = angular.element('ui-tabs .bar').width();
             var tabsWidth = vm.stretch ? size : size + (overflowWidth > 600 ? 54 : 6);
 
             var overflowContainer = angular.element('ui-tabs .ui-flex.wrap');

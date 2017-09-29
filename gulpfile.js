@@ -78,16 +78,41 @@ gulp.task('minify:js', () => {
     return minifyScript('src/');
 });
 
+gulp.task('concat:css', () => {
+    return gulp.src('**/*.css', {cwd: 'src'})
+        .pipe($.plumber())
+        .pipe($.autoprefixer({
+            browsers: ['> 1%', 'IE 7'],
+            cascade: false
+        }))
+        .pipe($.concatCss('smn-ui.css'))
+        .pipe(gulp.dest('src/'));
+});
+
+gulp.task('concat:js', () => {
+    const optionsEmbed = {
+        basePath: 'src/' //Pegando os templates pela pasta src
+    };
+    return gulp.src('**/*.js', {cwd: 'src'})
+        .pipe($.plumber())
+        .pipe($.babel())
+        .pipe($.angularEmbedTemplates(optionsEmbed))
+        .pipe($.angularFilesort())
+        .pipe($.concat('smn-ui.js'))
+        .pipe($.ngAnnotate())
+        .pipe(gulp.dest('src/'));
+});
+
 gulp.task('clean', () => {
     return gulp.src(['dist', 'src/*.min.*', 'src/app.templates.js'], {read: false})
         .pipe($.clean());
 });
 
 gulp.task('dist', () => {
-    gulp.src('src/*.min.*')
+    gulp.src('src/smn-ui.*')
         .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('build', ['clean'], () => {
-    $.runSequence('template', ['minify:css', 'minify:js'], 'dist');
+    $.runSequence('template', ['concat:css', 'concat:js', 'minify:css', 'minify:js'], 'dist');
 });

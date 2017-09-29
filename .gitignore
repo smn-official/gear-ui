@@ -1,6 +1,7 @@
 node_modules
 dist/
 src/*.min.*
+src/smn-ui.*
 **/*.templates.js
 .idea
 
