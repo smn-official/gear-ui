@@ -236,3 +236,35 @@ ui-input-container:not(.overlay-active) .overlay {
 ui-input-container.overlay-active {
 	z-index: 2000;
 }
+
+ui-input-container.ui-real::before,
+ui-input-container.ui-percent::before {
+	bottom: 7px;
+	position: absolute;
+	color: rgba(0,0,0,0.4);
+}
+ui-input-container.ui-real::before {
+	content: "R$";
+}
+ui-input-container.ui-real>.ui-control~label {
+	left: 25px;
+}
+ui-input-container.ui-real input {
+	padding-left: 25px;
+}
+ui-input-container.ui-real .ui-control.ui-focused~label, ui-input-container.ui-real>.ui-control.ng-not-empty~label,
+ui-input-container.ui-real>.ui-control:focus~label, ui-input-container.ui-real>label,
+ui-input-container.ui-real>label.keep-float, ui-input-container.ui-real>ui-chips~label,
+ui-input-container.ui-real>ui-option-container~label {
+	left: 0;
+}
+ui-input-container.ui-percent::before {
+	content: "%";
+	right: 0;
+}
+ui-input-container.ui-percent >.ui-control~label {
+	margin-right: 10px;
+}
+ui-input-container.ui-percent input {
+	padding-right: 14px;
+}
