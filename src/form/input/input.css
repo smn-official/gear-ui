@@ -239,7 +239,7 @@ ui-input-container.overlay-active {
 
 ui-input-container.ui-real::before,
 ui-input-container.ui-percent::before {
-	bottom: 7px;
+	top: 22px;
 	position: absolute;
 	color: rgba(0,0,0,0.4);
 }
