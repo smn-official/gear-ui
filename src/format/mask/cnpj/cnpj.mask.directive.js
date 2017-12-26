@@ -76,7 +76,6 @@
                 }
 
                 return caretPos;
-
             }
 
             function setCaretPosition(elem, caretPos) {
