@@ -56,7 +56,8 @@
                     return '';
             });
 
-            ctrl.$formatters.push(function(value){
+            ctrl.$formatters.push(function(value) {
+                value = value.toString();
                 if (value) value = ("00000000000000" + value).substring((14 + value.length) - 14);
                 return uiCnpjFilter(value);
             });
