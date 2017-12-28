@@ -57,7 +57,7 @@
             });
 
             ctrl.$formatters.push(function(value) {
-                value = value.toString();
+                value = typeof value == 'number' ? value.toString() : value;
                 if (value) value = ("00000000000000" + value).substring((14 + value.length) - 14);
                 return uiCnpjFilter(value);
             });

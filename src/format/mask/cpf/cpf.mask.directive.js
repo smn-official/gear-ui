@@ -23,7 +23,7 @@
             });
 
             ctrl.$formatters.push(function (value) {
-                value = value.toString();
+                value = typeof value == 'number' ? value.toString() : value;
                 if (value) value = ("00000000000" + value).substring((11 + value.length) - 11);
                 return uiCpfFilter(value);
             });
