@@ -11,7 +11,7 @@
 					'list': '=',
 					'idList': '@',
 					'placeholderList': '@',
-					'config': '&',
+					'config': '=',
 					'attrList': '@',
 					'itemDefault': '@',
 					'labelList': '@',
