@@ -1,9 +1,8 @@
 (function () {
     'use strict';
 
-    angular
-        .module('smn-ui')
-        .directive('uiMaskPercentage', uiMaskPercentage);
+    uiMaskPercentage.$inject = ["uiPercentageFilter"];
+    angular.module('smn-ui').directive('uiMaskPercentage', uiMaskPercentage);
 
     function uiMaskPercentage(uiPercentageFilter) {
         var directive = {
@@ -15,11 +14,13 @@
 
         function link(scope, element, attrs, ctrl) {
             ctrl.$parsers.push(function (value, oldValue) {
+                
+                if(!value) return;
+
                 var percentVal = +attrs.uiMaxPercentage;
 
                 function adjustMaxPercentage(reg) {
-                    if(value.match(reg) && value.match(/%/g))
-                        percentVal += (value.match(reg).length + value.match(/%/g).length - 1);
+                    if (value.match(reg) && value.match(/%/g)) percentVal += value.match(reg).length + value.match(/%/g).length - 1;
                 }
 
                 adjustMaxPercentage(/(-)|(,)/g);
@@ -35,11 +36,15 @@
                 }
 
                 element.bind("keyup", function (event) {
-                    if ((event.which === 8 || event.which === 46) && element[0].value.includes('-%'))
-                        ctrl.$setViewValue('');
+                    if ((event.which === 8 || event.which === 46) && element[0].value.includes('-%')) ctrl.$setViewValue('');
                 });
+                return parseFloat(viewValue.replace('%','').replace(',','.'));
+            });
 
-                return viewValue;
+            ctrl.$formatters.push(function (value) {
+                if(!value) return;
+                var uiPF = uiPercentageFilter(value);
+                return uiPF;
             });
         }
     }
