@@ -40,7 +40,6 @@
                 });
                 return parseFloat(viewValue.replace('%','').replace(',','.'));
             });
-
             ctrl.$formatters.push(function (value) {
                 if(!value) return;
                 var uiPF = uiPercentageFilter(value);
