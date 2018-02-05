@@ -26,10 +26,11 @@
 				});
 
 				scope.$watch('list', function () {
-					var _ref;
-
-					if (scope.list && scope.itemDefault) scope.list.splice(0, 0, _typeof(scope.list[0]) == 'object' ? (_ref = {}, _defineProperty(_ref, scope.config.option, scope.itemDefault), _defineProperty(_ref, scope.config.value, null), _ref) : scope.itemDefault);
-				});
+                    if (scope.list && scope.itemDefault)
+                        scope.list.splice(0, 0, angular.isObject(scope.list[0])
+                        ? { [scope.config.option]: scope.itemDefault, [scope.config.value]: null }
+                        : scope.itemDefault);
+                });
 
 				scope.selected = function () {
                     var itemSelected = scope.list.filter(function (obj) {
