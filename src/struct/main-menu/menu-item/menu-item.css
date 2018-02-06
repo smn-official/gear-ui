@@ -9,6 +9,7 @@ ui-menu-item {
 		position: relative;
 		background-color: white;
 		z-index: 1;
+		display: flex;
 	}
 	ui-menu-item > .item-wrap .fav-button {
 		position: absolute;
@@ -61,9 +62,31 @@ ui-menu-item {
 		ui-menu-item.is-open > .item-wrap .arrow-drop {
 			transform: rotate(0);
 		}
-ui-menu-item.is-open {
-	margin: 5px 10px 10px;
-	border-radius: 2px;
-	box-shadow: 0 1px 2px rgba(0,0,0,0.15), 0 1px 3px rgba(0,0,0,0.2);
-	transition: 200ms ease-in-out;
-}
+	
+	ui-menu-item.is-open {
+		margin: 5px 10px 10px;
+		border-radius: 2px;
+		box-shadow: 0 1px 2px rgba(0,0,0,0.15), 0 1px 3px rgba(0,0,0,0.2);
+		transition: 200ms ease-in-out;
+	}
+	ui-menu-item>.item-wrap a.has-submenu, ui-menu-item>.item-wrap a:link {
+		opacity: 1;
+		cursor: pointer;
+		flex-basis: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	ui-menu-item div.item-wrap > div {
+		max-width: 30px;
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		margin-left: auto;
+		padding: 0 16px;
+	}
+	ui-menu-item div.item-wrap > div > i {
+		font-size: 22px;
+		color: #E53935;
+		transition: 200ms ease;
+	}
