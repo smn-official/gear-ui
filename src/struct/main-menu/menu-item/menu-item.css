@@ -86,6 +86,6 @@ ui-menu-item {
 		padding: 0 16px;
 	}
 	ui-menu-item div.item-wrap > div > i {
-		font-size: 22px;
+		font-size: 16px;
 		color: #E53935;
 	}
