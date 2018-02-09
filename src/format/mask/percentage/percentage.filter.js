@@ -8,9 +8,9 @@
 
         function uiPercentageFilter(percentage) {
             if(!percentage) return '';
-            percentage = percentage.toString().replace('%', '');
+            percentage = percentage.toString().replace('%', '').replace('.', ',');
 
-            if (!percentage.includes('-') && percentage.match(/^\-?\d+(\,\d+)?\%?$/g) === null) percentage = percentage.substr(0, percentage.length - 1);
+            if (!percentage.includes('-') && percentage.match(/^\-?\d+(\,)?(\d+)?\%?$/g) === null) percentage = percentage.substr(0, percentage.length - 1);
 
             if (percentage !== '') percentage += '%';
 
