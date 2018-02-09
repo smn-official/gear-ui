@@ -26,6 +26,7 @@
 				});
 
 				scope.$watch('list', function () {
+					if (!scope.list) return;
 					var iDefault = scope.list.filter(function (obj) { return !!obj.default; });
 					if (scope.list && scope.itemDefault && !iDefault.length)
 						scope.list.splice(0, 0, angular.isObject(scope.list[0])
