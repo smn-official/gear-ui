@@ -15,7 +15,8 @@
 				'itemDefault': '@',
 				'labelList': '@',
 				'change': '=',
-				'click': '='
+				'click': '=',
+                'invalidValue': '@'
 			},
 			template: '<ui-input-container><input autocomplete="off" placeholder="{{placeholderList}}" ng-change="selected()" list="{{idList}}" ng-model="choosen"><datalist id="{{idList}}"><option ng-repeat="opt in list">{{opt[config.option]}}</option></datalist><label>{{labelList}}</label></ui-input-container>',
 			link: function link(scope, element, attrs, ngModel) {
@@ -35,14 +36,14 @@
 				});
 
 				scope.selected = function () {
-					var itemSelected = scope.list.filter(function (obj) {
-						return obj[scope.config.option] == scope.choosen;
-					})[0];
+                    var itemSelected = scope.list.filter(function (obj) {
+                        return obj[scope.config.option] == scope.choosen;
+                    })[0];
 
-					var rtn = !scope.attrList ? itemSelected || null : itemSelected ? itemSelected[scope.attrList] : null;
-					ngModel.$setViewValue(rtn);
-					scope.change && scope.change(rtn);
-				};
+                    var rtn = !scope.attrList ? itemSelected || null : itemSelected ? itemSelected[scope.attrList] : scope.invalidValue ? scope.choosen : null;
+                    ngModel.$setViewValue(rtn);
+                    scope.change && scope.change(rtn);
+                };
 			}
 		};
 	}]);
