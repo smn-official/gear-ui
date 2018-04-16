@@ -1,0 +1,25 @@
+.ui-list-filter{
+    transition: 0.2s;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 2px;
+    width: 100%;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.14), 0 4px 5px 0 rgba(0,0,0,.12), 0 1px 10px 0 rgba(0,0,0,.2);
+    max-height: 0;
+    overflow-y: scroll;
+    z-index: 3;
+}
+.ui-list-filter-open{
+    max-height: 135px;
+}
+.ui-item-filter{
+    padding: 8px;
+    font-size: 14px;
+    cursor: default;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.ui-item-filter:hover{
+    background-color: rgba(0,0,0,.1);
+}
