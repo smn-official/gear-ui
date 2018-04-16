@@ -2,7 +2,7 @@
 	<input type="text" ng-model="ngModelFilter" id="inputFilter" ng-required="requiredFilter ? true : false">
         <label>{{labelFilter}}</label>
         <ng-messages class="ui-error-message" for="formFilter.$error" >
-            <ng-message when="valorErrado" style="padding-top: 4px; position: absolute"> Insira um item presente na lista </ng-message>
+            <ng-message when="differentItem" style="padding-top: 4px; position: absolute"> Insira um item presente na lista </ng-message>
         </ng-messages>
         <ul id="listFilter" class="ui-list-filter">
             <li class="ui-item-filter"

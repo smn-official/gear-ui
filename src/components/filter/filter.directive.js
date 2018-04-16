@@ -25,35 +25,18 @@
     };
     return directive;
 
-    function link(scope, element, attrs, ngModelController){
-        activate();
+    function link(scope, element, attrs, ngModelController) {
+            activate();
 
-        function activate() {
-            scope.filter = function () {
-                var obj = {};
-                obj[scope.modelSearch] = scope.ngModelFilter;
-                return obj;
-            }
-            scope.select = function (obj) {
-                scope.ngModel = obj[scope.modelId] || obj;
-                scope.ngModelFilter = obj[scope.itemName];
-                close();
+            function activate() {
+                scope.filter = filter;
+                scope.select = select;
+
+                document.getElementById('inputFilter').onfocus = onFocus;
+                window.onclick = onBlur;
             }
 
-            document.getElementById('inputFilter').onfocus = function () {
-                    document.getElementById('listFilter').classList.add('ui-list-filter-open');
-                }
-
-            window.onclick = function (e) {
-                    if ((document.getElementById('listFilter') && document.getElementById('inputFilter')) && e.target != document.getElementById('listFilter') && e.target != document.getElementById('inputFilter')) {
-                        scope.$apply(function () {
-                            close();
-                        })
-                    }
-                }
-        }
-
-        function close(obj) {
+            function close(obj) {
                 document.getElementById('listFilter').classList.remove('ui-list-filter-open');
                 $timeout(function () {
                     var different = true;
@@ -66,10 +49,10 @@
                     if (different && scope.ngModelFilter) {
                         scope.ngModelFilter = '';
                         if (scope.requiredFilter !== undefined && scope.requiredFilter) {
-                            scope.formFilter.$setValidity('valorErrado', false);
+                            scope.formFilter.$setValidity('differentItem', false);
                         }
                     } else {
-                        scope.formFilter.$setValidity('valorErrado', true);
+                        scope.formFilter.$setValidity('differentItem', true);
                     }
                     if (!scope.ngModelFilter) {
                         scope.ngModel = null;
@@ -79,7 +62,32 @@
 
             }
 
-    }
+            function filter() {
+                var obj = {};
+                obj[scope.modelSearch] = scope.ngModelFilter;
+                return obj;
+            }
+
+            function select(obj) {
+                scope.ngModel = obj[scope.modelId] || obj;
+                scope.ngModelFilter = obj[scope.itemName];
+                close();
+            }
+
+            function onFocus() {
+                document.getElementById('listFilter').classList.add('ui-list-filter-open');
+            }
+
+            function onBlur(e) {
+                if ((document.getElementById('listFilter') && document.getElementById('inputFilter')) && e.target != document.getElementById('listFilter') && e.target != document.getElementById('inputFilter')) {
+                    scope.$apply(function () {
+                        close();
+                    })
+                }
+            }
+
+
+        }
 
     };
 })();
