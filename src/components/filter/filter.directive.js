@@ -18,7 +18,8 @@
                 'modelId': '@',
                 'list': '=',
                 'itemName': '@',
-                'requiredFilter': '='
+                'requiredFilter': '=',
+		'clearButton': '='
             },
             require: 'ngModel',
             templateUrl: 'components/filter/filter.directive.html' 
@@ -31,6 +32,7 @@
             function activate() {
                 scope.filter = filter;
                 scope.select = select;
+		scope.clear = clear;
 
                 document.getElementById('inputFilter').onfocus = onFocus;
                 window.onclick = onBlur;
@@ -72,6 +74,11 @@
                 scope.ngModel = obj[scope.modelId] || obj;
                 scope.ngModelFilter = obj[scope.itemName];
                 close();
+            }
+		
+
+	function clear(){
+                scope.ngModelFilter = ''
             }
 
             function onFocus() {
