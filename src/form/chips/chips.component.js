@@ -122,6 +122,7 @@
             });
         };
         $ctrl.selectItem = function (item) {
+            item = angular.copy(item);
             $ctrl.focusedIndex = $ctrl.uiItemsFiltered.length ? 0 : null;
             $ctrl.ngModel.push($ctrl.uiItemsValue ? item[$ctrl.uiItemsValue] : item);
             $ctrl.ngModelCtrl.$modelValue = $ctrl.ngModel;
